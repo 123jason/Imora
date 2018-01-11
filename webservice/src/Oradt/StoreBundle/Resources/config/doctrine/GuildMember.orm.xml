@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\GuildMember" table="guild_member">
+    <indexes>
+      <index name="fk_guild_member_2_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="UNIQUE" columns="guild_id,user_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="guildId" type="string" column="guild_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="jionedTime" type="datetime" column="jioned_time" nullable="false"/>
+    <field name="exitTime" type="datetime" column="exit_time" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="name" type="string" column="name" length="64" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="512" nullable="true"/>
+  </entity>
+</doctrine-mapping>

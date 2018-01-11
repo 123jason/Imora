@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasic" table="account_basic">
+    <unique-constraints>
+      <unique-constraint name="user_id_UNIQUE" columns="user_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="mcode" type="string" column="mcode" length="4" nullable="false"/>
+    <field name="mobile" type="string" column="mobile" length="18" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="false"/>
+    <field name="password" type="string" column="password" length="255" nullable="false"/>
+    <field name="secureLevel" type="integer" column="secure_level" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="ifmissing" type="integer" column="ifmissing" nullable="false"/>
+  </entity>
+</doctrine-mapping>

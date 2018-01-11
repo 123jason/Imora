@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicRecommend" table="account_basic_recommend">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="title" type="string" column="title" length="50" nullable="false"/>
+    <field name="recommendNumber" type="integer" column="recommend_number" length="10" nullable="false"/>
+    <field name="recommendedNumber" type="integer" column="recommended_number" length="10" nullable="false"/>
+    <field name="isPush" type="integer" column="is_push" nullable="false"/>
+    <field name="recommendTime" type="datetime" column="recommend_time"  nullable="false"/>
+  </entity>
+</doctrine-mapping>

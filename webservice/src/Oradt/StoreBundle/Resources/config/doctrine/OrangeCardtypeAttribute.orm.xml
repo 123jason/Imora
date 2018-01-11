@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeCardtypeAttribute" table="orange_cardtype_attribute">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardtypeid" type="integer" column="cardtypeid" nullable="false"/>
+    <field name="propertyType" type="integer" column="property_type" nullable="false"/>
+    <field name="isEdit" type="integer" column="is_edit" nullable="false"/>
+    <field name="attr" type="string" column="attr" length="255" nullable="false"/>
+    <field name="val" type="string" column="val" length="255" nullable="false"/>
+    <field name="alert" type="string" column="alert" length="255" nullable="false"/>
+    <field name="encrypted" type="integer" column="encrypted" nullable="false"/>
+    <field name="createtime" type="integer" column="createtime" nullable="false"/>
+    <field name="ifdefault" type="integer" column="ifdefault" nullable="false"/>
+    <field name="contact" type="integer" column="contact" nullable="false"/>
+  </entity>
+</doctrine-mapping>

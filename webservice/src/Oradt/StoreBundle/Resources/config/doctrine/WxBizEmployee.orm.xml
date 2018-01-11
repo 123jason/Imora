@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\WxBizEmployee" table="wx_biz_employee">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="accountNo" type="string" column="account_no" length="40" nullable="false"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="code" type="string" column="code" length="10" nullable="false"/>
+    <field name="mobile" type="string" column="mobile" length="18" nullable="false"/>
+    <field name="passwd" type="string" column="passwd" length="32" nullable="false"/>
+    <field name="email" type="string" column="email" length="90" nullable="true"/>
+    <field name="name" type="string" column="name" length="90" nullable="false"/>
+    <field name="superior" type="string" column="superior" length="90" nullable="true"/>
+    <field name="department" type="string" column="department" length="255" nullable="true"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="enable" type="integer" column="enable" nullable="false"/>
+    <field name="openId" type="string" column="open_id" length="40" nullable="false"/>
+    <field name="unionId" type="string" column="union_id" length="40" nullable="false"/>
+    <field name="roleId" type="integer" column="role_id" nullable="false"/>
+    <field name="importStatus" type="integer" column="import_status" nullable="false"/>
+    <field name="reFrom" type="integer" column="re_from" nullable="false"/>
+    <field name="identStatus" type="integer" column="ident_status" nullable="false"/>
+    <field name="identTime" type="integer" column="ident_time" nullable="false"/>
+    <field name="isDel" type="integer" nullable="false" column="is_del"></field>
+    <field name="bak" type="string" column="bak" length="255" nullable="false"/>
+    	
+
+  </entity>
+</doctrine-mapping>

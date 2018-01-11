@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignBidding" table="design_bidding">
+    <indexes>
+      <index name="fk_diagram_competitive_tender_diagram_project1_idx" columns="project_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="biddingId" type="string" column="bidding_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="projectId" type="string" column="project_id" length="32" nullable="false"/>
+    <field name="price" type="decimal" column="price" precision="8" scale="2" nullable="false"/>
+    <field name="unitId" type="integer" column="unit_id" nullable="false"/>
+    <field name="deadlineTime" type="integer" column="deadline_time" nullable="false"/>
+    <field name="areas" type="string" column="areas" length="6" nullable="true"/>
+    <field name="explains" type="string" column="explains" length="255" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+  </entity>
+</doctrine-mapping>

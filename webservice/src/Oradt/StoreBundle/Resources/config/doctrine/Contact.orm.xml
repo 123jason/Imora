@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Contact" table="contact">
+    <indexes>
+      <index name="fk_contact_1_idx" columns="group_id"/>
+      <index name="user_id_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="contact_id_UNIQUE" columns="contact_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="contactId" type="string" column="contact_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="contactName" type="string" column="contact_name" length="64" nullable="false"/>
+    <field name="groupId" type="string" column="group_id" length="32" nullable="false"/>
+    <field name="remark" type="string" column="remark" length="256" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="true"/>
+    <field name="introducation" type="string" column="introducation" nullable="false"/>
+    <field name="namePre" type="string" column="name_pre" length="1" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BasicOrderIapInfo" table="basic_order_iap_info">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="orderId" type="string" column="order_id" length="40" nullable="false"/>
+    <field name="receipt" type="string" column="receipt" length="256" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="status" type="string" column="status" length="10" nullable="false"/>
+    <field name="info" type="text" column="info" nullable="false"/>
+  </entity>
+</doctrine-mapping>

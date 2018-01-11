@@ -1,0 +1,673 @@
+<?php
+
+namespace Oradt\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * WeixinCard
+ */
+class WeixinCard
+{
+    
+   
+    /**
+     * @var string
+     */
+    private $wechatId;
+
+    /**
+     * @var string
+     */
+    private $wechatPicture;
+
+    /**
+     * @var string
+     */
+    private $cardName;
+
+    /**
+     * @var string
+     */
+    private $cardEmali;
+
+    /**
+     * @var string
+     */
+    private $cardIndustry;
+
+    /**
+     * @var string
+     */
+    private $cardJob;
+
+    /**
+     * @var string
+     */
+    private $cardCompany;
+
+    /**
+     * @var string
+     */
+    private $cardAddress;
+
+    /**
+     * @var string
+     */
+    private $cardZipcode;
+
+    /**
+     * @var string
+     */
+    private $cardTelephone;
+
+    /**
+     * @var string
+     */
+    private $cardMobile;
+
+    /**
+     * @var string
+     */
+    private $cardFax;
+
+    /**
+     * @var string
+     */
+    private $cardCompanyUrl;
+
+    /**
+     * @var string
+     */
+    private $wechatCardXml;
+
+    /**
+     * @var integer
+     */
+    private $createdTime;
+
+    /**
+     * @var integer
+     */
+    private $modifyTime;
+
+    /**
+     * @var string
+     */
+    private $searchCn;
+
+    /**
+     * @var string
+     */
+    private $searchPy;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+
+    /**
+     * Set wechatId
+     *
+     * @param string $wechatId
+     * @return WeixinCard
+     */
+    public function setWechatId($wechatId)
+    {
+        $this->wechatId = $wechatId;
+
+        return $this;
+    }
+
+    /**
+     * Get wechatId
+     *
+     * @return string 
+     */
+    public function getWechatId()
+    {
+        return $this->wechatId;
+    }
+
+    /**
+     * Set wechatPicture
+     *
+     * @param string $wechatPicture
+     * @return WeixinCard
+     */
+    public function setWechatPicture($wechatPicture)
+    {
+        $this->wechatPicture = $wechatPicture;
+
+        return $this;
+    }
+
+    /**
+     * Get wechatPicture
+     *
+     * @return string 
+     */
+    public function getWechatPicture()
+    {
+        return $this->wechatPicture;
+    }
+
+    /**
+     * Set cardName
+     *
+     * @param string $cardName
+     * @return WeixinCard
+     */
+    public function setCardName($cardName)
+    {
+        $this->cardName = $cardName;
+
+        return $this;
+    }
+
+    /**
+     * Get cardName
+     *
+     * @return string 
+     */
+    public function getCardName()
+    {
+        return $this->cardName;
+    }
+
+    /**
+     * Set cardEmali
+     *
+     * @param string $cardEmali
+     * @return WeixinCard
+     */
+    public function setCardEmali($cardEmali)
+    {
+        $this->cardEmali = $cardEmali;
+
+        return $this;
+    }
+
+    /**
+     * Get cardEmali
+     *
+     * @return string 
+     */
+    public function getCardEmali()
+    {
+        return $this->cardEmali;
+    }
+
+    /**
+     * Set cardIndustry
+     *
+     * @param string $cardIndustry
+     * @return WeixinCard
+     */
+    public function setCardIndustry($cardIndustry)
+    {
+        $this->cardIndustry = $cardIndustry;
+
+        return $this;
+    }
+
+    /**
+     * Get cardIndustry
+     *
+     * @return string 
+     */
+    public function getCardIndustry()
+    {
+        return $this->cardIndustry;
+    }
+
+    /**
+     * Set cardJob
+     *
+     * @param string $cardJob
+     * @return WeixinCard
+     */
+    public function setCardJob($cardJob)
+    {
+        $this->cardJob = $cardJob;
+
+        return $this;
+    }
+
+    /**
+     * Get cardJob
+     *
+     * @return string 
+     */
+    public function getCardJob()
+    {
+        return $this->cardJob;
+    }
+
+    /**
+     * Set cardCompany
+     *
+     * @param string $cardCompany
+     * @return WeixinCard
+     */
+    public function setCardCompany($cardCompany)
+    {
+        $this->cardCompany = $cardCompany;
+
+        return $this;
+    }
+
+    /**
+     * Get cardCompany
+     *
+     * @return string 
+     */
+    public function getCardCompany()
+    {
+        return $this->cardCompany;
+    }
+
+    /**
+     * Set cardAddress
+     *
+     * @param string $cardAddress
+     * @return WeixinCard
+     */
+    public function setCardAddress($cardAddress)
+    {
+        $this->cardAddress = $cardAddress;
+
+        return $this;
+    }
+
+    /**
+     * Get cardAddress
+     *
+     * @return string 
+     */
+    public function getCardAddress()
+    {
+        return $this->cardAddress;
+    }
+
+    /**
+     * Set cardZipcode
+     *
+     * @param string $cardZipcode
+     * @return WeixinCard
+     */
+    public function setCardZipcode($cardZipcode)
+    {
+        $this->cardZipcode = $cardZipcode;
+
+        return $this;
+    }
+
+    /**
+     * Get cardZipcode
+     *
+     * @return string 
+     */
+    public function getCardZipcode()
+    {
+        return $this->cardZipcode;
+    }
+
+    /**
+     * Set cardTelephone
+     *
+     * @param string $cardTelephone
+     * @return WeixinCard
+     */
+    public function setCardTelephone($cardTelephone)
+    {
+        $this->cardTelephone = $cardTelephone;
+
+        return $this;
+    }
+
+    /**
+     * Get cardTelephone
+     *
+     * @return string 
+     */
+    public function getCardTelephone()
+    {
+        return $this->cardTelephone;
+    }
+
+    /**
+     * Set cardMobile
+     *
+     * @param string $cardMobile
+     * @return WeixinCard
+     */
+    public function setCardMobile($cardMobile)
+    {
+        $this->cardMobile = $cardMobile;
+
+        return $this;
+    }
+
+    /**
+     * Get cardMobile
+     *
+     * @return string 
+     */
+    public function getCardMobile()
+    {
+        return $this->cardMobile;
+    }
+
+    /**
+     * Set cardFax
+     *
+     * @param string $cardFax
+     * @return WeixinCard
+     */
+    public function setCardFax($cardFax)
+    {
+        $this->cardFax = $cardFax;
+
+        return $this;
+    }
+
+    /**
+     * Get cardFax
+     *
+     * @return string 
+     */
+    public function getCardFax()
+    {
+        return $this->cardFax;
+    }
+
+    /**
+     * Set cardCompanyUrl
+     *
+     * @param string $cardCompanyUrl
+     * @return WeixinCard
+     */
+    public function setCardCompanyUrl($cardCompanyUrl)
+    {
+        $this->cardCompanyUrl = $cardCompanyUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get cardCompanyUrl
+     *
+     * @return string 
+     */
+    public function getCardCompanyUrl()
+    {
+        return $this->cardCompanyUrl;
+    }
+
+    /**
+     * Set wechatCardXml
+     *
+     * @param string $wechatCardXml
+     * @return WeixinCard
+     */
+    public function setWechatCardXml($wechatCardXml)
+    {
+        $this->wechatCardXml = $wechatCardXml;
+
+        return $this;
+    }
+
+    /**
+     * Get wechatCardXml
+     *
+     * @return string 
+     */
+    public function getWechatCardXml()
+    {
+        return $this->wechatCardXml;
+    }
+
+    /**
+     * Set createdTime
+     *
+     * @param integer $createdTime
+     * @return WeixinCard
+     */
+    public function setCreatedTime($createdTime)
+    {
+        $this->createdTime = $createdTime;
+
+        return $this;
+    }
+
+    /**
+     * Get createdTime
+     *
+     * @return integer 
+     */
+    public function getCreatedTime()
+    {
+        return $this->createdTime;
+    }
+
+    /**
+     * Set modifyTime
+     *
+     * @param integer $modifyTime
+     * @return WeixinCard
+     */
+    public function setModifyTime($modifyTime)
+    {
+        $this->modifyTime = $modifyTime;
+
+        return $this;
+    }
+
+    /**
+     * Get modifyTime
+     *
+     * @return integer 
+     */
+    public function getModifyTime()
+    {
+        return $this->modifyTime;
+    }
+
+    /**
+     * Set searchCn
+     *
+     * @param string $searchCn
+     * @return WeixinCard
+     */
+    public function setSearchCn($searchCn)
+    {
+        $this->searchCn = $searchCn;
+
+        return $this;
+    }
+
+    /**
+     * Get searchCn
+     *
+     * @return string 
+     */
+    public function getSearchCn()
+    {
+        return $this->searchCn;
+    }
+
+    /**
+     * Set searchPy
+     *
+     * @param string $searchPy
+     * @return WeixinCard
+     */
+    public function setSearchPy($searchPy)
+    {
+        $this->searchPy = $searchPy;
+
+        return $this;
+    }
+
+    /**
+     * Get searchPy
+     *
+     * @return string 
+     */
+    public function getSearchPy()
+    {
+        return $this->searchPy;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @var string
+     */
+    private $vcard;
+
+
+    /**
+     * Set vcard
+     *
+     * @param string $vcard
+     * @return WeixinCard
+     */
+    public function setVcard($vcard)
+    {
+        $this->vcard = $vcard;
+
+        return $this;
+    }
+
+    /**
+     * Get vcard
+     *
+     * @return string 
+     */
+    public function getVcard()
+    {
+        return $this->vcard;
+    }
+    /**
+     * @var integer
+     */
+    private $userId;
+
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     * @return WeixinCard
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+    /**
+     * @var string
+     */
+    private $md5PictureName;
+
+
+    /**
+     * Set md5PictureName
+     *
+     * @param string $md5PictureName
+     * @return WeixinCard
+     */
+    public function setMd5PictureName($md5PictureName)
+    {
+        $this->md5PictureName = $md5PictureName;
+
+        return $this;
+    }
+
+    /**
+     * Get md5PictureName
+     *
+     * @return string 
+     */
+    public function getMd5PictureName()
+    {
+        return $this->md5PictureName;
+    }
+    /**
+     * @var string
+     */
+    private $smallWechatPicture;
+
+
+    /**
+     * Set smallWechatPicture
+     *
+     * @param string $smallWechatPicture
+     * @return WeixinCard
+     */
+    public function setSmallWechatPicture($smallWechatPicture)
+    {
+        $this->smallWechatPicture = $smallWechatPicture;
+
+        return $this;
+    }
+
+    /**
+     * Get smallWechatPicture
+     *
+     * @return string 
+     */
+    public function getSmallWechatPicture()
+    {
+        return $this->smallWechatPicture;
+    }
+    /**
+     * @var integer
+     */
+    private $ocrStatus;
+
+
+    /**
+     * Set ocrStatus
+     *
+     * @param integer $ocrStatus
+     * @return WeixinCard
+     */
+    public function setOcrStatus($ocrStatus)
+    {
+        $this->ocrStatus = $ocrStatus;
+
+        return $this;
+    }
+
+    /**
+     * Get ocrStatus
+     *
+     * @return integer 
+     */
+    public function getOcrStatus()
+    {
+        return $this->ocrStatus;
+    }
+}

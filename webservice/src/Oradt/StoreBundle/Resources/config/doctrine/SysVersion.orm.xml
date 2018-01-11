@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SysVersion" table="sys_version">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="version" type="string" column="version" length="120" nullable="false"/>
+    <field name="deviceType" type="string" column="device_type" length="10" nullable="false"/>
+    <field name="versionUrl" type="string" column="version_url" length="240" nullable="false"/>
+    <field name="isIos" type="integer" column="is_ios" nullable="false"/>
+    <field name="unionpayNum" type="string" column="unionpay_num" length="120" nullable="false"/>
+    <field name="isUpdate" type="integer" column="is_update" nullable="false"/>
+    <field name="updatePrompt" type="string" column="update_prompt" length="100" nullable="false"/>
+    <field name="upbutton" type="string" column="upbutton" length="50" nullable="false"/>
+    <field name="noupbutton" type="string" column="noupbutton" length="50" nullable="false"/>
+    <field name="updateTime" type="integer" column="update_time" nullable="false"/>
+    <field name="updateLog" type="text" column="update_log" nullable="false"/>
+    <field name="isdelete" type="integer" column="isdelete" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignStatisticsProduct" table="design_statistics_product">
+    <unique-constraints>
+      <unique-constraint name="date" columns="date"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="total" type="integer" column="total" nullable="true"/>
+    <field name="news" type="integer" column="news" nullable="true"/>
+    <field name="trading" type="integer" column="trading" nullable="true"/>
+  </entity>
+</doctrine-mapping>

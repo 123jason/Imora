@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCardSchedule" table="contact_card_schedule">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+	<field name="vcardId" type="string" column="vcard_id" length="32" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+	<field name="title" type="string" column="title" length="100" nullable="true"/>
+    <field name="address" type="string" column="address" length="300" nullable="false"/>
+    <field name="startTime" type="integer" column="start_time" nullable="false"/>
+    <field name="endTime" type="integer" column="end_time" nullable="false"/>
+    <field name="remindTime" type="string" column="remind_time" nullable="true"/>
+    <field name="flagTime" type="integer" column="flag_time" nullable="true"/>
+    <field name="cycle" type="integer" column="cycle" nullable="true"/>
+	<field name="latitude" type="decimal" column="latitude" precision="13" scale="0" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="0" nullable="true"/>
+    <field name="isallday" type="integer" column="isallday" nullable="false"/>
+    <field name="lastModify" type="integer" column="last_modify" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="isRemind" type="integer" column="is_remind" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="flightId" type="string" column="flight_id" nullable="false"/>
+    <field name="scheduleFrom" type="integer" column="schedule_from" nullable="false"/>
+    <field name="scheduleInfo" type="text" column="schedule_info" nullable="true"/>
+    <field name="remindType" type="integer" column="remind_type" nullable="false"/>
+    <field name="scheduleMd5" type="string" column="schedule_md5" nullable="false"/>
+  </entity>
+</doctrine-mapping>

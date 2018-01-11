@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidate" table="hr_candidate">
+    <indexes>
+      <index name="user_id_UNIQUE" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="candidate_id_UNIQUE" columns="candidate_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="name" type="string" column="name" length="96" nullable="false"/>
+    <field name="gender" type="string" column="gender" nullable="false"/>
+    <field name="birthday" type="date" column="birthday" nullable="false"/>
+    <field name="marriage" type="integer" column="marriage" nullable="true"/>
+    <field name="workdate" type="date" column="workdate" nullable="false"/>
+    <field name="overseaExp" type="string" column="oversea_exp" length="96" nullable="false"/>
+    <field name="birthplace" type="string" column="birthplace" length="96" nullable="false"/>
+    <field name="residence" type="string" column="residence" length="96" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="false"/>
+    <field name="mobile" type="string" column="mobile" length="18" nullable="false"/>
+    <field name="tel" type="string" column="tel" length="18" nullable="true"/>
+    <field name="party" type="string" column="party" length="96" nullable="true"/>
+    <field name="degree" type="integer" column="degree" nullable="true"/>
+    <field name="avatarPath" type="string" column="avatar_path" length="128" nullable="true"/>
+    <field name="website" type="string" column="website" length="128" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="visitedTimes" type="integer" column="visited_times" nullable="false"/>
+    <field name="languageid" type="integer" column="languageid" nullable="false"/>
+    <field name="age" type="integer" column="age" nullable="false"/>
+    <field name="workExp" type="integer" column="work_exp" nullable="false"/>
+    <field name="lastCompany" type="string" column="last_company" length="96" nullable="true"/>
+    <field name="allCompany" type="string" column="all_company" length="1000" nullable="true"/>
+    <field name="industryCode" type="string" column="industry_code" length="20" nullable="true"/>
+    <field name="imName" type="string" column="im_name" length="60" nullable="true"/>
+    <field name="workstate" type="string" column="workstate" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="candidateNo" type="string" column="candidate_no" length="36" nullable="true"/>
+    <field name="profile" type="string" column="profile" nullable="true"/>
+    <field name="isBold" type="string" column="is_bold" nullable="true"/>
+    <field name="fontSize" type="string" column="font_size" nullable="true"/>
+  </entity>
+</doctrine-mapping>

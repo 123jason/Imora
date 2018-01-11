@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidateObjective" table="hr_candidate_objective">
+    <indexes>
+      <index name="user_id_idx_1" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="candidate_id_uni" columns="candidate_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="objectiveId" type="string" column="objective_id" length="32" nullable="false"/>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="position" type="string" column="position" length="256" nullable="true"/>
+    <field name="address" type="string" column="address" length="45" nullable="true"/>
+    <field name="industryCode" type="string" column="industry_code" length="8" nullable="true"/>
+    <field name="salary" type="integer" column="salary" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="otherExpect" type="string" column="other_expect" length="200" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+    <bizid>
+        <type>string</type>
+        <mapdb>a.biz_id</mapdb>
+        <w> AND a.biz_id IN (%s)</w>
+    </bizid>
+    <realname>
+        <type>string</type>
+        <mapdb>a.real_name</mapdb>
+        <w> AND a.real_name LIKE :realname</w>
+    </realname>
+    <title>
+        <type>string</type>
+        <mapdb>title</mapdb>
+        <w> AND a.title LIKE :title</w>
+    </title>
+    <personalid>
+        <type>string</type>
+        <mapdb>personal_id</mapdb>
+        <w> AND a.personal_id=:personalid</w>
+    </personalid>
+    <idcardcopy>
+        <type>string</type>
+        <mapdb>b.idcard_copy_path</mapdb>
+        <w>0</w>
+    </idcardcopy>
+    <authcopy>
+        <type>string</type>
+        <mapdb>b.authority_copy_path</mapdb>
+        <w>0</w>
+    </authcopy>
+    <authcopyname>
+            <type>string</type>
+            <mapdb>auth_name</mapdb>
+            <w> AND a.auth_name LIKE :authcopyname</w>
+    </authcopyname>
+    <mobile>
+        <type>string</type>
+        <mapdb>mobile</mapdb>
+        <w> AND a.mobile=:mobile</w></mobile>
+    <email>
+        <type>string</type>
+        <mapdb>email</mapdb>
+        <w> AND a.email=:email</w>
+    </email>
+    <legalperson>
+            <type>string</type>
+            <mapdb>a.legal_person</mapdb>
+            <w> AND a.legal_person LIKE :legalperson</w>
+     </legalperson>
+     <license>
+            <type>string</type>
+            <mapdb>b.license_copy_path</mapdb>
+            <w>0</w>
+     </license>
+     <codecertificate>
+            <type>string</type>
+            <mapdb>b.code_copy_path</mapdb>
+            <w>0</w>
+     </codecertificate>
+     <legalidcard>
+            <type>string</type>
+            <mapdb>b.legalidcard_copy_path</mapdb>
+            <w>0</w>
+     </legalidcard>
+  </fields>
+  <provide_max_fields>bizid,realname,title,personalid,idcardcopy,authcopy,authcopyname,mobile,email,legalperson,license,codecertificate,legalidcard</provide_max_fields>
+  <default_dataparam>
+  
+  </default_dataparam>
+  <sql><![CDATA[
+		SELECT %s FROM biz_operator AS a INNER JOIN biz_operator_extend_info AS b ON a.biz_id = b.biz_id%s%s
+   ]]></sql>
+  <where></where>
+  <order> ORDER BY a.id DESC</order>
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Trash" table="trash">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="trashId" type="string" column="trash_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="documentId" type="string" column="document_id" length="32" nullable="false"/>
+    <field name="type" type="string" column="type" nullable="false"/>
+    <field name="deletedTime" type="datetime" column="deleted_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

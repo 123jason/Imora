@@ -1,0 +1,24 @@
+oradt_weixin_biz:
+    resource: "@OradtWeixinBizBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oradt_common:
+    resource: "@OradtCommonBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oradt_batch:
+    resource: "@OradtBatchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oradt_verification:
+    resource: "@OradtVerificationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oradt_account_admin:
+    resource: "@OradtAccountAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+oradt_oauth:
+    resource: "@OradtOauthBundle/Resources/config/routing.yml"
+    prefix:   /
+

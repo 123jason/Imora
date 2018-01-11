@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicDetailExtend" table="account_basic_detail_extend">
+    <unique-constraints>
+      <unique-constraint name="key_user_id" columns="user_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="enName" type="string" column="en_name" length="100" nullable="false"/>
+    <field name="company" type="string" column="company" length="400" nullable="false"/>
+    <field name="title" type="string" column="title" length="255" nullable="false"/>
+    <field name="department" type="string" column="department" length="100" nullable="false"/>
+    <field name="url" type="string" column="url" length="5140" nullable="false"/>
+    <field name="telephone" type="string" column="telephone" length="1500" nullable="false"/>
+    <field name="cellphone" type="string" column="cellphone" length="50" nullable="false"/>
+    <field name="email1" type="string" column="email1" length="350" nullable="false"/>
+    <field name="address" type="string" column="address" length="400" nullable="false"/>
+    <field name="qq" type="string" column="qq" length="20" nullable="false"/>
+    <field name="weixin" type="string" column="weixin" length="100" nullable="false"/>
+    <field name="weibo" type="string" column="weibo" length="100" nullable="false"/>
+    <field name="fax" type="string" column="fax" length="100" nullable="false"/>
+    <field name="badNum" type="integer" column="bad_num" nullable="false"/>
+    <field name="praiseNum" type="integer" column="praise_num" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

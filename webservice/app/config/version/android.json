@@ -1,0 +1,38 @@
+{
+  "versions":[
+
+    {
+      "app_id":"A.0.2.20170620.0",
+      "device":"android",
+      "leftbutton":"取消",
+      "rightbutton":"升级",
+      "message":"本版本更新了xxxxxx",
+      "update_install":"1",
+      "update_log":"asd",
+      "datetime":"2017-06-20",
+      "load_path":"http://101.251.193.27:81/OraMain-IDC_Test-0620debug.apk"
+    },
+    {
+      "app_id":"A.0.2.20170621.0",
+      "device":"android",
+      "leftbutton":"取消",
+      "rightbutton":"升级",
+      "message":"本版本更新了普通升级test",
+      "update_install":"1",
+      "update_log":"asd",
+      "datetime":"2017-06-21",
+      "load_path":"http://101.251.193.27:81/OraMain-IDC_Test-0621debug.apk"
+    },
+    {
+      "app_id":"A.0.2.20170622.0",
+      "device":"android",
+      "leftbutton":"取消",
+      "rightbutton":"升级",
+      "message":"本版本更新了强制升级test",
+      "update_install":"2",
+      "update_log":"asd",
+      "datetime":"2017-06-22",
+      "load_path":"http://101.251.193.27:81/OraMain-IDC_Test-0622debug.apk"
+    }
+  ]
+}

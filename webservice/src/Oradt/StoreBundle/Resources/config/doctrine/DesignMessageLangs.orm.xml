@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignMessageLangs" table="design_message_langs">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="messageId" type="string" column="message_id" length="40" nullable="false"/>
+    <field name="languageId" type="integer" column="language_id" nullable="true"/>
+    <field name="titleLan" type="string" column="title_lan" length="255" nullable="true"/>
+    <field name="contentLan" type="text" column="content_lan" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+  	<deliveryid>
+		<type>string</type>
+		<mapdb>delivery_id</mapdb>
+		<w> AND delivery_id=:deliveryid</w></deliveryid>
+  	<vcardid>
+		<type>string</type>
+		<mapdb>card_id</mapdb>
+		<w> AND card_id=:vcardid</w></vcardid>
+  	<toaccount>
+		<type>string</type>
+		<mapdb>account</mapdb>
+		<w> AND account=:toaccount</w></toaccount>
+  	<date>
+		<type>string</type>
+		<mapdb>created_time</mapdb>
+		<w>Range</w></date>
+  </fields>
+  <provide_max_fields>deliveryid,vcardid,toaccount,date</provide_max_fields>
+  <default_dataparam>
+  <userId></userId>
+  </default_dataparam>
+  <sql><![CDATA[
+		SELECT %s FROM `biz_card_delivery_info` AS a%s%s
+   ]]></sql>
+  <where><![CDATA[a.biz_id=:userId]]></where>
+  <order> ORDER BY a.created_time DESC</order>
+
+</root>

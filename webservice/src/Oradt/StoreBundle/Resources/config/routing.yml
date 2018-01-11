@@ -1,0 +1,3 @@
+oradt_store_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OradtStoreBundle:Default:index }

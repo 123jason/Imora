@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicBingorange" table="account_basic_bingorange">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="orauuid" type="string" column="orauuid" length="256" nullable="false"/>
+    <field name="oraname" type="string" column="oraname" length="256" nullable="false"/>
+    <field name="phoneuuid" type="string" column="phoneuuid" length="256" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="pageId" type="string" column="page_id" length="256" nullable="false"/>
+    <field name="iflag" type="integer" column="iflag" nullable="false"/>
+    <field name="snnum" type="string" column="snnum" length="40" nullable="false"/>
+    <field name="qrcode" type="string" column="qrcode" length="256" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="ifmissing" type="integer" column="ifmissing" nullable="false"/>
+    <field name="orangeVersion" type="string" column="orange_version" length="90" nullable="false"/>
+    <field name="appVersion" type="string" column="app_version" length="90" nullable="false"/>
+    <field name="phoneVersion" type="string" column="phone_version" length="90" nullable="false"/>
+    <field name="module" type="string" column="module" length="90" nullable="false"/>
+    <field name="iserror" type="integer" column="iserror" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BasicOrderAbnormal" table="basic_order_abnormal">
+    <indexes>
+      <index name="order_id_key" columns="order_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="orderId" type="string" column="order_id" length="40" nullable="false"/>
+    <field name="buyer" type="string" column="buyer" length="255" nullable="false"/>
+    <field name="saler" type="string" column="saler" length="255" nullable="true"/>
+    <field name="customerId" type="string" column="customer_id" length="32" nullable="true"/>
+    <field name="customer" type="string" column="customer" length="255" nullable="true"/>
+    <field name="personLiable" type="integer" column="person_liable" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

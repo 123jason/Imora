@@ -1,0 +1,9 @@
+parameters:
+    oradt_apiaccesslisener.class: Oradt\OauthBundle\EventListener\ControllerListener
+# event linten config format
+#services:
+#    oradt_testaaaaaaaa.example:
+#        class: Oradt\OauthBundle\EventListener\ControllerListener
+#        arguments: [@doctrine.orm.entity_manager]
+#        tags:
+#            - { name: kernel.event_listener,event: kernel.response, method: onKernelController }

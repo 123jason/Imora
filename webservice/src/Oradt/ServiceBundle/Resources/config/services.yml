@@ -1,0 +1,475 @@
+parameters:
+    cron_service.class: Oradt\ServiceBundle\Services\CronService
+    # dirs_service.class: Oradt\ServiceBundle\Services\DirsService 上传本地服务器
+    dirs_service.class: Oradt\ServiceBundle\Services\AwsService #上传到亚马逊
+    aws_service.class: Oradt\ServiceBundle\Services\AwsService
+    global_base.class: Oradt\ServiceBundle\Services\GlobalBase
+    hr_service.class:  Oradt\ServiceBundle\Services\HrService
+    i18n_city_service.class: Oradt\ServiceBundle\Services\I18nCityService
+    account_biz_service.class: Oradt\ServiceBundle\Services\AccountBizService
+    function_service.class: Oradt\ServiceBundle\Services\FunctionService
+    oauth_service.class: Oradt\ServiceBundle\Services\OauthService
+    oauth_error_service.class: Oradt\ServiceBundle\Services\OauthErrorService
+    account_admin.class: Oradt\ServiceBundle\Services\AccountAdminService
+    orange_admin.class: Oradt\ServiceBundle\Services\OrangeAdminService
+    account_basic.class: Oradt\ServiceBundle\Services\AccountBasicService
+    design_platform.class: Oradt\ServiceBundle\Services\DesignPlatformService
+    weixin_pay.class: Oradt\ServiceBundle\Services\WeixinPayService
+    ali_pay.class: Oradt\ServiceBundle\Services\AliPayService
+    paypal.class: Oradt\ServiceBundle\Services\PaypalService
+    trashbin.class: Oradt\ServiceBundle\Services\TrashbinService
+    account_contact.class: Oradt\ServiceBundle\Services\ContactService
+    oradt_initdata.class: Oradt\ServiceBundle\Services\InitDataService
+    account_relation.class: Oradt\ServiceBundle\Services\RelationService
+    account_document.class: Oradt\ServiceBundle\Services\DocumentService
+    oradt_device.class: Oradt\ServiceBundle\Services\DeviceService
+    biz_card_service.class: Oradt\ServiceBundle\Services\BizcardService
+    oradt_message_service.class: Oradt\ServiceBundle\Services\MessageService
+    file_imc_service.class: Oradt\ServiceBundle\Services\File\FileImcService
+    file_hx_sms_service.class: Oradt\ServiceBundle\Services\File\FileHxSmsService
+    file_ym_sms_service.class: Oradt\ServiceBundle\Services\File\FileYmSmsService
+    vcard_data_service.class: Oradt\ServiceBundle\Services\File\VcardDataService
+    sms_service.class: Oradt\ServiceBundle\Services\SmsService
+    calendar_sync_service.class: Oradt\ServiceBundle\Services\CalendarSyncService
+    oradt_system_service.class: Oradt\ServiceBundle\Services\SystemService
+    api_statistic_service.class: Oradt\ServiceBundle\Services\ApiStatisticService
+    cache_redis_service.class: Oradt\ServiceBundle\Services\RedisClusterService
+    #map_service.class: Oradt\ServiceBundle\Services\MapService
+    map_service.class: Oradt\ServiceBundle\Services\MapNewService
+    goo_map_service.class: Oradt\ServiceBundle\Services\GooMapService
+    scancard_pic_service.class: Oradt\ServiceBundle\Services\ScanCardService
+    #scancard_pic_delta_time_service.class: Oradt\ServiceBundle\Services\ScanCardDeltaTimeService
+    mark_point_handle_info_service.class: Oradt\ServiceBundle\Services\MarkPointHandleInfoService
+    vcard_helper_service.class: Oradt\ServiceBundle\Services\File\VcardHelperService
+    calendar_service.class:  Oradt\ServiceBundle\Services\CalendarService
+    activity_service.class:  Oradt\ServiceBundle\Services\ActivityService
+    oradt_yps_service.class:  Oradt\ServiceBundle\Services\YpsService
+    sns_group_service.class:  Oradt\ServiceBundle\Services\SnsGroupService
+    sns_trends_service.class:  Oradt\ServiceBundle\Services\SnsTrendsService
+    user_config_service.class:  Oradt\ServiceBundle\Services\ConfigService
+    account_cardpackage_service.class:  Oradt\ServiceBundle\Services\CardpackageService
+    common_sync.class:  Oradt\ServiceBundle\Services\CommonSyncService
+    soap_service.class:  Oradt\ServiceBundle\Services\SoapService
+    expoinfo_service.class:  Oradt\ServiceBundle\Services\ExpoInfoService
+    expoticket_service.class:  Oradt\ServiceBundle\Services\ExpoTicketService
+    vcard_template_service.class:  Oradt\ServiceBundle\Services\VcardTemplateService
+    filter_service.class: Oradt\ServiceBundle\Services\FilterService
+    mongodb_service.class: Oradt\ServiceBundle\Services\MongodbService
+    kafka_service.class: Oradt\ServiceBundle\Services\KafkaService
+    sns_show_service.class: Oradt\ServiceBundle\Services\SnsQaNewsService
+    elasticsearch_service.class: Oradt\ServiceBundle\Services\ElasticsearchService
+    predis_service.class: Oradt\ServiceBundle\Services\PredisService
+    aliyun_service.class: Oradt\ServiceBundle\Services\AliyunService
+    file_ml_sms_service.class: Oradt\ServiceBundle\Services\File\FileMlSmsService
+    neo4j_service.class: Oradt\ServiceBundle\Services\Neo4jService
+    order_service.class: Oradt\ServiceBundle\Services\OrderService
+    alipay_sdk_service.class: Oradt\ServiceBundle\Services\AliPaySdk\AlipaySdkTradeService
+    vcard_json_service.class: Oradt\ServiceBundle\Services\VcardJsonService
+    iapay_service.class: Oradt\ServiceBundle\Services\IapService
+    gearman_service.class: Oradt\ServiceBundle\Services\GearmanService
+    account_emp.class: Oradt\ServiceBundle\Services\AccountEmpService
+    weather_service.class: Oradt\ServiceBundle\Services\WeatherService
+    ocr_service1.class: Oradt\ServiceBundle\Services\OcrService
+    ocr_service.class: Oradt\ServiceBundle\Services\OcrGearmanService
+    ocr_old_service.class: Oradt\ServiceBundle\Services\OcrOldService
+    wechat_service.class: Oradt\ServiceBundle\Services\WechatService
+    wx_biz_service.class: Oradt\ServiceBundle\Services\WxBizService
+    wx_biz_payment_service.class: Oradt\ServiceBundle\Services\WxBizPaymentService
+    common_service.class: Oradt\ServiceBundle\Services\CommonService
+services:
+  
+    special_handler:
+        class: Monolog\Handler\StreamHandler
+        arguments: [%kernel.logs_dir%/%kernel.environment%.special.log]
+        
+    special_logger:
+        class: Symfony\Bridge\Monolog\Logger
+        arguments: [special]
+        calls:
+            - [pushHandler, ["@special_handler"]]
+
+
+    cron_service:
+        class: %cron_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+
+    dirs_service:
+        class: %dirs_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+
+    global_base:
+        class: %global_base.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+
+    hr_service:
+        class: %hr_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+
+    i18n_city_service:
+                class: %i18n_city_service.class%
+                arguments:
+                    entityManager: "@doctrine.orm.entity_manager"
+                    arguments: "@service_container"
+
+    account_biz_service:
+        class: %account_biz_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+            
+    biz_card_service:
+        class: "%biz_card_service.class%"
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+            
+    oauth_service:
+        class: "%oauth_service.class%"
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+    oauth_error_service:
+        class: "%oauth_error_service.class%"
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+    function_service:
+        class:        %function_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager" 
+
+    account_admin_service:
+        class: %account_admin.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+    
+    orange_admin_service:
+        class: %orange_admin.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+
+    account_basic_service:
+        class: %account_basic.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    design_platform_service:
+        class: %design_platform.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    weixin_pay_service:
+        class: %weixin_pay.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    ali_pay_service:
+        class: %ali_pay.class%
+        arguments:
+            arguments: "@service_container"
+
+    paypal_service:
+        class: %paypal.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    trashbin_service:
+        class: %trashbin.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    account_contact_service:
+        class: %account_contact.class%
+        arguments:
+            arguments: "@service_container"
+
+    oradt_initdata_service:
+        class: %oradt_initdata.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+
+    account_relation_service:
+        class: %account_relation.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    account_document_service:
+        class: %account_document.class%
+        arguments:
+            arguments: "@service_container"
+
+    oradt_device_service:
+        class: %oradt_device.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    oradt_message_service:
+        class: %oradt_message_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+            
+    file_imc_service:
+        class: %file_imc_service.class%
+
+    aws_service:
+        class: %aws_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+
+    vcard_data_service:
+        class: %vcard_data_service.class%
+
+    vcard_helper_service:
+        class: %vcard_helper_service.class%
+        
+    file_hx_sms_service:
+        class: %file_hx_sms_service.class%
+        arguments:
+            arguments: "@service_container"
+        
+    file_ym_sms_service:
+        class: %file_ym_sms_service.class%
+        arguments:
+            arguments: "@service_container"
+        
+    sms_service:
+        class: %sms_service.class%
+        arguments:
+            arguments: "@service_container"
+            
+    calendar_sync_service:
+        class: %calendar_sync_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            special_logger: "@special_logger"
+            arguments: "@service_container"
+            
+    oradt_system_service:
+        class: %oradt_system_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+            
+    api_statistic_service:
+        class: %api_statistic_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+            
+    cache_redis_service:
+        class: %cache_redis_service.class%
+        arguments:
+            arguments: "@service_container"
+            
+    map_service:
+        class: %map_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    goo_map_service:
+            class: %goo_map_service.class%
+            arguments:
+                arguments: "@service_container"
+
+    scancard_pic_service:
+        class: %scancard_pic_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    #scancard_pic_delta_time_service:
+    #    class: %scancard_pic_delta_time_service.class%
+    #    arguments:
+    #        arguments: "@service_container"
+
+    mark_point_handle_info_service:
+        class: %mark_point_handle_info_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    calendar_service:
+        class: %calendar_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    activity_service:
+        class: %activity_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    yps_service:
+        class: %oradt_yps_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    sns_group_service:
+        class: %sns_group_service.class%
+        arguments:
+            arguments: "@service_container"
+            
+    sns_trends_service:
+        class: %sns_trends_service.class%
+        arguments:
+            arguments: "@service_container"
+    
+    user_config_service:
+        class: %user_config_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    account_cardpackage_service:
+        class: %account_cardpackage_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    common_sync:
+            class: %common_sync.class%
+            arguments:
+                arguments: "@service_container"
+                
+    soap_service:
+            class: %soap_service.class%
+            arguments:
+                arguments: "@service_container"
+    expoinfo_service:
+        class: %expoinfo_service.class%
+        arguments:
+            arguments: "@service_container"
+    expoticket_service:
+            class: %expoticket_service.class%
+            arguments:
+                arguments: "@service_container"
+                
+    vcard_template_service:
+        class: %vcard_template_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    filter_service:
+        class: %filter_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    mongodb_service:
+        class: %mongodb_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    kafka_service:
+        class: %kafka_service.class%
+        arguments:
+            arguments: "@service_container"
+
+    sns_show_service:
+        class: %sns_show_service.class%
+        arguments:
+            arguments: "@service_container"
+            
+    elasticsearch_service:
+        class: %elasticsearch_service.class%
+        arguments:
+            arguments: "@service_container"    
+    predis_service:
+        class: %predis_service.class%
+        arguments:
+            arguments: "@service_container"
+    aliyun_service:
+        class: %aliyun_service.class%
+        arguments:
+            arguments: "@service_container"
+    file_ml_sms_service:
+        class: %file_ml_sms_service.class%
+        arguments:
+            arguments: "@service_container"
+    neo4j_service:
+            class: %neo4j_service.class%
+            arguments:
+                arguments: "@service_container"              
+    order_service:
+            class: %order_service.class%
+            arguments:
+                arguments: "@service_container"
+
+    alipay_sdk_service:
+            class: %alipay_sdk_service.class%
+            arguments:
+                arguments: "@service_container"
+                
+    vcard_json_service:
+            class: %vcard_json_service.class%
+            arguments:
+                arguments: "@service_container"
+    
+    iapay_service:
+            class: %iapay_service.class%
+            arguments:
+                arguments: "@service_container"  
+    gearman_service:
+            class: %gearman_service.class%
+            arguments:
+                arguments: "@service_container" 
+    weather_service:
+            class: %weather_service.class%
+            arguments:
+                arguments: "@service_container" 
+    ocr_service:
+            class: %ocr_service.class%
+            arguments:
+                arguments: "@service_container"
+    ocr_service1:
+            class: %ocr_service1.class%
+            arguments:
+                arguments: "@service_container"
+    ocr_old_service:
+            class: %ocr_old_service.class%
+            arguments:
+                arguments: "@service_container"
+    wechat_service:
+            class: %wechat_service.class%
+            arguments:
+                arguments: "@service_container"
+
+    account_emp_service:
+        class: %account_emp.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    wx_biz_service:
+        class: %wx_biz_service.class%
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+            arguments: "@service_container"
+
+    wx_biz_payment_service:
+            class: %wx_biz_payment_service.class%
+            arguments:
+                entityManager: "@doctrine.orm.entity_manager"
+                arguments: "@service_container"
+
+    common_service:
+            class: %common_service.class%
+            arguments:
+                entityManager: "@doctrine.orm.entity_manager"
+                arguments: "@service_container"

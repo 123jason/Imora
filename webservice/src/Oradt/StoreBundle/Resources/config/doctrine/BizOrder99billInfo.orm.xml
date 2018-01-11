@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BizOrder99billInfo" table="biz_order_99bill_info">
+    <unique-constraints>
+      <unique-constraint name="key_order_id" columns="order_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="orderId" type="string" column="order_id" length="40" nullable="false"/>
+    <field name="acctid" type="string" column="acctid" length="40" nullable="false"/>
+    <field name="version" type="string" column="version" length="10" nullable="false"/>
+    <field name="language" type="string" column="language" length="5" nullable="false"/>
+    <field name="signtype" type="string" column="signtype" length="5" nullable="false"/>
+    <field name="paytype" type="string" column="paytype" length="5" nullable="false"/>
+    <field name="bankid" type="string" column="bankid" length="20" nullable="false"/>
+    <field name="orderamount" type="float" column="orderamount" precision="10" scale="2" nullable="false"/>
+    <field name="dealid" type="string" column="dealid" length="50" nullable="false"/>
+    <field name="bankdealid" type="string" column="bankdealid" length="50" nullable="false"/>
+    <field name="dealTime" type="string" column="deal_time" length="20" nullable="false"/>
+    <field name="payamount" type="string" column="payamount" length="20" nullable="false"/>
+    <field name="fee" type="string" column="fee" length="20" nullable="false"/>
+    <field name="payresult" type="integer" column="payresult" nullable="false"/>
+    <field name="errcode" type="string" column="errcode" length="100" nullable="false"/>
+  </entity>
+</doctrine-mapping>

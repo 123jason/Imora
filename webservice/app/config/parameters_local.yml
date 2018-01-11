@@ -1,0 +1,140 @@
+# This file is auto-generated during the composer install
+# 注：相关依赖： 1 mysql\4 kafka(包括PHP扩展)\8 elasticsearch(暂未用)\9 aws s3配置参数(现测试阶段用的都是测试桶)\11 gearman\飞常准航班\3 redis
+#
+parameters:    
+    ###-----1：API版本号------------------------
+    api_version: dev_3.0.31
+    
+    ###-----2 数据库相关配置开始 共三项
+    #：API主数据库配置----------
+    database_driver: pdo_mysql
+    database_host: 192.168.30.192
+    database_port: 3306
+    database_name: oradt_cloud1520
+    database_user: userdev
+    database_password: user_dev
+    
+    #：扫描名片数据库配置-------
+    #注：数据库未分库前和 1 配置一致
+    scan_database_driver: pdo_mysql
+    scan_database_host: 192.168.30.192
+    scan_database_port: 3306
+    scan_database_name: imora_scan
+    scan_database_user: userdev
+    scan_database_password: user_dev
+    
+    #：U8中间数据库配置-------
+    u8_database_driver: pdo_mysql
+    u8_database_host: 192.168.30.192
+    u8_database_port: 3306
+    u8_database_name: u8orderdb
+    u8_database_user: appuser
+    u8_database_password: app_79521
+    ### 数据库相关配置结束
+
+    ###-----3：redis开关及配置地址------------
+    #注：predis_clusters:配置多个用;分开  redis_open 项为是否启用redis开关
+    redis_open: false
+    predis_clusters: 'tcp://192.168.30.102:7001;tcp://192.168.30.102:7002'
+    #API唯一标示，每个API服都需要配一个唯一的前缀
+    redis_key_pre: '191'
+    
+    ###-----4：kafka配置参数及主题名配置------------
+    #注：kafka 关闭注释掉kafka_host这一项就OK
+    #kafka_host: '192.168.30.147:9092,192.168.30.148:9092,192.168.30.149:9092'
+    #扫描名片kafka主题 1 
+    kafka_scancard: api_scancard
+    #个人账户注册kafka主题 2 
+    kafka_accountbasic: api_accountbasic
+    #多人名片交换kafka主题
+    #kafka_mapfriend: api_mapfriend
+    #联系人名片kafka主题 3 
+    kafka_contactcard: api_contactcard
+    #功能卡kafka主题
+    #kafka_funccard: api_funccard
+    #微信demo kafka主题 4 微信项目独有
+    kafka_fbusinesscardcorrect: business-card-correct
+    
+    ###-----5：短信服务相关配置(在不更换服务商的情况下修改 基本上可以不用动)------------
+    #短信接口配置，1美联软通（支持国内外），2亿美软通（目前我们用的是亿美软通）
+    SMS_ID: 2
+    #推广信息内容（其中 http://dev.orayun.com 在不同服务器上需要根据WEB地址更新）
+    SMS_POPULAR_CODE: '拓展人脉商务神器，很时尚，一定要分享给您：http://dev.orayun.com/h5/imora/download.html，退订回复TD'
+    #添加好友未注册的手机号 发送内容 aa,bb,cc,dd为变量 注：（其中 http://dev.orayun.com 在不同服务器上需要根据WEB地址更新）
+    SMS_ADD_FRIENDS: '您好，我是bbccdd，诚邀您加入橙脉，随时随地拓展人脉、管理名片，“橙脉”在手，职场我有！http://dev.orayun.com/h5/imora/download.html，退订回复TD'
+
+    
+    ###-----6：API接口地址域名及文件下载域名------------------------
+    HOST_URL: http://192.168.30.191
+    #WEB对应的地址域名（在不同服务器上需要根据WEB地址更新）
+    WEB_HOST_URL: http://dev.orayun.com
+    
+    ###-----7：API上传文件存放目录------------------------
+    DOC_ROOT: /home/wwwfile/images1520/
+    
+    ###-----8: elasticsearch配置
+    ELAS_URL: '192.168.30.108:7200'
+    #ELAS_INDEX: 'sharecard'
+    #ELAS_TYPE: 'sharecard'
+    ELAS_SCANER_INDEX: 'scancard'
+    ELAS_SCANER_TYPE: 'scard'
+    #USER_INDEX: 'usercard'
+    #USER_TYPE: 'usercard'
+
+    ###-----9:AWS S3 账户配置, 并配置存储桶（需先在S3后台创建）
+    #访问密钥 ID
+    s3key: AKIAP6URJXAHO7ZZX4QA
+    #私有访问密钥
+    s3secret: ku0FJW2HZXS/eRxKtygMP+SqlOl+0+BrwodKXzIr
+    #区域
+    s3region: cn-north-1
+    #桶名称，需先创建
+    s3bucketname: oradtdev
+    #临时目录，用于生成缩略图, 前+ DOC_ROOT
+    s3temp: temp/
+    
+    ###-----10:飞常准航班 账户与 注册码【请勿对外泄露】 该服务为转发服务，中心配置朝研发要相关配置
+    #已绑定的白名片单有 106.37.218.146 外网服务地址  http://106.37.218.151:60001
+    #10263  注意多环境情况下配置 flight_appid
+    flight_appid: dev
+    flight_appsecurity: '57e9e26e3ae16'
+    flight_get_url: http://192.168.30.191/service/fcz?
+    flight_add_push: http://192.168.30.191/service/fcz/addflightpush?
+    
+    ###-----11 gearman Server 配置 多个用逗号分开 例：10.0.0.1,10.0.0.2:7003 
+    gearman_server: '192.168.30.191:4730'
+    #gearman任务名 U8数据
+    gearman_remind: 'order'
+    #gearman清除任务
+    gearman_message: 'gearman_message'
+    #push消息重发机制，多长时间后重发配置 单位（秒）
+    interval_time:  300
+    ###-----12 ocr配置地址
+    #本机ocr 方式  配置 命令目录
+    OCR_PATH: /data/ocr/release/
+    #分布式ocr 方式  1 上传图片交换目录  2 gearman 方法名   ，该方式依赖gearman ，nfs共享
+    OCRFILE: /home/ocrfile/
+    ocr_gearman_function: Ocr_function
+
+    ###-----13 微信项目独有配置   ,名片搜索地址 （AI组搜索地址）
+    fullsearch: http://192.168.30.104:8080/WeixinCard/sideresearch
+    
+    ###-----14 Api接口日志开关 【性能调试开启 】
+    API_LOG_ON-OFF: true
+    
+    ###-----15 支付相关开始 注意替换回调地址中的 host
+    #：支付宝支付回调地址（注：其中106.37.218.151:60001在不同服务器上需要根据API地址更新且必须是外网地址）
+    ALIPAY_NOTIFY_URL :  'http://106.37.218.151:60001/account/trading/alipay'
+    ALIPAY_ACCOUNT : '2088911943662777'
+    ALIPAY_EMAIL :  'orapay@oradt.com'
+    ALIPAY_KEY :  'y99ppnlmr2crbhlr5x3mvswu3exal8nh'
+    
+    #：快钱回调地址（注：其中106.37.218.151:60001在不同服务器上需要根据API地址更新且必须是外网地址）
+    BILL_NOTIFY_URL : 'http://106.37.218.151:60001/accountbiz/order/kqbgurl'
+    
+    #：友控APPID 2088911943662777
+    ALIPAY_YOUKONG_ACCOUNT : '2088911943662777'
+    ALIPAY_APPID: 2015080400198909
+    ALIPAY_GATEWAY_URL: 'https://openapi.alipay.com/gateway.do'
+    
+    ### 支付相关结束

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignBiddingAttachments" table="design_bidding_attachments">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="attachId" type="string" column="attach_id" length="32" nullable="false"/>
+    <field name="biddingId" type="string" column="bidding_id" nullable="false"/>
+    <field name="name" type="string" column="name" nullable="false"/>
+	<field name="size" type="integer" column="size" nullable="false"/>
+	<field name="pathUrl" type="string" column="path_url" length="255" nullable="false"/>    
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+</entity>
+</doctrine-mapping>

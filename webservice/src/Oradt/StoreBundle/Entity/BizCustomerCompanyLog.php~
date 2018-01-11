@@ -1,0 +1,13 @@
+<?php
+
+namespace Oradt\StoreBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BizCustomerCompanyLog
+ */
+class BizCustomerCompanyLog
+{
+   
+}

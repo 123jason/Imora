@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizDetail" table="account_biz_detail">
+    <unique-constraints>
+      <unique-constraint name="biz_id_UNIQUE" columns="biz_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="true"/>
+    <field name="bizName" type="string" column="biz_name" length="256" nullable="false"/>
+ 	<field name="prespell" type="string" column="prespell" length="1" nullable="true"/>   
+    <field name="bizAddress" type="string" column="biz_address" length="256" nullable="false"/>
+    <field name="bizEmail" type="string" column="biz_email" length="96" nullable="true"/>
+    <field name="bizLicenseCode" type="string" column="biz_license_code" length="32" nullable="false"/>
+    <field name="bizOrgCode" type="string" column="biz_org_code" length="32" nullable="false"/>
+    <field name="bizInfo" type="string" column="biz_info" length="8192" nullable="false"/>
+    <field name="website" type="string" column="website" length="128" nullable="true"/>
+    <field name="logoPath" type="string" column="logo_path" length="256" nullable="true"/>
+    <field name="countryCode" type="integer" column="country_code" nullable="false"/>
+    <field name="bizSize" type="integer" column="biz_size" nullable="true"/>
+    <field name="bizType" type="string" column="biz_type" length="45" nullable="true"/>
+    <field name="countryid" type="string" column="countryid" length="30" nullable="true"/>
+    <field name="region" type="string" column="region" length="96" nullable="true"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="true"/>
+    <field name="imid" type="bigint" column="imid" nullable="true"/>
+    <field name="categoryId" type="string" column="category_id" length="50" nullable="false"/>
+    <field name="categoryId2" type="string" column="category_id2" length="50" nullable="false"/>
+    <field name="languageid" type="integer" column="languageid" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="96" nullable="false"/>
+    <field name="contact" type="string" column="contact" length="50" nullable="false"/>
+    <field name="bizno" type="string" column="bizno" length="21" nullable="false"/>
+    <field name="branchAddress" type="string" column="branch_address" length="8192" nullable="true"/>
+    <field name="registType" type="integer" column="regist_type" nullable="true"/>
+    <field name="bizsuperId" type="string" column="bizsuper_id" length="40" nullable="true"/>
+    <field name="licensePath" type="string" column="license_path" length="255" nullable="true"/>
+    <field name="organizationPath" type="string" column="organization_path" length="255" nullable="true"/>
+    <field name="registrationPath" type="string" column="registration_path" length="255" nullable="true"/>
+    <field name="licenseType" type="string" column="license_type" nullable="false"/>
+    <field name="identType" type="integer" column="ident_type" nullable="false"/>
+    <field name="identTime" type="integer" column="ident_time" nullable="false"/>
+    <field name="payfee" type="integer" column="payfee" nullable="false"/>
+  </entity>
+</doctrine-mapping>

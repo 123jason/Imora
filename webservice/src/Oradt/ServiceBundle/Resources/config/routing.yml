@@ -1,0 +1,3 @@
+oradt_service_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OradtServiceBundle:Default:index }

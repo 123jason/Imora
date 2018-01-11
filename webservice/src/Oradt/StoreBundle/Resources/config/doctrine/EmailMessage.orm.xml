@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\EmailMessage" table="email_message">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="messageId" type="string" column="message_id" length="32" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="false"/>
+    <field name="type" type="string" column="type" nullable="false"/>
+    <field name="content" type="string" column="content" length="8192" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="module" type="string" column="module" length="512" nullable="false"/>
+    <field name="forwardUrl" type="string" column="forward_url" length="256" nullable="true"/>
+  </entity>
+</doctrine-mapping>

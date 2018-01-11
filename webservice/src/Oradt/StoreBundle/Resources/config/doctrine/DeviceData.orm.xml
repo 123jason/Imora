@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DeviceData" table="device_data">
+    <indexes>
+      <index name="fk_device_data_1_idx" columns="device_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="moduleId" type="string" column="module_id" length="32" nullable="false"/>
+    <field name="deviceId" type="string" column="device_id" length="32" nullable="false"/>
+    <field name="module" type="string" column="module" length="256" nullable="false"/>
+    <field name="metadata" type="text" column="metadata" nullable="false"/>
+    <field name="lastModified" type="datetime" column="last_modified" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\MessageTalk" table="message_talk">
+    <indexes>
+      <index name="to_uid_idx" columns="to_uid"/>
+      <index name="from_uid_idx" columns="from_uid"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="msgId" type="string" column="msg_id" length="32" nullable="false"/>
+    <field name="toUid" type="string" column="to_uid" length="40" nullable="false"/>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="false"/>
+    <field name="senderName" type="string" column="sender_name" length="96" nullable="false"/>
+    <field name="content" type="string" column="content" length="8192" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="readTime" type="datetime" column="read_time" nullable="false"/>
+    <field name="fromStatus" type="string" column="from_status" nullable="false"/>
+    <field name="toStatus" type="string" column="to_status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OradtPushLog" table="oradt_push_log">
+    <indexes>
+      <index name="publidId" columns="public_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="publicId" type="string" column="public_id" length="40" nullable="false"/>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="false"/>
+    <field name="content" type="string" column="content" length="8192" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="sendtype" type="integer" column="sendtype" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,11 @@
+email_post:
+    path:     /email
+    defaults: { _controller: OradtVerificationBundle:Email:post }
+    requirements:
+        _method:  POST
+        
+email_get:
+    path:     /email
+    defaults: { _controller: OradtVerificationBundle:Email:get }
+    requirements:
+        _method:  GET

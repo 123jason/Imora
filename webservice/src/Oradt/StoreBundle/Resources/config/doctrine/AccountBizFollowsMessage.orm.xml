@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizFollowsMessage" table="account_biz_follows_message">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="publicId" type="string" column="public_id" length="40" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+ 	<roleid>
+		<type>string</type>
+		<mapdb>role_id</mapdb>
+		<w> AND role_id=:roleid</w></roleid>
+  	<name>
+		<type>string</type>
+		<mapdb>name</mapdb>
+		<w> AND name LIKE :name</w></name>
+  	<displayname>
+		<type>string</type>
+		<mapdb>display_name</mapdb>
+		<w> AND display_name LIKE :displayname</w></displayname>
+	<permission>
+		<type>string</type>
+		<mapdb>permission</mapdb>
+		<w> AND permission LIKE :permission</w></permission>  	
+  </fields>
+  <provide_max_fields>roleid,name,displayname,permission</provide_max_fields>
+  <default_dataparam>
+  </default_dataparam>
+  <sql>SELECT %s FROM authority_role%s%s</sql>
+  <where>id>0</where>
+  <order> ORDER BY id DESC</order>
+</root>

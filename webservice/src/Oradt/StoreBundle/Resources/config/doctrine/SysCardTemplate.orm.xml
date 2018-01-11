@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SysCardTemplate" table="sys_card_template">
+    <unique-constraints>
+      <unique-constraint name="card_id_UNIQUE" columns="card_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardId" type="string" column="card_id" length="32" nullable="false"/>
+    <field name="cardType" type="boolean" column="card_type" nullable="false"/>
+    <field name="name" type="string" column="name" length="256" nullable="false"/>
+    <field name="vcard" type="text" column="vcard" nullable="false"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+    <field name="modifedtime" type="datetime" column="modifedtime" nullable="false"/>
+    <field name="picture" type="string" column="picture" length="150" nullable="false"/>
+    <field name="sort" type="integer" column="sort" nullable="false"/>
+    <field name="resMd5" type="string" column="res_md5" length="32" nullable="false"/>
+    <field name="resSize" type="integer" column="res_size" nullable="false"/>
+  </entity>
+</doctrine-mapping>

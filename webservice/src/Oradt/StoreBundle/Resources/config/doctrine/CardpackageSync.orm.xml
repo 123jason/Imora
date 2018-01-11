@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\CardpackageSync" table="cardpackage_sync">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="32" nullable="true"/>
+    <field name="modifedtime" type="datetime" column="modifedtime" nullable="true"/>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="true"/>
+    <field name="module" type="string" column="module" nullable="true"/>
+    <field name="operation" type="string" column="operation" nullable="true"/>
+  </entity>
+</doctrine-mapping>

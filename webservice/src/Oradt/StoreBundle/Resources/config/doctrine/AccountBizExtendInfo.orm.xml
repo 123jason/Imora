@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizExtendInfo" table="account_biz_extend_info">
+    <unique-constraints>
+      <unique-constraint name="biz_id_UNIQUE" columns="biz_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+    <field name="registerIp" type="string" column="register_ip" length="64" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

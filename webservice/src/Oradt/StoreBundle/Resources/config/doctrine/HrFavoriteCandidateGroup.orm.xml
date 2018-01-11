@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrFavoriteCandidateGroup" table="hr_favorite_candidate_group">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="groupId" type="string" column="group_id" length="32" nullable="false"/>
+    <field name="groupName" type="string" column="group_name" length="100" nullable="false"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="sortid" type="smallint" column="sortid" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

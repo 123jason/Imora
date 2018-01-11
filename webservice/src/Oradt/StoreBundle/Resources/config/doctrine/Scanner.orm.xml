@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Scanner" table="scanner">
+    <unique-constraints>
+      <unique-constraint name="scanner_id" columns="scannerid"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="scannerid" type="string" column="scannerid" length="32" nullable="false"/>
+    <field name="mac" type="string" column="mac" length="32" nullable="false"/>
+    <field name="passwd" type="string" column="passwd" length="50" nullable="false"/>
+    <field name="model" type="string" column="model" length="50" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="createtime" type="integer" column="createtime" nullable="false"/>
+    <field name="recordid" type="integer" column="recordid" nullable="false"/>
+    <field name="adminid" type="string" column="adminid" length="40" nullable="false"/>
+    <field name="realname" type="string" column="realname" length="96" nullable="false"/>
+    <field name="type" type="integer" column="type" length="1" nullable="false"/>
+  </entity>
+</doctrine-mapping>

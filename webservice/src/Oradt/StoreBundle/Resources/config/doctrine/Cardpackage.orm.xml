@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Cardpackage" table="cardpackage">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="groupid" type="string" column="groupid" length="32" nullable="true"/>
+    <field name="cardname" type="string" column="cardname" length="128" nullable="false"/>
+    <field name="cardid" type="string" column="cardid" length="128" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="256" nullable="false"/>
+    <field name="picturea" type="string" column="picturea" length="128" nullable="false"/>
+    <field name="pictureb" type="string" column="pictureb" length="128" nullable="true"/>
+    <field name="sorting1" type="integer" column="sorting1" nullable="false"/>
+    <field name="sorting2" type="integer" column="sorting2" nullable="true"/>
+    <field name="sorting3" type="integer" column="sorting3" nullable="true"/>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="createdtime" type="datetime" column="createdtime" nullable="true"/>
+    <field name="balance" type="string" column="balance" length="32" nullable="true"/>
+    <field name="tel" type="string" column="tel" length="32" nullable="true"/>
+    <field name="isfavor" type="integer" column="isfavor" nullable="true"/>
+    <field name="isticket" type="integer" column="isticket" nullable="true"/>
+    <field name="starttime" type="datetime" column="starttime" nullable="true"/>
+    <field name="endtime" type="datetime" column="endtime" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+    <field name="params" type="string" column="params" length="256" nullable="true"/>
+    <field name="expoid" type="string" column="expoid" length="40" nullable="true"/>
+    <field name="expotitle" type="string" column="expotitle" length="200" nullable="true"/>
+    <field name="sign" type="integer" column="sign" nullable="true"/>
+    <field name="address" type="string" column="address" length="200" nullable="true"/>
+    <field name="lng" type="string" column="lng" length="50" nullable="true"/>
+    <field name="lat" type="string" column="lat" length="50" nullable="true"/>
+    <field name="cardholder" type="string" column="cardholder" length="50" nullable="true"/>
+    <field name="linkman" type="string" column="linkman" length="50" nullable="true"/>
+    <field name="tel2" type="string" column="tel2" length="32" nullable="true"/>
+    <field name="tel3" type="string" column="tel3" length="32" nullable="true"/>
+    <field name="validitytime" type="string" column="validitytime" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

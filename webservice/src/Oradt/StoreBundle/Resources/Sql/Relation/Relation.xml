@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+	<contactid>
+		<type>string</type>
+		<mapdb>A.contact_id</mapdb>
+		<w> AND A.contact_id IN (%s)</w></contactid>  	
+    <contactavatar><type>string</type>
+		<mapdb>A.from_uid</mapdb>
+		<w> AND A.from_uid=:contactavatar</w></contactavatar>
+	<latitude><type>string</type>
+		<mapdb>latitude</mapdb>
+		<w>0</w></latitude>
+  	<longitude>
+		<type>string</type>
+		<mapdb>longitude</mapdb>
+		<w>0</w></longitude>
+  	<date>
+		<type>string</type>
+		<mapdb>created_time</mapdb>
+		<w>Range</w></date>
+  </fields>
+  <provide_max_fields>contactid,contactavatar,latitude,longitude,date</provide_max_fields>
+  <default_dataparam>
+  <userId></userId>
+  </default_dataparam>
+  <sql><![CDATA[
+		 SELECT %s FROM contact AS A 
+		 INNER JOIN contact_private_location AS B ON A.contact_id=B.contact_id%s%s
+   ]]></sql>
+  <where><![CDATA[A.user_id=:userId AND A.user_id<>A.from_uid AND A.status='active']]></where>
+  <order></order>
+
+</root>

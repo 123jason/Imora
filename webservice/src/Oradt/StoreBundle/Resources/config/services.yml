@@ -1,0 +1,7 @@
+parameters:
+#    oradt_store.example.class: Oradt\StoreBundle\Example
+
+services:
+#    oradt_store.example:
+#        class: %oradt_store.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

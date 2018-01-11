@@ -1,0 +1,9 @@
+#短信验证
+verification_sms:
+    resource: "routing/sms.yml"
+    prefix:  /verification
+    
+#邮件验证
+verification_email:
+    resource: "routing/email.yml"
+    prefix:  /verification

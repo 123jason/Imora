@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizImport" table="account_biz_import">
+    <unique-constraints>
+      <unique-constraint name="biz_id_UNIQUE" columns="biz_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="name" type="string" column="name" length="96" nullable="true"/>
+    <field name="username" type="string" column="username" length="96" nullable="true"/>
+    <field name="mobile" type="string" column="mobile" length="18" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="false"/>
+    <field name="title" type="string" column="title" length="96" nullable="true"/>
+    <field name="roleid" type="integer" column="roleid" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="reason" type="string" column="reason" length="255" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

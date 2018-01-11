@@ -1,0 +1,7 @@
+parameters:
+#    oradt_weixin_biz.example.class: Oradt\WeixinBizBundle\Example
+
+services:
+#    oradt_weixin_biz.example:
+#        class: %oradt_weixin_biz.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

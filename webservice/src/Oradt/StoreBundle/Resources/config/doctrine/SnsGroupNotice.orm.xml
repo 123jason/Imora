@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsGroupNotice" table="sns_group_notice">
+    <indexes>
+      <index name="group_id_idx" columns="group_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="notice_id_uni" columns="notice_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="noticeId" type="string" column="notice_id" length="32" nullable="false"/>
+    <field name="content" type="string" column="content" length="512" nullable="true"/>
+    <field name="groupId" type="string" column="group_id" length="32" nullable="false"/>
+    <field name="memberId" type="string" column="member_id" length="40" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

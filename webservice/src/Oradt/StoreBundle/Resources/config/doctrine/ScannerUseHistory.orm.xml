@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScannerUseHistory" table="scanner_use_history">
+    <indexes>
+      <index name="scanner_id_use" columns="scanner_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="scannerId" type="string" column="scanner_id" length="32" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="startime" type="integer" column="startime" nullable="false"/>
+    <field name="endtime" type="integer" column="endtime" nullable="false"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="bizName" type="string" column="biz_name" length="100" nullable="false"/>
+    <field name="address" type="string" column="address" length="255" nullable="false"/>
+    <field name="outAdminId" type="string" column="out_admin_id" length="40" nullable="false"/>
+    <field name="outAdminName" type="string" column="out_admin_name" length="96" nullable="false"/>
+    <field name="inAdminId" type="string" column="in_admin_id" length="40" nullable="false"/>
+    <field name="inAdminName" type="string" column="in_admin_name" length="96" nullable="false"/>
+  </entity>
+</doctrine-mapping>

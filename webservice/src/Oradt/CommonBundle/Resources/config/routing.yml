@@ -1,0 +1,73 @@
+####################################### api store #############################
+oradt_common_store_post:
+    path:     /common/apistore/{act}
+    defaults: { _controller: OradtCommonBundle:ApiStore:post }
+    requirements:
+        _method: POST
+oradt_common_store_get:
+    path:     /common/apistore/{act}
+    defaults: { _controller: OradtCommonBundle:ApiStore:get }
+    requirements:
+        _method: GET
+        
+####################################### api wechat #############################
+oradt_common_wechat_get:
+    path:     /common/wechat/{act}
+    defaults: { _controller: OradtCommonBundle:WeChat:get }
+    requirements:
+        _method: GET
+
+oradt_common_wechat_post:
+    path:     /common/wechat/{act}
+    defaults: { _controller: OradtCommonBundle:WeChat:post }
+    requirements:
+        _method: POST
+
+################################ weixin api #########################
+oradt_common_wx:
+    path:     /common/wx/{act}
+    defaults: { _controller: OradtCommonBundle:Wx:get }
+    requirements:
+        _method: GET
+oradt_common_wx_post:
+    path:     /common/wx/{act}
+    defaults: { _controller: OradtCommonBundle:Wx:post }
+    requirements:
+        _method: POST
+
+################################ weixin api for card #########################
+oradt_common_card:
+    path:     /common/card/{act}
+    defaults: { _controller: OradtCommonBundle:Card:get }
+    requirements:
+        _method: GET
+oradt_common_card_post:
+    path:     /common/card/{act}
+    defaults: { _controller: OradtCommonBundle:Card:post }
+    requirements:
+        _method: POST
+
+####################################### api wechat Scanner #############################
+oradt_common_scanner_get:
+    path:     /common/scan/{act}
+    defaults: { _controller: OradtCommonBundle:Scanner:get }
+    requirements:
+        _method: GET
+
+oradt_common_scanner_post:
+    path:     /common/scan/{act}
+    defaults: { _controller: OradtCommonBundle:Scanner:post }
+    requirements:
+        _method: POST
+
+oradt_common_anyscan_get:
+    path:     /common/anyscan/{act}
+    defaults: { _controller: OradtCommonBundle:Anyscan:get }
+    requirements:
+        _method: GET
+
+oradt_common_anyscan_post:
+    path:     /common/anyscan/{act}
+    defaults: { _controller: OradtCommonBundle:Anyscan:post }
+    requirements:
+        _method: POST

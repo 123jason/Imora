@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ExpoInfo" table="expo_info">
+    <unique-constraints>
+      <unique-constraint name="expo_id_unique" columns="expo_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="expoId" type="string" column="expo_id" length="40" nullable="false"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="title" type="string" column="title" length="200" nullable="false"/>
+    <field name="subject" type="text" column="subject" nullable="false"/>
+    <field name="countryId" type="string" column="country_id" length="3" nullable="true"/>
+    <field name="provinceId" type="string" column="province_id" length="10" nullable="true"/>
+    <field name="citycode" type="string" column="citycode" length="20" nullable="true"/>
+    <field name="address" type="string" column="address" length="200" nullable="false"/>
+    <field name="starttime" type="date" column="starttime" nullable="false"/>
+    <field name="endtime" type="date" column="endtime" nullable="false"/>
+    <field name="plannum" type="integer" column="plannum" nullable="false"/>
+    <field name="majorCorpo" type="string" column="major_corpo" length="500" nullable="false"/>
+    <field name="provideCorpo" type="string" column="provide_corpo" length="500" nullable="true"/>
+    <field name="messages" type="text" column="messages" nullable="true"/>
+    <field name="remarks" type="text" column="remarks" nullable="true"/>
+    <field name="code" type="string" column="code" length="100" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="true"/>
+    <field name="applicationTime" type="integer" column="application_time" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="logo" type="string" column="logo" length="200" nullable="true"/>
+    <field name="prespell" type="string" column="prespell" length="1" nullable="true"/>
+    <field name="avatar" type="string" column="avatar" length="200" nullable="true"/>
+    <field name="isgrant" type="integer" column="isgrant" nullable="true"/>
+    <field name="videopic" type="string" column="videopic" length="200" nullable="true"/>
+    <field name="videoUrl" type="string" column="video_url" length="300" nullable="true"/>
+    <field name="coverPic" type="string" column="cover_pic" length="300" nullable="true"/>
+    <field name="hot" type="integer" column="hot" nullable="false"/>
+    <field name="recommend" type="integer" column="recommend" nullable="false"/>
+    <field name="planUsernum" type="integer" column="plan_usernum" nullable="false"/>
+    <field name="categoryId" type="string" column="category_id" length="32" nullable="false"/>
+    <field name="isExhibitor" type="integer" column="is_exhibitor" nullable="false"/>
+    <field name="exhibitorStatus" type="integer" column="exhibitor_status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

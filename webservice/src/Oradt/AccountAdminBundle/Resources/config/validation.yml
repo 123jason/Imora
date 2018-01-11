@@ -1,0 +1,4 @@
+Oradt\StoreBundle\Entity\AccountEmployee:
+    properties:
+         realName:
+            - NotBlank: ~

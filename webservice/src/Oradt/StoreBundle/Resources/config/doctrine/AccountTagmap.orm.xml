@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountTagmap" table="account_tagmap">
+    <indexes>
+      <index name="tagmap_userid" columns="user_id"/>
+      <index name="tagmap_fuserid" columns="fuser_id"/>
+      <index name="tagmap_tagid_id" columns="tagid"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="tagType" type="string" column="tag_type" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="fuserId" type="string" column="fuser_id" length="40" nullable="true"/>
+    <field name="tagid" type="integer" column="tagid" nullable="true"/>
+  </entity>
+</doctrine-mapping>

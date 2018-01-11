@@ -1,0 +1,97 @@
+parameters:
+    #-----1：状态及图片存放目录----------
+    SYN_STATUS_FAIL: 0 #0失败
+    SYN_STATUS_PROGRESS: 1 #1进行中
+    SYN_STATUS_SUCCESS: 2 #2成功
+    #scan card  zip directory
+    CRON_SCAND_TEMPDIR: /data/vcard_list/
+    #CRON_SCAND_TOKEN: admin
+    #默认用户ID
+    DEF_USER_ID: '0000000000000000000000000000000000000000'
+    #默认分组ID
+    DEF_GROUP_ID: '00000000000000000000000000000000'
+    #个人身份名片最大张数限制
+    SELF_CARD_NUM: 3
+    #-----2：默认系统账号
+    
+    
+    #-----6：邮件配置参数------------------------
+    mailer_transport: NTLM
+    mailer_host: mail.oradt.com
+    mailer_user: test@oradt.com
+    mailer_password: test
+    
+    #-----7：短信服务相关账号配置(再更换服务商的情况下修改 基本上可以不用动)
+    #亿美账户账号--验证类 发送验证码使用  特服号：087907
+    SMS_YM_URL: 'http://hprpt2.eucp.b2m.cn:8080/sdk/SDKService'
+    SMS_YM_USER: 'test'
+    SMS_YM_PASSWD: 'test'
+    #亿美账户账号--信息类 内部使用  特服号：445156
+    SMS_YM_INFO_URL: 'http://hprpt2.eucp.b2m.cn:8080/sdk/SDKService'
+    SMS_YM_INFO_USER: 'test'
+    SMS_YM_INFO_PASSWD: 'test'
+    #亿美账户营销账号--营销类推广类  特服号：187275 
+    SMS_YM_MARKETING_URL: 'http://sdktaows.eucp.b2m.cn:8080/sdk/SDKService'
+    SMS_YM_MARKETING_USER: 'test'
+    SMS_YM_MARKETING_PASSWD: 'test'
+    #亿美账户营销账号--营销类 备用  特服号：009259
+    SMS_YM_MARKETWO_URL: 'http://sdktaows.eucp.b2m.cn:8080/sdk/SDKService'
+    SMS_YM_MARKETWO_USER: 'test'
+    SMS_YM_MARKETWO_PASSWD: 'test'
+    
+    #-----8：百度地图AK------------------------
+    BAIDU_MAP_AK: 'test'
+    BAIDU_PLACE_AK: 'test'
+    
+    #-----9：获取雷达名片列表默认值
+    
+    
+    #-----10：天眼查获取公司名称
+    TYC_URL: http://open.api.tianyancha.com/services/v3/open/w/detail.json
+    TYCM_URL: http://open.api.tianyancha.com/services/v3/open/companyMortgage.json
+    
+    #-----11：生成员工名片缩略图调用web端191地址:传参：empid、tempid、vcardid 
+    #WEB_CARD_URL: http://dev.orayun.com/Company/Aaa/createEmployeeCard?
+    
+    
+    #地址解析配置
+    MAP_HOST_URL: http://127.0.0.1
+    
+    #
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    debug_toolbar: true
+    debug_redirects: false
+    use_assetic_controller: true
+
+    #小米推送配置
+    misecret: test==
+    package: test
+    #--------------以下为注释掉配置（如后续启用，放到上面即可）------------
+    #-----2：IM数据库及IM Webservice配置-------
+    #MONGODB_HOST: '192.168.30.191'
+    #MONGODB_PORT: '27017'
+    #MONGODB_DBNAME: 'test'
+    
+    #扫描名片默认处理状态配置
+    #scancard_handle_status: 'auto_ocr'
+
+    #-----2：IM数据库及IM Webservice配置-------
+    #im_database_host: 123.57.146.39
+    #im_database_port: 3306
+    #im_database_name: V2Platform
+    #im_database_user: v2_root
+    #im_database_password: 654321
+    #im web service url
+    #IM_WEBSERVICE_URL: 'http://123.57.12.84:5555'
+    
+    #-----13：solr配置
+    #SOLR_URL: 'http://192.168.30.191:8983/solr/scancard/select'
+    
+    #OCR_URL: http://192.168.40.92:8080/PIM_NameCard/SrvXMLAPI
+    
+    #-----14:测试账号配置(注：测试账号如果开启 输入固定手机好 验证码 就可以登录)
+    #注：测试账号 在 19999990001 到 19999999999 之间   去掉
+    #test_account_open: true
+    #测试账号固定验证码
+    #test_code: '123456'

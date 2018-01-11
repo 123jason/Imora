@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrJobProperties" table="hr_job_properties">
+    <indexes>
+      <index name="fk_hr_job_properties_1_idx" columns="job_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="jobId" type="string" column="job_id" length="32" nullable="false"/>
+    <field name="salary" type="integer" column="salary" nullable="true"/>
+    <field name="jobArea" type="string" column="job_area" length="128" nullable="true"/>
+    <field name="jobType" type="string" column="job_type" nullable="true"/>
+    <field name="experience" type="integer" column="experience" nullable="true"/>
+    <field name="degree" type="integer" column="degree" nullable="true"/>
+    <field name="totaljobs" type="integer" column="totaljobs" nullable="true"/>
+  </entity>
+</doctrine-mapping>

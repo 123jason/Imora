@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidatePatent" table="hr_candidate_patent">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="patentId" type="string" column="patent_id" length="32" nullable="true"/>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="true"/>
+    <field name="patentName" type="string" column="patent_name" length="96" nullable="true"/>
+    <field name="patentCode" type="string" column="patent_code" length="96" nullable="true"/>
+    <field name="position" type="string" column="position" length="96" nullable="true"/>
+    <field name="applyDate" type="date" column="apply_date" nullable="true"/>
+    <field name="awardDate" type="date" column="award_date" nullable="true"/>
+    <field name="patentUrl" type="string" column="patent_url" length="96" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="96" nullable="true"/>
+    <field name="createTime" type="datetime" column="create_time" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="true"/>
+  </entity>
+</doctrine-mapping>

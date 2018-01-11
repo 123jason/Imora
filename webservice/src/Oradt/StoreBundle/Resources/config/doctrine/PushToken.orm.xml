@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\PushToken" table="push_token">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="accountId" type="string" column="account_id" length="96" nullable="false"/>
+    <field name="deviceToken" type="string" column="device_token" length="64" nullable="false"/>
+      <field name="deviceId" type="string" column="device_id" length="64" nullable="false"/>
+    <field name="deviceType" type="string" column="device_type" nullable="false"/>
+    <field name="tags" type="string" column="tags" length="512" nullable="false"/>
+    <field name="count" type="integer" column="count" length="11" nullable="false"/>
+    <field name="status" type="string" column="status" length="2" nullable="false"/>
+    <field name="sessionId" type="string" column="session_id" length="48" nullable="false"/>
+  </entity>
+</doctrine-mapping>

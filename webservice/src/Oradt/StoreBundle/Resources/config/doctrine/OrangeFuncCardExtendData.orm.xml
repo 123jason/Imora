@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeFuncCardExtendData" table="orange_func_card_extend_data">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardid" type="integer" column="cardid" length="11" nullable="false"/>
+    <field name="cardBalance" type="float" column="card_balance" precision="10" scale="0" nullable="false"/>
+    <field name="cardScore" type="integer" column="card_score" nullable="false"/>
+    <field name="cardLevel" type="string" column="card_level" length="20" nullable="false"/>
+    <field name="cardBill" type="text" column="card_bill" nullable="false"/>
+    <field name="isCheckIn" type="integer" column="is_check_in" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="mileage" type="string" column="mileage" length="96" nullable="false"/>
+    <field name="leg" type="string" column="leg" length="96" nullable="false"/>
+    <field name="monthExpiredEile" type="string" column="month_expired_eile" length="96" nullable="false"/>
+    <field name="yearExpiredMile" type="string" column="year_expired_mile" length="96" nullable="false"/>
+    <field name="upMile" type="string" column="up_mile" length="96" nullable="false"/>
+    <field name="upTotalMile" type="string" column="up_total_mile" length="96" nullable="false"/>
+    <field name="upTotalLeg" type="string" column="up_total_leg" length="96" nullable="false"/>
+    <field name="upLeg" type="string" column="up_leg" length="96" nullable="false"/>
+    <field name="integral" type="integer" column="integral" length="10" nullable="false"/>
+    <field name="monthExpiredIntegral" type="integer" column="month_expired_integral" length="10" nullable="false"/>
+    <field name="thMonExpiredIntegral" type="integer" column="th_mon_expired_integral" length="10" nullable="false"/>
+    <field name="yearExpiredIntegral" type="integer" column="year_expired_integral" length="10" nullable="false"/>
+    <field name="thMonExpiredMile" type="string" column="th_mon_expired_mile" length="96" nullable="false"/>
+    <field name="upIntegral" type="integer" column="up_integral" length="10" nullable="false"/>
+    <field name="upTotalIntegral" type="integer" column="up_total_integral" length="10" nullable="false"/>
+    <field name="gatherState" type="integer" column="gather_state" length="2" nullable="false"/>
+    <field name="checkInTime" type="integer" column="check_in_time" length="10" nullable="false"/>
+  </entity>
+</doctrine-mapping>

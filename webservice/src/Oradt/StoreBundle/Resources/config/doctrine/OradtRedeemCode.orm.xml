@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OradtRedeemCode" table="oradt_redeem_code">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="groupId" type="integer" column="group_id" nullable="false"/>
+    <field name="redeemCode" type="string" column="redeem_code" length="20" nullable="false"/>
+    <field name="startTime" type="integer" column="start_time" nullable="false"/>
+    <field name="endTime" type="integer" column="end_time" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="false"/>
+    <field name="releaseTime" type="integer" column="release_time" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="useAccountId" type="string" column="use_account_id" length="40" nullable="false"/>
+    <field name="useAccount" type="string" column="use_account" length="98" nullable="false"/>
+    <field name="useName" type="string" column="use_name" length="98" nullable="false"/>
+    <field name="useTime" type="integer" column="use_time" nullable="false"/>
+    <field name="orderId" type="string" column="order_id" length="32" nullable="false"/>
+  </entity>
+</doctrine-mapping>

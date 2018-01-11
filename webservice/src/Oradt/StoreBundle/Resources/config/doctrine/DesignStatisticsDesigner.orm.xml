@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignStatisticsDesigner" table="design_statistics_designer">
+    <unique-constraints>
+      <unique-constraint name="date" columns="date"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="totalDesigner" type="integer" column="total_designer" nullable="true"/>
+    <field name="newDesigner" type="integer" column="new_designer" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizInvoiceAptitude" table="account_biz_invoice_aptitude">
+    <unique-constraints>
+      <unique-constraint name="biz_id_UNIQUE" columns="biz_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="taxpayerCode" type="string" column="taxpayer_code" length="255" nullable="false"/>
+    <field name="regAddress" type="string" column="reg_address" length="255" nullable="false"/>
+    <field name="regTelephone" type="string" column="reg_telephone" length="50" nullable="false"/>
+    <field name="bank" type="string" column="bank" length="50" nullable="false"/>
+    <field name="bankAccount" type="string" column="bank_account" length="100" nullable="false"/>
+    <field name="payTaxProve" type="string" column="pay_tax_prove" length="255" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

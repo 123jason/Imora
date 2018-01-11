@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\TopicCategory" table="topic_category">
+    <unique-constraints>
+      <unique-constraint name="category_id_UNIQUE" columns="category_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="categoryId" type="string" column="category_id" length="32" nullable="false"/>
+    <field name="parentId" type="string" column="parent_id" length="32" nullable="true"/>
+    <field name="name" type="string" column="name" length="64" nullable="false"/>
+    <field name="description" type="string" column="description" length="1024" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+  </entity>
+</doctrine-mapping>

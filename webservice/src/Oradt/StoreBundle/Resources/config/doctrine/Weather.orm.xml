@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Weather" table="weather">
+    <indexes>
+      <index name="fk_weather_1_idx" columns="city_code"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="code" type="string" column="code" length="8" nullable="false"/>
+    <field name="feelslike" type="integer" column="feelslike" nullable="true"/>
+    <field name="tempHi" type="integer" column="temp_hi" nullable="true"/>
+    <field name="tempLo" type="integer" column="temp_lo" nullable="true"/>
+    <field name="pm25" type="integer" column="pm25" nullable="true"/>
+    <field name="wind" type="integer" column="wind" nullable="true"/>
+    <field name="windDegree" type="integer" column="wind_degree" nullable="true"/>
+    <field name="humidity" type="integer" column="humidity" nullable="true"/>
+    <field name="uvIndex" type="integer" column="uv_index" nullable="true"/>
+    <field name="visibility" type="integer" column="visibility" nullable="true"/>
+    <field name="dewPoint" type="integer" column="dew_point" nullable="true"/>
+    <field name="barometer" type="integer" column="barometer" nullable="true"/>
+    <field name="dateTime" type="datetime" column="date_time" nullable="false"/>
+    <field name="cityCode" type="string" column="city_code" length="16" nullable="false"/>
+    <field name="whichday" type="string" column="whichday" nullable="false"/>
+    <field name="daynight" type="string" column="daynight" nullable="false"/>
+    <field name="suntime" type="string" column="suntime" length="30" nullable="true"/>
+    <field name="iscache" type="string" column="iscache" nullable="false"/>
+    <field name="sunrise" type="integer" column="sunrise" nullable="false"/>
+    <field name="sunset" type="integer" column="sunset" nullable="false"/>
+    <field name="pubDate" type="integer" column="pub_date" nullable="false"/>
+  </entity>
+</doctrine-mapping>

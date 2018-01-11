@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScanCardRbacOperationLog" table="scan_card_rbac_operation_log">
+    <indexes>
+      <index name="idx_op_time_operation" columns="op_time,operation"/>
+      <index name="idx_target_id" columns="target_id"/>
+      <index name="idx_target_name" columns="target_name"/>
+      <index name="idx_operate_id" columns="operate_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="operateId" type="string" column="operate_id" length="40" nullable="false"/>
+    <field name="targetId" type="string" column="target_id" length="40" nullable="false"/>
+    <field name="targetName" type="string" column="target_name" length="48" nullable="false"/>
+    <field name="statusFrom" type="string" column="status_from" length="3192" nullable="false"/>
+    <field name="statusTo" type="string" column="status_to" length="3192" nullable="false"/>
+    <field name="operation" type="string" column="operation" nullable="false"/>
+    <field name="opTime" type="datetime" column="op_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

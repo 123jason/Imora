@@ -1,0 +1,3718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ConfWebServiceInterface"
+ targetNamespace="http://localhost/ConfWebServiceInterface.wsdl"
+ xmlns:tns="http://localhost/ConfWebServiceInterface.wsdl"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:ConfWebServiceInterface"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:ConfWebServiceInterface"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:ConfWebServiceInterface"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+ </schema>
+
+</types>
+
+<message name="CreateConfRequest">
+ <part name="sSubject" type="xsd:string"/><!-- ns__CreateConf::sSubject -->
+ <part name="nCreateID" type="xsd:long"/><!-- ns__CreateConf::nCreateID -->
+ <part name="nOrgID" type="xsd:long"/><!-- ns__CreateConf::nOrgID -->
+ <part name="sChairPasswd" type="xsd:string"/><!-- ns__CreateConf::sChairPasswd -->
+ <part name="sParticipantPasswd" type="xsd:string"/><!-- ns__CreateConf::sParticipantPasswd -->
+ <part name="nStartTime" type="xsd:long"/><!-- ns__CreateConf::nStartTime -->
+ <part name="nEndTime" type="xsd:long"/><!-- ns__CreateConf::nEndTime -->
+ <part name="nConfType" type="xsd:int"/><!-- ns__CreateConf::nConfType -->
+ <part name="nMaxParticipant" type="xsd:int"/><!-- ns__CreateConf::nMaxParticipant -->
+ <part name="nParticpantLimited" type="xsd:int"/><!-- ns__CreateConf::nParticpantLimited -->
+</message>
+
+<message name="CreateConfResponse">
+ <part name="nGroupID" type="xsd:long"/><!-- ns__CreateConf::nGroupID -->
+</message>
+
+<message name="AddConfParticipantRequest">
+ <part name="confid" type="xsd:long"/><!-- ns__AddConfParticipant::confid -->
+ <part name="xmlParticipant" type="xsd:string"/><!-- ns__AddConfParticipant::xmlParticipant -->
+</message>
+
+<message name="AddConfParticipantResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__AddConfParticipant::nResult -->
+</message>
+
+<message name="DelConfParticipantsRequest">
+ <part name="confid" type="xsd:long"/><!-- ns__DelConfParticipants::confid -->
+ <part name="useridset" type="xsd:string"/><!-- ns__DelConfParticipants::useridset -->
+</message>
+
+<message name="DelConfParticipantsResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelConfParticipants::nResult -->
+</message>
+
+<message name="DestroyConfRequest">
+ <part name="nGroupID" type="xsd:long"/><!-- ns__DestroyConf::nGroupID -->
+</message>
+
+<message name="DestroyConfResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DestroyConf::nResult -->
+</message>
+
+<message name="QueryConfRequest">
+ <part name="confid" type="xsd:long"/><!-- ns__QueryConf::confid -->
+</message>
+
+<message name="QueryConfResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryConf::xml -->
+</message>
+
+<message name="QueryConfParticipantsRequest">
+ <part name="confid" type="xsd:long"/><!-- ns__QueryConfParticipants::confid -->
+</message>
+
+<message name="QueryConfParticipantsResponse">
+ <part name="participantxml" type="xsd:string"/><!-- ns__QueryConfParticipants::participantxml -->
+</message>
+
+<message name="UpdateConfInfoRequest">
+ <part name="confid" type="xsd:long"/><!-- ns__UpdateConfInfo::confid -->
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__UpdateConfInfo::xmlinfo -->
+</message>
+
+<message name="UpdateConfInfoResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__UpdateConfInfo::nResult -->
+</message>
+
+<message name="QueryUserConfAccessibleRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserConfAccessible::userid -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserConfAccessible::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserConfAccessible::limitcount -->
+</message>
+
+<message name="QueryUserConfAccessibleResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryUserConfAccessible::xml -->
+</message>
+
+<message name="QueryUserConfAccessibleTotalCountRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserConfAccessibleTotalCount::userid -->
+</message>
+
+<message name="QueryUserConfAccessibleTotalCountResponse">
+ <part name="size" type="xsd:int"/><!-- ns__QueryUserConfAccessibleTotalCount::size -->
+</message>
+
+<message name="QueryUserAccessibleConfByTimeIntervalRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTimeInterval::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTimeInterval::usercondition -->
+ <part name="begintime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTimeInterval::begintime -->
+ <part name="endtime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTimeInterval::endtime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTimeInterval::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTimeInterval::limitcount -->
+</message>
+
+<message name="QueryUserAccessibleConfByTimeIntervalResponse">
+ <part name="xmlconfs" type="xsd:string"/><!-- ns__QueryUserAccessibleConfByTimeInterval::xmlconfs -->
+</message>
+
+<message name="QueryUserAccessbileConfByTimeIntervalTotalCountRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeIntervalTotalCount::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByTimeIntervalTotalCount::usercondition -->
+ <part name="begintime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeIntervalTotalCount::begintime -->
+ <part name="endtime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeIntervalTotalCount::endtime -->
+</message>
+
+<message name="QueryUserAccessbileConfByTimeIntervalTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByTimeIntervalTotalCount::count -->
+</message>
+
+<message name="QueryUserAccessibleConfByStartTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByStartTime::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByStartTime::usercondition -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByStartTime::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByStartTime::maxbegintime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByStartTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByStartTime::limitcount -->
+</message>
+
+<message name="QueryUserAccessibleConfByStartTimeResponse">
+ <part name="xmlconfs" type="xsd:string"/><!-- ns__QueryUserAccessibleConfByStartTime::xmlconfs -->
+</message>
+
+<message name="QueryUserAccessbileConfByStartTimeTotalCountRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByStartTimeTotalCount::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByStartTimeTotalCount::usercondition -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByStartTimeTotalCount::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByStartTimeTotalCount::maxbegintime -->
+</message>
+
+<message name="QueryUserAccessbileConfByStartTimeTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByStartTimeTotalCount::count -->
+</message>
+
+<message name="QueryUserAccessibleConfByTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTime::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTime::usercondition -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTime::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTime::maxbegintime -->
+ <part name="minendtime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTime::minendtime -->
+ <part name="maxendtime" type="xsd:long"/><!-- ns__QueryUserAccessibleConfByTime::maxendtime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserAccessibleConfByTime::limitcount -->
+</message>
+
+<message name="QueryUserAccessibleConfByTimeResponse">
+ <part name="xmlconfs" type="xsd:string"/><!-- ns__QueryUserAccessibleConfByTime::xmlconfs -->
+</message>
+
+<message name="QueryUserAccessbileConfByTimeTotalCountRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::userid -->
+ <part name="usercondition" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::usercondition -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::maxbegintime -->
+ <part name="minendtime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::minendtime -->
+ <part name="maxendtime" type="xsd:long"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::maxendtime -->
+</message>
+
+<message name="QueryUserAccessbileConfByTimeTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserAccessbileConfByTimeTotalCount::count -->
+</message>
+
+<message name="QueryOrgConfByStartTimeRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgConfByStartTime::orgid -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryOrgConfByStartTime::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryOrgConfByStartTime::maxbegintime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryOrgConfByStartTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryOrgConfByStartTime::limitcount -->
+</message>
+
+<message name="QueryOrgConfByStartTimeResponse">
+ <part name="xmlconfs" type="xsd:string"/><!-- ns__QueryOrgConfByStartTime::xmlconfs -->
+</message>
+
+<message name="QueryOrgConfByStartTimeTotalCountRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgConfByStartTimeTotalCount::orgid -->
+ <part name="minbegintime" type="xsd:long"/><!-- ns__QueryOrgConfByStartTimeTotalCount::minbegintime -->
+ <part name="maxbegintime" type="xsd:long"/><!-- ns__QueryOrgConfByStartTimeTotalCount::maxbegintime -->
+</message>
+
+<message name="QueryOrgConfByStartTimeTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryOrgConfByStartTimeTotalCount::count -->
+</message>
+
+<message name="AddOrganizationRequest">
+ <part name="adminid" type="xsd:long"/><!-- ns__AddOrganization::adminid -->
+ <part name="orgname" type="xsd:string"/><!-- ns__AddOrganization::orgname -->
+ <part name="industry" type="xsd:string"/><!-- ns__AddOrganization::industry -->
+ <part name="address" type="xsd:string"/><!-- ns__AddOrganization::address -->
+ <part name="tel" type="xsd:string"/><!-- ns__AddOrganization::tel -->
+ <part name="mobile" type="xsd:string"/><!-- ns__AddOrganization::mobile -->
+ <part name="remark" type="xsd:string"/><!-- ns__AddOrganization::remark -->
+ <part name="defaultpwd" type="xsd:string"/><!-- ns__AddOrganization::defaultpwd -->
+</message>
+
+<message name="AddOrganizationResponse">
+ <part name="orgid" type="xsd:long"/><!-- ns__AddOrganization::orgid -->
+</message>
+
+<message name="AddDepartmentRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__AddDepartment::orgid -->
+ <part name="parentDepartmentID" type="xsd:long"/><!-- ns__AddDepartment::parentDepartmentID -->
+ <part name="name" type="xsd:string"/><!-- ns__AddDepartment::name -->
+ <part name="remark" type="xsd:string"/><!-- ns__AddDepartment::remark -->
+</message>
+
+<message name="AddDepartmentResponse">
+ <part name="deptid" type="xsd:long"/><!-- ns__AddDepartment::deptid -->
+</message>
+
+<message name="AddDeparmtmentUserRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__AddDeparmtmentUser::userid -->
+ <part name="deptid" type="xsd:long"/><!-- ns__AddDeparmtmentUser::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddDeparmtmentUser::orgid -->
+ <part name="role" type="xsd:int"/><!-- ns__AddDeparmtmentUser::role -->
+</message>
+
+<message name="AddDeparmtmentUserResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__AddDeparmtmentUser::nResult -->
+</message>
+
+<message name="AddDepartmentBatchUserRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__AddDepartmentBatchUser::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddDepartmentBatchUser::orgid -->
+ <part name="userset" type="xsd:string"/><!-- ns__AddDepartmentBatchUser::userset -->
+</message>
+
+<message name="AddDepartmentBatchUserResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__AddDepartmentBatchUser::nResult -->
+</message>
+
+<message name="QueryOrgDeptsRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgDepts::orgid -->
+</message>
+
+<message name="QueryOrgDeptsResponse">
+ <part name="xmldeptsinfo" type="xsd:string"/><!-- ns__QueryOrgDepts::xmldeptsinfo -->
+</message>
+
+<message name="QueryUserAccessibleDeptsRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessibleDepts::userid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryUserAccessibleDepts::orgid -->
+</message>
+
+<message name="QueryUserAccessibleDeptsResponse">
+ <part name="xmldeptsinfo" type="xsd:string"/><!-- ns__QueryUserAccessibleDepts::xmldeptsinfo -->
+</message>
+
+<message name="QueryDeptsOfDeptManagerRequest">
+ <part name="managerid" type="xsd:long"/><!-- ns__QueryDeptsOfDeptManager::managerid -->
+</message>
+
+<message name="QueryDeptsOfDeptManagerResponse">
+ <part name="xmldeptsinfo" type="xsd:string"/><!-- ns__QueryDeptsOfDeptManager::xmldeptsinfo -->
+</message>
+
+<message name="DeptSortOperationBatchRequest">
+ <part name="xml" type="xsd:string"/><!-- ns__DeptSortOperationBatch::xml -->
+</message>
+
+<message name="DeptSortOperationBatchResponse">
+ <part name="ret" type="xsd:int"/><!-- ns__DeptSortOperationBatch::ret -->
+</message>
+
+<message name="DeptMembersSortOperationBatchRequest">
+ <part name="xml" type="xsd:string"/><!-- ns__DeptMembersSortOperationBatch::xml -->
+</message>
+
+<message name="DeptMembersSortOperationBatchResponse">
+ <part name="ret" type="xsd:int"/><!-- ns__DeptMembersSortOperationBatch::ret -->
+</message>
+
+<message name="QueryDeptInfoRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryDeptInfo::deptid -->
+</message>
+
+<message name="QueryDeptInfoResponse">
+ <part name="xmldeptinfo" type="xsd:string"/><!-- ns__QueryDeptInfo::xmldeptinfo -->
+</message>
+
+<message name="QueryDeptManagerLoginRequest">
+ <part name="account" type="xsd:string"/><!-- ns__QueryDeptManagerLogin::account -->
+ <part name="pwd" type="xsd:string"/><!-- ns__QueryDeptManagerLogin::pwd -->
+</message>
+
+<message name="QueryDeptManagerLoginResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryDeptManagerLogin::xml -->
+</message>
+
+<message name="QueryDeptManagersInfoRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryDeptManagersInfo::deptid -->
+</message>
+
+<message name="QueryDeptManagersInfoResponse">
+ <part name="xmlManagerInfo" type="xsd:string"/><!-- ns__QueryDeptManagersInfo::xmlManagerInfo -->
+</message>
+
+<message name="AddDeptManagerRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__AddDeptManager::deptid -->
+ <part name="userid" type="xsd:long"/><!-- ns__AddDeptManager::userid -->
+</message>
+
+<message name="AddDeptManagerResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__AddDeptManager::ret -->
+</message>
+
+<message name="DelDeptManagerRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__DelDeptManager::deptid -->
+ <part name="userid" type="xsd:long"/><!-- ns__DelDeptManager::userid -->
+</message>
+
+<message name="DelDeptManagerResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__DelDeptManager::ret -->
+</message>
+
+<message name="DelDeptManagerByDeptIdRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__DelDeptManagerByDeptId::deptid -->
+</message>
+
+<message name="DelDeptManagerByDeptIdResponse">
+ <part name="count" type="xsd:int"/><!-- ns__DelDeptManagerByDeptId::count -->
+</message>
+
+<message name="DelAllDeptManagerByUserIdRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__DelAllDeptManagerByUserId::userid -->
+</message>
+
+<message name="DelAllDeptManagerByUserIdResponse">
+ <part name="bret" type="xsd:boolean"/><!-- ns__DelAllDeptManagerByUserId::bret -->
+</message>
+
+<message name="IsDeptManagerRequest">
+ <part name="account" type="xsd:string"/><!-- ns__IsDeptManager::account -->
+</message>
+
+<message name="IsDeptManagerResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__IsDeptManager::ret -->
+</message>
+
+<message name="QueryAncestorManagerOfUserRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryAncestorManagerOfUser::orgid -->
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryAncestorManagerOfUser::deptid -->
+ <part name="userid" type="xsd:long"/><!-- ns__QueryAncestorManagerOfUser::userid -->
+</message>
+
+<message name="QueryAncestorManagerOfUserResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryAncestorManagerOfUser::xml -->
+</message>
+
+<message name="QueryChildManagerOfUserRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryChildManagerOfUser::orgid -->
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryChildManagerOfUser::deptid -->
+ <part name="userid" type="xsd:long"/><!-- ns__QueryChildManagerOfUser::userid -->
+</message>
+
+<message name="QueryChildManagerOfUserResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryChildManagerOfUser::xml -->
+</message>
+
+<message name="IsChildDeptRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__IsChildDept::orgid -->
+ <part name="pDeptid" type="xsd:long"/><!-- ns__IsChildDept::pDeptid -->
+ <part name="cDeptid" type="xsd:long"/><!-- ns__IsChildDept::cDeptid -->
+</message>
+
+<message name="IsChildDeptResponse">
+ <part name="bret" type="xsd:boolean"/><!-- ns__IsChildDept::bret -->
+</message>
+
+<message name="IsDeptManagerByIdRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__IsDeptManagerById::userid -->
+</message>
+
+<message name="IsDeptManagerByIdResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__IsDeptManagerById::ret -->
+</message>
+
+<message name="QueryDeptManagerInfoRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryDeptManagerInfo::userid -->
+</message>
+
+<message name="QueryDeptManagerInfoResponse">
+ <part name="userinfo" type="xsd:string"/><!-- ns__QueryDeptManagerInfo::userinfo -->
+</message>
+
+<message name="AddSipServerRequest">
+ <part name="strHost" type="xsd:string"/><!-- ns__AddSipServer::strHost -->
+ <part name="nPort" type="xsd:long"/><!-- ns__AddSipServer::nPort -->
+ <part name="strDomain" type="xsd:string"/><!-- ns__AddSipServer::strDomain -->
+</message>
+
+<message name="AddSipServerResponse">
+ <part name="nRet" type="xsd:long"/><!-- ns__AddSipServer::nRet -->
+</message>
+
+<message name="QuerySipServerRequest">
+</message>
+
+<message name="QuerySipServerResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QuerySipServer::xml -->
+</message>
+
+<message name="DelSipServerRequest">
+ <part name="id" type="xsd:long"/><!-- ns__DelSipServer::id -->
+</message>
+
+<message name="DelSipServerResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__DelSipServer::ret -->
+</message>
+
+<message name="UpdateSipServerRequest">
+ <part name="id" type="xsd:long"/><!-- ns__UpdateSipServer::id -->
+ <part name="xml" type="xsd:string"/><!-- ns__UpdateSipServer::xml -->
+</message>
+
+<message name="UpdateSipServerResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__UpdateSipServer::ret -->
+</message>
+
+<message name="IsSipExtNumOccupiedRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__IsSipExtNumOccupied::orgid -->
+ <part name="sipextnum" type="xsd:long"/><!-- ns__IsSipExtNumOccupied::sipextnum -->
+</message>
+
+<message name="IsSipExtNumOccupiedResponse">
+ <part name="ret" type="xsd:boolean"/><!-- ns__IsSipExtNumOccupied::ret -->
+</message>
+
+<message name="QuerySubDeptTotalCountRequest">
+ <part name="parentdeptid" type="xsd:long"/><!-- ns__QuerySubDeptTotalCount::parentdeptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QuerySubDeptTotalCount::orgid -->
+</message>
+
+<message name="QuerySubDeptTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QuerySubDeptTotalCount::count -->
+</message>
+
+<message name="QuerySubDeptsRequest">
+ <part name="parentdeptid" type="xsd:long"/><!-- ns__QuerySubDepts::parentdeptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QuerySubDepts::orgid -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QuerySubDepts::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__QuerySubDepts::count -->
+</message>
+
+<message name="QuerySubDeptsResponse">
+ <part name="xmlsubdeptsinfo" type="xsd:string"/><!-- ns__QuerySubDepts::xmlsubdeptsinfo -->
+</message>
+
+<message name="QueryAllSubDeptsRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryAllSubDepts::orgid -->
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryAllSubDepts::deptid -->
+</message>
+
+<message name="QueryAllSubDeptsResponse">
+ <part name="xmlsubdeptsinfo" type="xsd:string"/><!-- ns__QueryAllSubDepts::xmlsubdeptsinfo -->
+</message>
+
+<message name="QueryDeptMemberRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryDeptMember::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryDeptMember::orgid -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryDeptMember::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__QueryDeptMember::count -->
+</message>
+
+<message name="QueryDeptMemberResponse">
+ <part name="xmluserid" type="xsd:string"/><!-- ns__QueryDeptMember::xmluserid -->
+</message>
+
+<message name="QueryDeptMemberTotalCountRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryDeptMemberTotalCount::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryDeptMemberTotalCount::orgid -->
+</message>
+
+<message name="QueryDeptMemberTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryDeptMemberTotalCount::count -->
+</message>
+
+<message name="DelOrganizationRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__DelOrganization::orgid -->
+</message>
+
+<message name="DelOrganizationResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelOrganization::nResult -->
+</message>
+
+<message name="DelDepartmentRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__DelDepartment::deptid -->
+ <part name="delmode" type="xsd:int"/><!-- ns__DelDepartment::delmode -->
+</message>
+
+<message name="DelDepartmentResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelDepartment::nResult -->
+</message>
+
+<message name="DelDepartmentUserRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__DelDepartmentUser::userid -->
+ <part name="deptid" type="xsd:long"/><!-- ns__DelDepartmentUser::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__DelDepartmentUser::orgid -->
+</message>
+
+<message name="DelDepartmentUserResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelDepartmentUser::nResult -->
+</message>
+
+<message name="DelDepartmentBatchUserRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__DelDepartmentBatchUser::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__DelDepartmentBatchUser::orgid -->
+ <part name="userset" type="xsd:string"/><!-- ns__DelDepartmentBatchUser::userset -->
+</message>
+
+<message name="DelDepartmentBatchUserResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelDepartmentBatchUser::nResult -->
+</message>
+
+<message name="QueryOrganization">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrganization::orgid -->
+</message>
+
+<message name="QueryOrgResponse">
+ <part name="orgname" type="xsd:string"/><!-- ns__QueryOrganization::orgname -->
+ <part name="industry" type="xsd:string"/><!-- ns__QueryOrganization::industry -->
+ <part name="address" type="xsd:string"/><!-- ns__QueryOrganization::address -->
+ <part name="tel" type="xsd:string"/><!-- ns__QueryOrganization::tel -->
+ <part name="mobile" type="xsd:string"/><!-- ns__QueryOrganization::mobile -->
+ <part name="logo" type="xsd:string"/><!-- ns__QueryOrganization::logo -->
+ <part name="remark" type="xsd:string"/><!-- ns__QueryOrganization::remark -->
+ <part name="defaultpwd" type="xsd:string"/><!-- ns__QueryOrganization::defaultpwd -->
+ <part name="adminid" type="xsd:long"/><!-- ns__QueryOrganization::adminid -->
+</message>
+
+<message name="QueryOrgManagerRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgManager::orgid -->
+</message>
+
+<message name="QueryOrgManagerResponse">
+ <part name="admininfo" type="xsd:string"/><!-- ns__QueryOrgManager::admininfo -->
+</message>
+
+<message name="QueryOrgnameExistedRequest">
+ <part name="orgname" type="xsd:string"/><!-- ns__QueryOrgnameExisted::orgname -->
+</message>
+
+<message name="QueryOrgnameExistedResponse">
+ <part name="bResult" type="xsd:boolean"/><!-- ns__QueryOrgnameExisted::bResult -->
+</message>
+
+<message name="UpdataOrganizationRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__UpdataOrganization::orgid -->
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__UpdataOrganization::xmlinfo -->
+</message>
+
+<message name="UpdataOrganizationResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__UpdataOrganization::nResult -->
+</message>
+
+<message name="UpdateDeptInfoRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__UpdateDeptInfo::deptid -->
+ <part name="xmldeptinfo" type="xsd:string"/><!-- ns__UpdateDeptInfo::xmldeptinfo -->
+</message>
+
+<message name="UpdateDeptInfoResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__UpdateDeptInfo::nResult -->
+</message>
+
+<message name="FuzzyQuerySubDeptsInfoRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__FuzzyQuerySubDeptsInfo::orgid -->
+ <part name="parentdeptid" type="xsd:long"/><!-- ns__FuzzyQuerySubDeptsInfo::parentdeptid -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQuerySubDeptsInfo::value -->
+ <part name="type" type="xsd:int"/><!-- ns__FuzzyQuerySubDeptsInfo::type -->
+ <part name="startindex" type="xsd:int"/><!-- ns__FuzzyQuerySubDeptsInfo::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQuerySubDeptsInfo::count -->
+</message>
+
+<message name="FuzzyQuerySubDeptsInfoResponse">
+ <part name="xmldeptinfo" type="xsd:string"/><!-- ns__FuzzyQuerySubDeptsInfo::xmldeptinfo -->
+</message>
+
+<message name="FuzzyQuerySubDeptsTotalCountRequest">
+ <part name="parentdeptid" type="xsd:long"/><!-- ns__FuzzyQuerySubDeptsTotalCount::parentdeptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__FuzzyQuerySubDeptsTotalCount::orgid -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQuerySubDeptsTotalCount::value -->
+ <part name="type" type="xsd:int"/><!-- ns__FuzzyQuerySubDeptsTotalCount::type -->
+</message>
+
+<message name="FuzzyQuerySubDeptsTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQuerySubDeptsTotalCount::count -->
+</message>
+
+<message name="FuzzyQueryDeptMemberRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__FuzzyQueryDeptMember::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__FuzzyQueryDeptMember::orgid -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQueryDeptMember::value -->
+ <part name="type" type="xsd:int"/><!-- ns__FuzzyQueryDeptMember::type -->
+ <part name="startindex" type="xsd:int"/><!-- ns__FuzzyQueryDeptMember::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQueryDeptMember::count -->
+</message>
+
+<message name="FuzzyQueryDeptMemberResponse">
+ <part name="xmluserid" type="xsd:string"/><!-- ns__FuzzyQueryDeptMember::xmluserid -->
+</message>
+
+<message name="FuzzyQueryDeptMemberTotalCountRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__FuzzyQueryDeptMemberTotalCount::deptid -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQueryDeptMemberTotalCount::value -->
+ <part name="type" type="xsd:int"/><!-- ns__FuzzyQueryDeptMemberTotalCount::type -->
+ <part name="orgid" type="xsd:long"/><!-- ns__FuzzyQueryDeptMemberTotalCount::orgid -->
+</message>
+
+<message name="FuzzyQueryDeptMemberTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQueryDeptMemberTotalCount::count -->
+</message>
+
+<message name="QueryUserDeptsRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserDepts::userid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryUserDepts::orgid -->
+</message>
+
+<message name="QueryUserDeptsResponse">
+ <part name="xmldeptinfo" type="xsd:string"/><!-- ns__QueryUserDepts::xmldeptinfo -->
+</message>
+
+<message name="QueryUserAccessibleOrganizationRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccessibleOrganization::userid -->
+</message>
+
+<message name="QueryUserAccessibleOrganizationResponse">
+ <part name="orginfo" type="xsd:string"/><!-- ns__QueryUserAccessibleOrganization::orginfo -->
+</message>
+
+<message name="QueryInvisibleDeptRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryInvisibleDept::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryInvisibleDept::orgid -->
+</message>
+
+<message name="QueryInvisibleDeptResponse">
+ <part name="xmldeptids" type="xsd:string"/><!-- ns__QueryInvisibleDept::xmldeptids -->
+</message>
+
+<message name="AddInvisibleDeptsRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__AddInvisibleDepts::deptid -->
+ <part name="invisibledeptset" type="xsd:string"/><!-- ns__AddInvisibleDepts::invisibledeptset -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddInvisibleDepts::orgid -->
+</message>
+
+<message name="AddInvisibleDeptsResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__AddInvisibleDepts::nResult -->
+</message>
+
+<message name="AddBlockedDeptsRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__AddBlockedDepts::deptid -->
+ <part name="blockdeptset" type="xsd:string"/><!-- ns__AddBlockedDepts::blockdeptset -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddBlockedDepts::orgid -->
+</message>
+
+<message name="AddBlockedDeptsResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__AddBlockedDepts::nResult -->
+</message>
+
+<message name="DelInvisibleDeptsRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__DelInvisibleDepts::deptid -->
+ <part name="invisibledeptset" type="xsd:string"/><!-- ns__DelInvisibleDepts::invisibledeptset -->
+ <part name="orgid" type="xsd:long"/><!-- ns__DelInvisibleDepts::orgid -->
+</message>
+
+<message name="DelInvisibleDeptsResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelInvisibleDepts::nResult -->
+</message>
+
+<message name="QueryDeptMemberInDeptsRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryDeptMemberInDepts::orgid -->
+ <part name="deptset" type="xsd:string"/><!-- ns__QueryDeptMemberInDepts::deptset -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryDeptMemberInDepts::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryDeptMemberInDepts::limitcount -->
+</message>
+
+<message name="QueryDeptMemberInDeptsResponse">
+ <part name="xmluserinfo" type="xsd:string"/><!-- ns__QueryDeptMemberInDepts::xmluserinfo -->
+</message>
+
+<message name="QueryDeptMemberInDeptsTotalCountRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryDeptMemberInDeptsTotalCount::orgid -->
+ <part name="deptset" type="xsd:string"/><!-- ns__QueryDeptMemberInDeptsTotalCount::deptset -->
+</message>
+
+<message name="QueryDeptMemberInDeptsTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryDeptMemberInDeptsTotalCount::count -->
+</message>
+
+<message name="QueryOrgAllMemberRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgAllMember::orgid -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryOrgAllMember::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryOrgAllMember::limitcount -->
+</message>
+
+<message name="QueryOrgAllMemberResponse">
+ <part name="xmluserinfo" type="xsd:string"/><!-- ns__QueryOrgAllMember::xmluserinfo -->
+</message>
+
+<message name="QueryOrgAllMemberTotalCountRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgAllMemberTotalCount::orgid -->
+</message>
+
+<message name="QueryOrgAllMemberTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryOrgAllMemberTotalCount::count -->
+</message>
+
+<message name="QueryBlockedDepartsRequest">
+ <part name="deptid" type="xsd:long"/><!-- ns__QueryBlockedDeparts::deptid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryBlockedDeparts::orgid -->
+</message>
+
+<message name="QueryBlockedDepartsResponse">
+ <part name="xmldeptsinfo" type="xsd:string"/><!-- ns__QueryBlockedDeparts::xmldeptsinfo -->
+</message>
+
+<message name="DelBatchDepartmentRequest">
+ <part name="deptset" type="xsd:string"/><!-- ns__DelBatchDepartment::deptset -->
+ <part name="delmode" type="xsd:int"/><!-- ns__DelBatchDepartment::delmode -->
+</message>
+
+<message name="DelBatchDepartmentResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelBatchDepartment::nResult -->
+</message>
+
+<message name="QueryDeptNameExistedRequest">
+ <part name="parentid" type="xsd:long"/><!-- ns__QueryDeptNameExisted::parentid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryDeptNameExisted::orgid -->
+ <part name="name" type="xsd:string"/><!-- ns__QueryDeptNameExisted::name -->
+</message>
+
+<message name="QueryDeptNameExistedResponse">
+ <part name="bResult" type="xsd:boolean"/><!-- ns__QueryDeptNameExisted::bResult -->
+</message>
+
+<message name="QueryOrgsRequest">
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryOrgs::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryOrgs::limitcount -->
+</message>
+
+<message name="QueryOrgsResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryOrgs::xml -->
+</message>
+
+<message name="QueryOrgsCountRequest">
+</message>
+
+<message name="QueryOrgsCountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__QueryOrgsCount::result -->
+</message>
+
+<message name="FuzzyQueryOrgsByNameRequest">
+ <part name="orgname" type="xsd:string"/><!-- ns__FuzzyQueryOrgsByName::orgname -->
+ <part name="startindex" type="xsd:int"/><!-- ns__FuzzyQueryOrgsByName::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__FuzzyQueryOrgsByName::limitcount -->
+</message>
+
+<message name="FuzzyQueryOrgsByNameResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__FuzzyQueryOrgsByName::xml -->
+</message>
+
+<message name="FuzzyQueryOrgsByNameCountRequest">
+ <part name="orgname" type="xsd:string"/><!-- ns__FuzzyQueryOrgsByNameCount::orgname -->
+</message>
+
+<message name="FuzzyQueryOrgsByNameCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQueryOrgsByNameCount::count -->
+</message>
+
+<message name="AddBatchUserRequest">
+ <part name="xmluser" type="xsd:string"/><!-- ns__AddBatchUser::xmluser -->
+</message>
+
+<message name="AddBatchUserResponse">
+ <part name="xmlResult" type="xsd:string"/><!-- ns__AddBatchUser::xmlResult -->
+</message>
+
+<message name="AddUserRequest">
+ <part name="xmluser" type="xsd:string"/><!-- ns__AddUser::xmluser -->
+</message>
+
+<message name="AddUserResponse">
+ <part name="nRet" type="xsd:long"/><!-- ns__AddUser::nRet -->
+</message>
+
+<message name="DelUserRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__DelUser::userid -->
+</message>
+
+<message name="DelUserResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelUser::nResult -->
+</message>
+
+<message name="DelUsersRequest">
+ <part name="userset" type="xsd:string"/><!-- ns__DelUsers::userset -->
+</message>
+
+<message name="DelUsersResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__DelUsers::nResult -->
+</message>
+
+<message name="QueryUserAccountExistedRequest">
+ <part name="email" type="xsd:string"/><!-- ns__QueryUserAccountExisted::email -->
+</message>
+
+<message name="QueryUserAccountExistedResponse">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserAccountExisted::userid -->
+</message>
+
+<message name="QueryBatchUserAccountExistedRequest">
+ <part name="xmlemails" type="xsd:string"/><!-- ns__QueryBatchUserAccountExisted::xmlemails -->
+</message>
+
+<message name="QueryBatchUserAccountExistedResponse">
+ <part name="xmlResult" type="xsd:string"/><!-- ns__QueryBatchUserAccountExisted::xmlResult -->
+</message>
+
+<message name="QueryUserConciseInfoRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserConciseInfo::userid -->
+</message>
+
+<message name="QueryUserConciseInfoResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryUserConciseInfo::xmlinfo -->
+</message>
+
+<message name="QueryUserDetailInfoRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserDetailInfo::userid -->
+</message>
+
+<message name="QueryUserDetailInfoResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryUserDetailInfo::xmlinfo -->
+</message>
+
+<message name="UpdateUserPwdRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__UpdateUserPwd::userid -->
+ <part name="pwd" type="xsd:string"/><!-- ns__UpdateUserPwd::pwd -->
+</message>
+
+<message name="UpdateUserPwdResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__UpdateUserPwd::nResult -->
+</message>
+
+<message name="UpdateUserInfoRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__UpdateUserInfo::userid -->
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__UpdateUserInfo::xmlinfo -->
+</message>
+
+<message name="UpdateUserInfoResponse">
+ <part name="nResult" type="xsd:int"/><!-- ns__UpdateUserInfo::nResult -->
+</message>
+
+<message name="QueryUsersRequest">
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUsers::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__QueryUsers::count -->
+</message>
+
+<message name="QueryUsersResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryUsers::xml -->
+</message>
+
+<message name="QueryUsersTotalCountRequest">
+</message>
+
+<message name="QueryUsersTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUsersTotalCount::count -->
+</message>
+
+<message name="FuzzyQueryUserByConditionRequest">
+ <part name="condition" type="xsd:int"/><!-- ns__FuzzyQueryUserByCondition::condition -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQueryUserByCondition::value -->
+ <part name="starindex" type="xsd:int"/><!-- ns__FuzzyQueryUserByCondition::starindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__FuzzyQueryUserByCondition::limitcount -->
+</message>
+
+<message name="FuzzyQueryUserByConditionResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__FuzzyQueryUserByCondition::xml -->
+</message>
+
+<message name="FuzzyQueryUserCountByConditionRequest">
+ <part name="condition" type="xsd:int"/><!-- ns__FuzzyQueryUserCountByCondition::condition -->
+ <part name="value" type="xsd:string"/><!-- ns__FuzzyQueryUserCountByCondition::value -->
+</message>
+
+<message name="FuzzyQueryUserCountByConditionResponse">
+ <part name="count" type="xsd:int"/><!-- ns__FuzzyQueryUserCountByCondition::count -->
+</message>
+
+<message name="QueryOrgUserExistedRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryOrgUserExisted::userid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgUserExisted::orgid -->
+</message>
+
+<message name="QueryOrgUserExistedResponse">
+ <part name="bExisted" type="xsd:boolean"/><!-- ns__QueryOrgUserExisted::bExisted -->
+</message>
+
+<message name="AddSMSAccountRequest">
+ <part name="host" type="xsd:string"/><!-- ns__AddSMSAccount::host -->
+ <part name="corpid" type="xsd:string"/><!-- ns__AddSMSAccount::corpid -->
+ <part name="loginname" type="xsd:string"/><!-- ns__AddSMSAccount::loginname -->
+ <part name="pwd" type="xsd:string"/><!-- ns__AddSMSAccount::pwd -->
+</message>
+
+<message name="AddSMSAccountResponse">
+ <part name="smsid" type="xsd:long"/><!-- ns__AddSMSAccount::smsid -->
+</message>
+
+<message name="AddOrgSMSAccountRequest">
+ <part name="smsid" type="xsd:long"/><!-- ns__AddOrgSMSAccount::smsid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddOrgSMSAccount::orgid -->
+</message>
+
+<message name="AddOrgSMSAccountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddOrgSMSAccount::result -->
+</message>
+
+<message name="AddUserSMSAddNORequest">
+ <part name="users" type="xsd:string"/><!-- ns__AddUserSMSAddNO::users -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddUserSMSAddNO::orgid -->
+</message>
+
+<message name="AddUserSMSAddNOResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__AddUserSMSAddNO::xml -->
+</message>
+
+<message name="QueryOrgSMSAccountRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgSMSAccount::orgid -->
+</message>
+
+<message name="QueryOrgSMSAccountResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryOrgSMSAccount::xml -->
+</message>
+
+<message name="QueryUserSMSInfoRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserSMSInfo::userid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryUserSMSInfo::orgid -->
+</message>
+
+<message name="QueryUserSMSInfoResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryUserSMSInfo::xml -->
+</message>
+
+<message name="QuerySMSAccountRequest">
+ <part name="smsid" type="xsd:long"/><!-- ns__QuerySMSAccount::smsid -->
+</message>
+
+<message name="QuerySMSAccountResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QuerySMSAccount::xml -->
+</message>
+
+<message name="UpdateSMSAccountRequest">
+ <part name="smsid" type="xsd:long"/><!-- ns__UpdateSMSAccount::smsid -->
+ <part name="host" type="xsd:string"/><!-- ns__UpdateSMSAccount::host -->
+ <part name="corpid" type="xsd:string"/><!-- ns__UpdateSMSAccount::corpid -->
+ <part name="loginname" type="xsd:string"/><!-- ns__UpdateSMSAccount::loginname -->
+ <part name="pwd" type="xsd:string"/><!-- ns__UpdateSMSAccount::pwd -->
+</message>
+
+<message name="UpdateSMSAccountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__UpdateSMSAccount::result -->
+</message>
+
+<message name="DelSMSAccountRequest">
+ <part name="smsid" type="xsd:long"/><!-- ns__DelSMSAccount::smsid -->
+</message>
+
+<message name="DelSMSAccountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelSMSAccount::result -->
+</message>
+
+<message name="DelOrgSMSAccountRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__DelOrgSMSAccount::orgid -->
+ <part name="smsid" type="xsd:long"/><!-- ns__DelOrgSMSAccount::smsid -->
+</message>
+
+<message name="DelOrgSMSAccountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelOrgSMSAccount::result -->
+</message>
+
+<message name="DelUserSMSRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__DelUserSMS::userid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__DelUserSMS::orgid -->
+</message>
+
+<message name="DelUserSMSResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelUserSMS::result -->
+</message>
+
+<message name="QueryAllSMSAccountRequest">
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryAllSMSAccount::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryAllSMSAccount::limitcount -->
+</message>
+
+<message name="QueryAllSMSAccountResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryAllSMSAccount::xml -->
+</message>
+
+<message name="QueryAllSMSAccountCountRequest">
+</message>
+
+<message name="QueryAllSMSAccountCountResponse">
+ <part name="result" type="xsd:int"/><!-- ns__QueryAllSMSAccountCount::result -->
+</message>
+
+<message name="QueryUserCallRecordByTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserCallRecordByTime::userid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryUserCallRecordByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryUserCallRecordByTime::endTime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserCallRecordByTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserCallRecordByTime::limitcount -->
+</message>
+
+<message name="QueryUserCallRecordByTimeResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryUserCallRecordByTime::xmlinfo -->
+</message>
+
+<message name="QueryUserCallRecordCountByTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserCallRecordCountByTime::userid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryUserCallRecordCountByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryUserCallRecordCountByTime::endTime -->
+</message>
+
+<message name="QueryUserCallRecordCountByTimeResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserCallRecordCountByTime::count -->
+</message>
+
+<message name="QueryUserSMSRecordByTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserSMSRecordByTime::userid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryUserSMSRecordByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryUserSMSRecordByTime::endTime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserSMSRecordByTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryUserSMSRecordByTime::limitcount -->
+</message>
+
+<message name="QueryUserSMSRecordByTimeResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryUserSMSRecordByTime::xmlinfo -->
+</message>
+
+<message name="QueryUserSMSRecodCountByTimeRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserSMSRecodCountByTime::userid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryUserSMSRecodCountByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryUserSMSRecodCountByTime::endTime -->
+</message>
+
+<message name="QueryUserSMSRecodCountByTimeResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserSMSRecodCountByTime::count -->
+</message>
+
+<message name="QueryOrgCallRecordsByTimeRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgCallRecordsByTime::orgid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryOrgCallRecordsByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryOrgCallRecordsByTime::endTime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryOrgCallRecordsByTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryOrgCallRecordsByTime::limitcount -->
+</message>
+
+<message name="QueryOrgCallRecordsByTimeResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryOrgCallRecordsByTime::xmlinfo -->
+</message>
+
+<message name="QueryOrgCallRecordsCountByTimeRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgCallRecordsCountByTime::orgid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryOrgCallRecordsCountByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryOrgCallRecordsCountByTime::endTime -->
+</message>
+
+<message name="QueryOrgCallRecordsCountByTimeResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryOrgCallRecordsCountByTime::count -->
+</message>
+
+<message name="QueryOrgSMSRecordsByTimeRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsByTime::orgid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsByTime::endTime -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryOrgSMSRecordsByTime::startindex -->
+ <part name="limitcount" type="xsd:int"/><!-- ns__QueryOrgSMSRecordsByTime::limitcount -->
+</message>
+
+<message name="QueryOrgSMSRecordsByTimeResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryOrgSMSRecordsByTime::xmlinfo -->
+</message>
+
+<message name="QueryOrgSMSRecordsCountByTimeRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsCountByTime::orgid -->
+ <part name="beginTime" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsCountByTime::beginTime -->
+ <part name="endTime" type="xsd:long"/><!-- ns__QueryOrgSMSRecordsCountByTime::endTime -->
+</message>
+
+<message name="QueryOrgSMSRecordsCountByTimeResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryOrgSMSRecordsCountByTime::count -->
+</message>
+
+<message name="QueryUserAdministrableAnnouncementRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__QueryUserAdministrableAnnouncement::logintype -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryUserAdministrableAnnouncement::orgid -->
+ <part name="creatorid" type="xsd:long"/><!-- ns__QueryUserAdministrableAnnouncement::creatorid -->
+ <part name="startindex" type="xsd:int"/><!-- ns__QueryUserAdministrableAnnouncement::startindex -->
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserAdministrableAnnouncement::count -->
+</message>
+
+<message name="QueryUserAdministrableAnnouncementResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryUserAdministrableAnnouncement::xml -->
+</message>
+
+<message name="QueryUserAdministrableAnnouncementTotalCountRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__QueryUserAdministrableAnnouncementTotalCount::logintype -->
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryUserAdministrableAnnouncementTotalCount::orgid -->
+ <part name="creatorid" type="xsd:long"/><!-- ns__QueryUserAdministrableAnnouncementTotalCount::creatorid -->
+</message>
+
+<message name="QueryUserAdministrableAnnouncementTotalCountResponse">
+ <part name="count" type="xsd:int"/><!-- ns__QueryUserAdministrableAnnouncementTotalCount::count -->
+</message>
+
+<message name="QueryAnnouncementInfoRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__QueryAnnouncementInfo::logintype -->
+ <part name="annid" type="xsd:long"/><!-- ns__QueryAnnouncementInfo::annid -->
+</message>
+
+<message name="QueryAnnouncementInfoResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryAnnouncementInfo::xml -->
+</message>
+
+<message name="QueryAnnounceOrgDeptsRequest">
+ <part name="annid" type="xsd:int"/><!-- ns__QueryAnnounceOrgDepts::annid -->
+</message>
+
+<message name="QueryAnnounceOrgDeptsResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__QueryAnnounceOrgDepts::xml -->
+</message>
+
+<message name="AddAnnouncementRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__AddAnnouncement::logintype -->
+ <part name="xml" type="xsd:string"/><!-- ns__AddAnnouncement::xml -->
+</message>
+
+<message name="AddAnnouncementResponse">
+ <part name="annid" type="xsd:long"/><!-- ns__AddAnnouncement::annid -->
+</message>
+
+<message name="AddAnnounceDeptsRequest">
+ <part name="depts" type="xsd:string"/><!-- ns__AddAnnounceDepts::depts -->
+ <part name="orgid" type="xsd:long"/><!-- ns__AddAnnounceDepts::orgid -->
+ <part name="annid" type="xsd:long"/><!-- ns__AddAnnounceDepts::annid -->
+</message>
+
+<message name="AddAnnounceDeptsResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddAnnounceDepts::result -->
+</message>
+
+<message name="UpdateAnnouncementRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__UpdateAnnouncement::logintype -->
+ <part name="annid" type="xsd:long"/><!-- ns__UpdateAnnouncement::annid -->
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__UpdateAnnouncement::xmlinfo -->
+</message>
+
+<message name="UpdateAnnouncementResponse">
+ <part name="result" type="xsd:int"/><!-- ns__UpdateAnnouncement::result -->
+</message>
+
+<message name="DelAnnounceDeptsRequest">
+ <part name="deptset" type="xsd:string"/><!-- ns__DelAnnounceDepts::deptset -->
+ <part name="annid" type="xsd:long"/><!-- ns__DelAnnounceDepts::annid -->
+ <part name="orgid" type="xsd:long"/><!-- ns__DelAnnounceDepts::orgid -->
+</message>
+
+<message name="DelAnnounceDeptsResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelAnnounceDepts::result -->
+</message>
+
+<message name="DelAnnoucementRequest">
+ <part name="logintype" type="xsd:int"/><!-- ns__DelAnnoucement::logintype -->
+ <part name="annidset" type="xsd:string"/><!-- ns__DelAnnoucement::annidset -->
+</message>
+
+<message name="DelAnnoucementResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelAnnoucement::result -->
+</message>
+
+<message name="IssueAnnouncementRequest">
+ <part name="annidset" type="xsd:string"/><!-- ns__IssueAnnouncement::annidset -->
+ <part name="logintype" type="xsd:int"/><!-- ns__IssueAnnouncement::logintype -->
+</message>
+
+<message name="IssueAnnouncementResponse">
+ <part name="result" type="xsd:int"/><!-- ns__IssueAnnouncement::result -->
+</message>
+
+<message name="AddFileBoxsRequest">
+ <part name="xmlBoxsInfo" type="xsd:string"/><!-- ns__AddFileBoxs::xmlBoxsInfo -->
+</message>
+
+<message name="AddFileBoxsResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddFileBoxs::result -->
+</message>
+
+<message name="QueryOrgFileBoxRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgFileBox::orgid -->
+</message>
+
+<message name="QueryOrgFileBoxResponse">
+ <part name="xmlBox" type="xsd:string"/><!-- ns__QueryOrgFileBox::xmlBox -->
+</message>
+
+<message name="QueryFileBoxRequest">
+ <part name="id" type="xsd:long"/><!-- ns__QueryFileBox::id -->
+ <part name="boxtype" type="xsd:int"/><!-- ns__QueryFileBox::boxtype -->
+</message>
+
+<message name="QueryFileBoxResponse">
+ <part name="xmlBox" type="xsd:string"/><!-- ns__QueryFileBox::xmlBox -->
+</message>
+
+<message name="DelFileBoxRequest">
+ <part name="boxid" type="xsd:long"/><!-- ns__DelFileBox::boxid -->
+</message>
+
+<message name="DelFileBoxResponse">
+ <part name="result" type="xsd:int"/><!-- ns__DelFileBox::result -->
+</message>
+
+<message name="AddAdminFileBoxResourceRequest">
+ <part name="xmlresource" type="xsd:string"/><!-- ns__AddAdminFileBoxResource::xmlresource -->
+</message>
+
+<message name="AddAdminFileBoxResourceResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddAdminFileBoxResource::result -->
+</message>
+
+<message name="QueryAdminFileBoxResourceRequest">
+ <part name="adminid" type="xsd:long"/><!-- ns__QueryAdminFileBoxResource::adminid -->
+</message>
+
+<message name="QueryAdminFileBoxResourceResponse">
+ <part name="xmlresource" type="xsd:string"/><!-- ns__QueryAdminFileBoxResource::xmlresource -->
+</message>
+
+<message name="AddAdminRequest">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__AddAdmin::xmlinfo -->
+</message>
+
+<message name="AddAdminResponse">
+ <part name="result" type="xsd:long"/><!-- ns__AddAdmin::result -->
+</message>
+
+<message name="AdminLoginRequest">
+ <part name="username" type="xsd:string"/><!-- ns__AdminLogin::username -->
+ <part name="pwd" type="xsd:string"/><!-- ns__AdminLogin::pwd -->
+</message>
+
+<message name="AdminLoginResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__AdminLogin::xml -->
+</message>
+
+<message name="QueryAdminInfoRequest">
+ <part name="id" type="xsd:long"/><!-- ns__QueryAdminInfo::id -->
+</message>
+
+<message name="QueryAdminInfoResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryAdminInfo::xmlinfo -->
+</message>
+
+<message name="QueryAdminByNameRequest">
+ <part name="username" type="xsd:string"/><!-- ns__QueryAdminByName::username -->
+</message>
+
+<message name="QueryAdminByNameResponse">
+ <part name="xmlinfo" type="xsd:string"/><!-- ns__QueryAdminByName::xmlinfo -->
+</message>
+
+<message name="QueryAdminAccountExistedRequest">
+ <part name="username" type="xsd:string"/><!-- ns__QueryAdminAccountExisted::username -->
+</message>
+
+<message name="QueryAdminAccountExistedResponse">
+ <part name="result" type="xsd:int"/><!-- ns__QueryAdminAccountExisted::result -->
+</message>
+
+<message name="UpdateAdminInfoRequest">
+ <part name="adminid" type="xsd:long"/><!-- ns__UpdateAdminInfo::adminid -->
+ <part name="xml" type="xsd:string"/><!-- ns__UpdateAdminInfo::xml -->
+</message>
+
+<message name="UpdateAdminInfoResponse">
+ <part name="result" type="xsd:int"/><!-- ns__UpdateAdminInfo::result -->
+</message>
+
+<message name="QueryAdminOrgInfoRequest">
+ <part name="id" type="xsd:long"/><!-- ns__QueryAdminOrgInfo::id -->
+</message>
+
+<message name="QueryAdminOrgInfoResponse">
+ <part name="xmlorginfo" type="xsd:string"/><!-- ns__QueryAdminOrgInfo::xmlorginfo -->
+</message>
+
+<message name="QueryAdminSubordinateRequest">
+ <part name="adminid" type="xsd:long"/><!-- ns__QueryAdminSubordinate::adminid -->
+</message>
+
+<message name="QueryAdminSubordinateResponse">
+ <part name="xmlsubadmininfo" type="xsd:string"/><!-- ns__QueryAdminSubordinate::xmlsubadmininfo -->
+</message>
+
+<message name="AddUserPermissionRequest">
+ <part name="userspermission" type="xsd:string"/><!-- ns__AddUserPermission::userspermission -->
+</message>
+
+<message name="AddUserPermissionResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddUserPermission::result -->
+</message>
+
+<message name="QueryUserPermissionRequest">
+ <part name="userid" type="xsd:long"/><!-- ns__QueryUserPermission::userid -->
+</message>
+
+<message name="QueryUserPermissionResponse">
+ <part name="xmlresult" type="xsd:string"/><!-- ns__QueryUserPermission::xmlresult -->
+</message>
+
+<message name="UpdateUserPermissionRequest">
+ <part name="userspermissionxml" type="xsd:string"/><!-- ns__UpdateUserPermission::userspermissionxml -->
+</message>
+
+<message name="UpdateUserPermissionResponse">
+ <part name="result" type="xsd:int"/><!-- ns__UpdateUserPermission::result -->
+</message>
+
+<message name="UserLoginRequest">
+ <part name="username" type="xsd:string"/><!-- ns__UserLogin::username -->
+ <part name="pass" type="xsd:string"/><!-- ns__UserLogin::pass -->
+</message>
+
+<message name="UserLoginResponse">
+ <part name="xml" type="xsd:string"/><!-- ns__UserLogin::xml -->
+</message>
+
+<message name="AddOrgPermissionRequest">
+ <part name="orgpermission" type="xsd:string"/><!-- ns__AddOrgPermission::orgpermission -->
+</message>
+
+<message name="AddOrgPermissionResponse">
+ <part name="result" type="xsd:int"/><!-- ns__AddOrgPermission::result -->
+</message>
+
+<message name="QueryOrgPermissionRequest">
+ <part name="orgid" type="xsd:long"/><!-- ns__QueryOrgPermission::orgid -->
+</message>
+
+<message name="QueryOrgPermissionResponse">
+ <part name="xmlresult" type="xsd:string"/><!-- ns__QueryOrgPermission::xmlresult -->
+</message>
+
+<message name="UpdateOrgPermissionRequest">
+ <part name="orgpermissionxml" type="xsd:string"/><!-- ns__UpdateOrgPermission::orgpermissionxml -->
+</message>
+
+<message name="UpdateOrgPermissionResponse">
+ <part name="result" type="xsd:int"/><!-- ns__UpdateOrgPermission::result -->
+</message>
+
+<message name="QueryConsumeResourceRequest">
+</message>
+
+<message name="QueryConsumeResourceResponse">
+ <part name="xmlResult" type="xsd:string"/><!-- ns__QueryConsumeResource::xmlResult -->
+</message>
+
+<message name="ConnectMasterServerRequest">
+ <part name="DomainId" type="xsd:int"/><!-- ns__ConnectMasterServer::DomainId -->
+ <part name="sServerIp" type="xsd:string"/><!-- ns__ConnectMasterServer::sServerIp -->
+ <part name="port" type="xsd:int"/><!-- ns__ConnectMasterServer::port -->
+ <part name="password" type="xsd:string"/><!-- ns__ConnectMasterServer::password -->
+</message>
+
+<message name="ConnectMasterServerResponse">
+ <part name="sDomainName" type="xsd:string"/><!-- ns__ConnectMasterServer::sDomainName -->
+</message>
+
+<message name="DisConnectMasterServerRequest">
+</message>
+
+<message name="DisConnectMasterServerResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__DisConnectMasterServer::bRet -->
+</message>
+
+<message name="QueryMasterConnectionRequest">
+</message>
+
+<message name="QueryMasterConnectionResponse">
+ <part name="nStatus" type="xsd:int"/><!-- ns__QueryMasterConnection::nStatus -->
+</message>
+
+<message name="ChangeDomainIdRequest">
+</message>
+
+<message name="ChangeDomainIdResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__ChangeDomainId::bRet -->
+</message>
+
+<message name="QueryDomainNameRequest">
+</message>
+
+<message name="QueryDomainNameResponse">
+ <part name="sDomainName" type="xsd:string"/><!-- ns__QueryDomainName::sDomainName -->
+</message>
+
+<message name="NotifyCloseServerRequest">
+</message>
+
+<message name="NotifyCloseServerResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__NotifyCloseServer::bRet -->
+</message>
+
+<message name="NotifyStartServerRequest">
+</message>
+
+<message name="NotifyStartServerResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__NotifyStartServer::bRet -->
+</message>
+
+<message name="NotifyAuthCompleteRequest">
+ <part name="sAuthInfoXml" type="xsd:string"/><!-- ns__NotifyAuthComplete::sAuthInfoXml -->
+</message>
+
+<message name="NotifyAuthCompleteResponse">
+ <part name="sRetXml" type="xsd:string"/><!-- ns__NotifyAuthComplete::sRetXml -->
+</message>
+
+<message name="AdjustPermissionRequest">
+</message>
+
+<message name="AdjustPermissionResponse">
+ <part name="sRetXml" type="xsd:string"/><!-- ns__AdjustPermission::sRetXml -->
+</message>
+
+<message name="QueryDongleRequest">
+</message>
+
+<message name="QueryDongleResponse">
+ <part name="sRetXml" type="xsd:string"/><!-- ns__QueryDongle::sRetXml -->
+</message>
+
+<message name="PushMessageRequest">
+ <part name="nID" type="xsd:long"/><!-- ns__PushMessage::nID -->
+ <part name="sXML" type="xsd:string"/><!-- ns__PushMessage::sXML -->
+</message>
+
+<message name="PushMessageResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__PushMessage::bRet -->
+</message>
+
+<message name="DelBlackListRequest">
+ <part name="nSrcUserID" type="xsd:long"/><!-- ns__DelBlackList::nSrcUserID -->
+ <part name="nDstUserID" type="xsd:long"/><!-- ns__DelBlackList::nDstUserID -->
+</message>
+
+<message name="DelBlackListResponse">
+ <part name="bRet" type="xsd:boolean"/><!-- ns__DelBlackList::bRet -->
+</message>
+
+<portType name="ConfWebServiceInterfacePortType">
+ <operation name="CreateConf">
+  <documentation>Service definition of function ns__CreateConf</documentation>
+  <input message="tns:CreateConfRequest"/>
+  <output message="tns:CreateConfResponse"/>
+ </operation>
+ <operation name="AddConfParticipant">
+  <documentation>Service definition of function ns__AddConfParticipant</documentation>
+  <input message="tns:AddConfParticipantRequest"/>
+  <output message="tns:AddConfParticipantResponse"/>
+ </operation>
+ <operation name="DelConfParticipants">
+  <documentation>Service definition of function ns__DelConfParticipants</documentation>
+  <input message="tns:DelConfParticipantsRequest"/>
+  <output message="tns:DelConfParticipantsResponse"/>
+ </operation>
+ <operation name="DestroyConf">
+  <documentation>Service definition of function ns__DestroyConf</documentation>
+  <input message="tns:DestroyConfRequest"/>
+  <output message="tns:DestroyConfResponse"/>
+ </operation>
+ <operation name="QueryConf">
+  <documentation>Service definition of function ns__QueryConf</documentation>
+  <input message="tns:QueryConfRequest"/>
+  <output message="tns:QueryConfResponse"/>
+ </operation>
+ <operation name="QueryConfParticipants">
+  <documentation>Service definition of function ns__QueryConfParticipants</documentation>
+  <input message="tns:QueryConfParticipantsRequest"/>
+  <output message="tns:QueryConfParticipantsResponse"/>
+ </operation>
+ <operation name="UpdateConfInfo">
+  <documentation>Service definition of function ns__UpdateConfInfo</documentation>
+  <input message="tns:UpdateConfInfoRequest"/>
+  <output message="tns:UpdateConfInfoResponse"/>
+ </operation>
+ <operation name="QueryUserConfAccessible">
+  <documentation>Service definition of function ns__QueryUserConfAccessible</documentation>
+  <input message="tns:QueryUserConfAccessibleRequest"/>
+  <output message="tns:QueryUserConfAccessibleResponse"/>
+ </operation>
+ <operation name="QueryUserConfAccessibleTotalCount">
+  <documentation>Service definition of function ns__QueryUserConfAccessibleTotalCount</documentation>
+  <input message="tns:QueryUserConfAccessibleTotalCountRequest"/>
+  <output message="tns:QueryUserConfAccessibleTotalCountResponse"/>
+ </operation>
+ <operation name="QueryUserAccessibleConfByTimeInterval">
+  <documentation>Service definition of function ns__QueryUserAccessibleConfByTimeInterval</documentation>
+  <input message="tns:QueryUserAccessibleConfByTimeIntervalRequest"/>
+  <output message="tns:QueryUserAccessibleConfByTimeIntervalResponse"/>
+ </operation>
+ <operation name="QueryUserAccessbileConfByTimeIntervalTotalCount">
+  <documentation>Service definition of function ns__QueryUserAccessbileConfByTimeIntervalTotalCount</documentation>
+  <input message="tns:QueryUserAccessbileConfByTimeIntervalTotalCountRequest"/>
+  <output message="tns:QueryUserAccessbileConfByTimeIntervalTotalCountResponse"/>
+ </operation>
+ <operation name="QueryUserAccessibleConfByStartTime">
+  <documentation>Service definition of function ns__QueryUserAccessibleConfByStartTime</documentation>
+  <input message="tns:QueryUserAccessibleConfByStartTimeRequest"/>
+  <output message="tns:QueryUserAccessibleConfByStartTimeResponse"/>
+ </operation>
+ <operation name="QueryUserAccessbileConfByStartTimeTotalCount">
+  <documentation>Service definition of function ns__QueryUserAccessbileConfByStartTimeTotalCount</documentation>
+  <input message="tns:QueryUserAccessbileConfByStartTimeTotalCountRequest"/>
+  <output message="tns:QueryUserAccessbileConfByStartTimeTotalCountResponse"/>
+ </operation>
+ <operation name="QueryUserAccessibleConfByTime">
+  <documentation>Service definition of function ns__QueryUserAccessibleConfByTime</documentation>
+  <input message="tns:QueryUserAccessibleConfByTimeRequest"/>
+  <output message="tns:QueryUserAccessibleConfByTimeResponse"/>
+ </operation>
+ <operation name="QueryUserAccessbileConfByTimeTotalCount">
+  <documentation>Service definition of function ns__QueryUserAccessbileConfByTimeTotalCount</documentation>
+  <input message="tns:QueryUserAccessbileConfByTimeTotalCountRequest"/>
+  <output message="tns:QueryUserAccessbileConfByTimeTotalCountResponse"/>
+ </operation>
+ <operation name="QueryOrgConfByStartTime">
+  <documentation>Service definition of function ns__QueryOrgConfByStartTime</documentation>
+  <input message="tns:QueryOrgConfByStartTimeRequest"/>
+  <output message="tns:QueryOrgConfByStartTimeResponse"/>
+ </operation>
+ <operation name="QueryOrgConfByStartTimeTotalCount">
+  <documentation>Service definition of function ns__QueryOrgConfByStartTimeTotalCount</documentation>
+  <input message="tns:QueryOrgConfByStartTimeTotalCountRequest"/>
+  <output message="tns:QueryOrgConfByStartTimeTotalCountResponse"/>
+ </operation>
+ <operation name="AddOrganization">
+  <documentation>Service definition of function ns__AddOrganization</documentation>
+  <input message="tns:AddOrganizationRequest"/>
+  <output message="tns:AddOrganizationResponse"/>
+ </operation>
+ <operation name="AddDepartment">
+  <documentation>Service definition of function ns__AddDepartment</documentation>
+  <input message="tns:AddDepartmentRequest"/>
+  <output message="tns:AddDepartmentResponse"/>
+ </operation>
+ <operation name="AddDeparmtmentUser">
+  <documentation>Service definition of function ns__AddDeparmtmentUser</documentation>
+  <input message="tns:AddDeparmtmentUserRequest"/>
+  <output message="tns:AddDeparmtmentUserResponse"/>
+ </operation>
+ <operation name="AddDepartmentBatchUser">
+  <documentation>Service definition of function ns__AddDepartmentBatchUser</documentation>
+  <input message="tns:AddDepartmentBatchUserRequest"/>
+  <output message="tns:AddDepartmentBatchUserResponse"/>
+ </operation>
+ <operation name="QueryOrgDepts">
+  <documentation>Service definition of function ns__QueryOrgDepts</documentation>
+  <input message="tns:QueryOrgDeptsRequest"/>
+  <output message="tns:QueryOrgDeptsResponse"/>
+ </operation>
+ <operation name="QueryUserAccessibleDepts">
+  <documentation>Service definition of function ns__QueryUserAccessibleDepts</documentation>
+  <input message="tns:QueryUserAccessibleDeptsRequest"/>
+  <output message="tns:QueryUserAccessibleDeptsResponse"/>
+ </operation>
+ <operation name="QueryDeptsOfDeptManager">
+  <documentation>Service definition of function ns__QueryDeptsOfDeptManager</documentation>
+  <input message="tns:QueryDeptsOfDeptManagerRequest"/>
+  <output message="tns:QueryDeptsOfDeptManagerResponse"/>
+ </operation>
+ <operation name="DeptSortOperationBatch">
+  <documentation>Service definition of function ns__DeptSortOperationBatch</documentation>
+  <input message="tns:DeptSortOperationBatchRequest"/>
+  <output message="tns:DeptSortOperationBatchResponse"/>
+ </operation>
+ <operation name="DeptMembersSortOperationBatch">
+  <documentation>Service definition of function ns__DeptMembersSortOperationBatch</documentation>
+  <input message="tns:DeptMembersSortOperationBatchRequest"/>
+  <output message="tns:DeptMembersSortOperationBatchResponse"/>
+ </operation>
+ <operation name="QueryDeptInfo">
+  <documentation>Service definition of function ns__QueryDeptInfo</documentation>
+  <input message="tns:QueryDeptInfoRequest"/>
+  <output message="tns:QueryDeptInfoResponse"/>
+ </operation>
+ <operation name="QueryDeptManagerLogin">
+  <documentation>Service definition of function ns__QueryDeptManagerLogin</documentation>
+  <input message="tns:QueryDeptManagerLoginRequest"/>
+  <output message="tns:QueryDeptManagerLoginResponse"/>
+ </operation>
+ <operation name="QueryDeptManagersInfo">
+  <documentation>Service definition of function ns__QueryDeptManagersInfo</documentation>
+  <input message="tns:QueryDeptManagersInfoRequest"/>
+  <output message="tns:QueryDeptManagersInfoResponse"/>
+ </operation>
+ <operation name="AddDeptManager">
+  <documentation>Service definition of function ns__AddDeptManager</documentation>
+  <input message="tns:AddDeptManagerRequest"/>
+  <output message="tns:AddDeptManagerResponse"/>
+ </operation>
+ <operation name="DelDeptManager">
+  <documentation>Service definition of function ns__DelDeptManager</documentation>
+  <input message="tns:DelDeptManagerRequest"/>
+  <output message="tns:DelDeptManagerResponse"/>
+ </operation>
+ <operation name="DelDeptManagerByDeptId">
+  <documentation>Service definition of function ns__DelDeptManagerByDeptId</documentation>
+  <input message="tns:DelDeptManagerByDeptIdRequest"/>
+  <output message="tns:DelDeptManagerByDeptIdResponse"/>
+ </operation>
+ <operation name="DelAllDeptManagerByUserId">
+  <documentation>Service definition of function ns__DelAllDeptManagerByUserId</documentation>
+  <input message="tns:DelAllDeptManagerByUserIdRequest"/>
+  <output message="tns:DelAllDeptManagerByUserIdResponse"/>
+ </operation>
+ <operation name="IsDeptManager">
+  <documentation>Service definition of function ns__IsDeptManager</documentation>
+  <input message="tns:IsDeptManagerRequest"/>
+  <output message="tns:IsDeptManagerResponse"/>
+ </operation>
+ <operation name="QueryAncestorManagerOfUser">
+  <documentation>Service definition of function ns__QueryAncestorManagerOfUser</documentation>
+  <input message="tns:QueryAncestorManagerOfUserRequest"/>
+  <output message="tns:QueryAncestorManagerOfUserResponse"/>
+ </operation>
+ <operation name="QueryChildManagerOfUser">
+  <documentation>Service definition of function ns__QueryChildManagerOfUser</documentation>
+  <input message="tns:QueryChildManagerOfUserRequest"/>
+  <output message="tns:QueryChildManagerOfUserResponse"/>
+ </operation>
+ <operation name="IsChildDept">
+  <documentation>Service definition of function ns__IsChildDept</documentation>
+  <input message="tns:IsChildDeptRequest"/>
+  <output message="tns:IsChildDeptResponse"/>
+ </operation>
+ <operation name="IsDeptManagerById">
+  <documentation>Service definition of function ns__IsDeptManagerById</documentation>
+  <input message="tns:IsDeptManagerByIdRequest"/>
+  <output message="tns:IsDeptManagerByIdResponse"/>
+ </operation>
+ <operation name="QueryDeptManagerInfo">
+  <documentation>Service definition of function ns__QueryDeptManagerInfo</documentation>
+  <input message="tns:QueryDeptManagerInfoRequest"/>
+  <output message="tns:QueryDeptManagerInfoResponse"/>
+ </operation>
+ <operation name="AddSipServer">
+  <documentation>Service definition of function ns__AddSipServer</documentation>
+  <input message="tns:AddSipServerRequest"/>
+  <output message="tns:AddSipServerResponse"/>
+ </operation>
+ <operation name="QuerySipServer">
+  <documentation>Service definition of function ns__QuerySipServer</documentation>
+  <input message="tns:QuerySipServerRequest"/>
+  <output message="tns:QuerySipServerResponse"/>
+ </operation>
+ <operation name="DelSipServer">
+  <documentation>Service definition of function ns__DelSipServer</documentation>
+  <input message="tns:DelSipServerRequest"/>
+  <output message="tns:DelSipServerResponse"/>
+ </operation>
+ <operation name="UpdateSipServer">
+  <documentation>Service definition of function ns__UpdateSipServer</documentation>
+  <input message="tns:UpdateSipServerRequest"/>
+  <output message="tns:UpdateSipServerResponse"/>
+ </operation>
+ <operation name="IsSipExtNumOccupied">
+  <documentation>Service definition of function ns__IsSipExtNumOccupied</documentation>
+  <input message="tns:IsSipExtNumOccupiedRequest"/>
+  <output message="tns:IsSipExtNumOccupiedResponse"/>
+ </operation>
+ <operation name="QuerySubDeptTotalCount">
+  <documentation>Service definition of function ns__QuerySubDeptTotalCount</documentation>
+  <input message="tns:QuerySubDeptTotalCountRequest"/>
+  <output message="tns:QuerySubDeptTotalCountResponse"/>
+ </operation>
+ <operation name="QuerySubDepts">
+  <documentation>Service definition of function ns__QuerySubDepts</documentation>
+  <input message="tns:QuerySubDeptsRequest"/>
+  <output message="tns:QuerySubDeptsResponse"/>
+ </operation>
+ <operation name="QueryAllSubDepts">
+  <documentation>Service definition of function ns__QueryAllSubDepts</documentation>
+  <input message="tns:QueryAllSubDeptsRequest"/>
+  <output message="tns:QueryAllSubDeptsResponse"/>
+ </operation>
+ <operation name="QueryDeptMember">
+  <documentation>Service definition of function ns__QueryDeptMember</documentation>
+  <input message="tns:QueryDeptMemberRequest"/>
+  <output message="tns:QueryDeptMemberResponse"/>
+ </operation>
+ <operation name="QueryDeptMemberTotalCount">
+  <documentation>Service definition of function ns__QueryDeptMemberTotalCount</documentation>
+  <input message="tns:QueryDeptMemberTotalCountRequest"/>
+  <output message="tns:QueryDeptMemberTotalCountResponse"/>
+ </operation>
+ <operation name="DelOrganization">
+  <documentation>Service definition of function ns__DelOrganization</documentation>
+  <input message="tns:DelOrganizationRequest"/>
+  <output message="tns:DelOrganizationResponse"/>
+ </operation>
+ <operation name="DelDepartment">
+  <documentation>Service definition of function ns__DelDepartment</documentation>
+  <input message="tns:DelDepartmentRequest"/>
+  <output message="tns:DelDepartmentResponse"/>
+ </operation>
+ <operation name="DelDepartmentUser">
+  <documentation>Service definition of function ns__DelDepartmentUser</documentation>
+  <input message="tns:DelDepartmentUserRequest"/>
+  <output message="tns:DelDepartmentUserResponse"/>
+ </operation>
+ <operation name="DelDepartmentBatchUser">
+  <documentation>Service definition of function ns__DelDepartmentBatchUser</documentation>
+  <input message="tns:DelDepartmentBatchUserRequest"/>
+  <output message="tns:DelDepartmentBatchUserResponse"/>
+ </operation>
+ <operation name="QueryOrganization">
+  <documentation>Service definition of function ns__QueryOrganization</documentation>
+  <input message="tns:QueryOrganization"/>
+  <output message="tns:QueryOrgResponse"/>
+ </operation>
+ <operation name="QueryOrgManager">
+  <documentation>Service definition of function ns__QueryOrgManager</documentation>
+  <input message="tns:QueryOrgManagerRequest"/>
+  <output message="tns:QueryOrgManagerResponse"/>
+ </operation>
+ <operation name="QueryOrgnameExisted">
+  <documentation>Service definition of function ns__QueryOrgnameExisted</documentation>
+  <input message="tns:QueryOrgnameExistedRequest"/>
+  <output message="tns:QueryOrgnameExistedResponse"/>
+ </operation>
+ <operation name="UpdataOrganization">
+  <documentation>Service definition of function ns__UpdataOrganization</documentation>
+  <input message="tns:UpdataOrganizationRequest"/>
+  <output message="tns:UpdataOrganizationResponse"/>
+ </operation>
+ <operation name="UpdateDeptInfo">
+  <documentation>Service definition of function ns__UpdateDeptInfo</documentation>
+  <input message="tns:UpdateDeptInfoRequest"/>
+  <output message="tns:UpdateDeptInfoResponse"/>
+ </operation>
+ <operation name="FuzzyQuerySubDeptsInfo">
+  <documentation>Service definition of function ns__FuzzyQuerySubDeptsInfo</documentation>
+  <input message="tns:FuzzyQuerySubDeptsInfoRequest"/>
+  <output message="tns:FuzzyQuerySubDeptsInfoResponse"/>
+ </operation>
+ <operation name="FuzzyQuerySubDeptsTotalCount">
+  <documentation>Service definition of function ns__FuzzyQuerySubDeptsTotalCount</documentation>
+  <input message="tns:FuzzyQuerySubDeptsTotalCountRequest"/>
+  <output message="tns:FuzzyQuerySubDeptsTotalCountResponse"/>
+ </operation>
+ <operation name="FuzzyQueryDeptMember">
+  <documentation>Service definition of function ns__FuzzyQueryDeptMember</documentation>
+  <input message="tns:FuzzyQueryDeptMemberRequest"/>
+  <output message="tns:FuzzyQueryDeptMemberResponse"/>
+ </operation>
+ <operation name="FuzzyQueryDeptMemberTotalCount">
+  <documentation>Service definition of function ns__FuzzyQueryDeptMemberTotalCount</documentation>
+  <input message="tns:FuzzyQueryDeptMemberTotalCountRequest"/>
+  <output message="tns:FuzzyQueryDeptMemberTotalCountResponse"/>
+ </operation>
+ <operation name="QueryUserDepts">
+  <documentation>Service definition of function ns__QueryUserDepts</documentation>
+  <input message="tns:QueryUserDeptsRequest"/>
+  <output message="tns:QueryUserDeptsResponse"/>
+ </operation>
+ <operation name="QueryUserAccessibleOrganization">
+  <documentation>Service definition of function ns__QueryUserAccessibleOrganization</documentation>
+  <input message="tns:QueryUserAccessibleOrganizationRequest"/>
+  <output message="tns:QueryUserAccessibleOrganizationResponse"/>
+ </operation>
+ <operation name="QueryInvisibleDept">
+  <documentation>Service definition of function ns__QueryInvisibleDept</documentation>
+  <input message="tns:QueryInvisibleDeptRequest"/>
+  <output message="tns:QueryInvisibleDeptResponse"/>
+ </operation>
+ <operation name="AddInvisibleDepts">
+  <documentation>Service definition of function ns__AddInvisibleDepts</documentation>
+  <input message="tns:AddInvisibleDeptsRequest"/>
+  <output message="tns:AddInvisibleDeptsResponse"/>
+ </operation>
+ <operation name="AddBlockedDepts">
+  <documentation>Service definition of function ns__AddBlockedDepts</documentation>
+  <input message="tns:AddBlockedDeptsRequest"/>
+  <output message="tns:AddBlockedDeptsResponse"/>
+ </operation>
+ <operation name="DelInvisibleDepts">
+  <documentation>Service definition of function ns__DelInvisibleDepts</documentation>
+  <input message="tns:DelInvisibleDeptsRequest"/>
+  <output message="tns:DelInvisibleDeptsResponse"/>
+ </operation>
+ <operation name="QueryDeptMemberInDepts">
+  <documentation>Service definition of function ns__QueryDeptMemberInDepts</documentation>
+  <input message="tns:QueryDeptMemberInDeptsRequest"/>
+  <output message="tns:QueryDeptMemberInDeptsResponse"/>
+ </operation>
+ <operation name="QueryDeptMemberInDeptsTotalCount">
+  <documentation>Service definition of function ns__QueryDeptMemberInDeptsTotalCount</documentation>
+  <input message="tns:QueryDeptMemberInDeptsTotalCountRequest"/>
+  <output message="tns:QueryDeptMemberInDeptsTotalCountResponse"/>
+ </operation>
+ <operation name="QueryOrgAllMember">
+  <documentation>Service definition of function ns__QueryOrgAllMember</documentation>
+  <input message="tns:QueryOrgAllMemberRequest"/>
+  <output message="tns:QueryOrgAllMemberResponse"/>
+ </operation>
+ <operation name="QueryOrgAllMemberTotalCount">
+  <documentation>Service definition of function ns__QueryOrgAllMemberTotalCount</documentation>
+  <input message="tns:QueryOrgAllMemberTotalCountRequest"/>
+  <output message="tns:QueryOrgAllMemberTotalCountResponse"/>
+ </operation>
+ <operation name="QueryBlockedDeparts">
+  <documentation>Service definition of function ns__QueryBlockedDeparts</documentation>
+  <input message="tns:QueryBlockedDepartsRequest"/>
+  <output message="tns:QueryBlockedDepartsResponse"/>
+ </operation>
+ <operation name="DelBatchDepartment">
+  <documentation>Service definition of function ns__DelBatchDepartment</documentation>
+  <input message="tns:DelBatchDepartmentRequest"/>
+  <output message="tns:DelBatchDepartmentResponse"/>
+ </operation>
+ <operation name="QueryDeptNameExisted">
+  <documentation>Service definition of function ns__QueryDeptNameExisted</documentation>
+  <input message="tns:QueryDeptNameExistedRequest"/>
+  <output message="tns:QueryDeptNameExistedResponse"/>
+ </operation>
+ <operation name="QueryOrgs">
+  <documentation>Service definition of function ns__QueryOrgs</documentation>
+  <input message="tns:QueryOrgsRequest"/>
+  <output message="tns:QueryOrgsResponse"/>
+ </operation>
+ <operation name="QueryOrgsCount">
+  <documentation>Service definition of function ns__QueryOrgsCount</documentation>
+  <input message="tns:QueryOrgsCountRequest"/>
+  <output message="tns:QueryOrgsCountResponse"/>
+ </operation>
+ <operation name="FuzzyQueryOrgsByName">
+  <documentation>Service definition of function ns__FuzzyQueryOrgsByName</documentation>
+  <input message="tns:FuzzyQueryOrgsByNameRequest"/>
+  <output message="tns:FuzzyQueryOrgsByNameResponse"/>
+ </operation>
+ <operation name="FuzzyQueryOrgsByNameCount">
+  <documentation>Service definition of function ns__FuzzyQueryOrgsByNameCount</documentation>
+  <input message="tns:FuzzyQueryOrgsByNameCountRequest"/>
+  <output message="tns:FuzzyQueryOrgsByNameCountResponse"/>
+ </operation>
+ <operation name="AddBatchUser">
+  <documentation>Service definition of function ns__AddBatchUser</documentation>
+  <input message="tns:AddBatchUserRequest"/>
+  <output message="tns:AddBatchUserResponse"/>
+ </operation>
+ <operation name="AddUser">
+  <documentation>Service definition of function ns__AddUser</documentation>
+  <input message="tns:AddUserRequest"/>
+  <output message="tns:AddUserResponse"/>
+ </operation>
+ <operation name="DelUser">
+  <documentation>Service definition of function ns__DelUser</documentation>
+  <input message="tns:DelUserRequest"/>
+  <output message="tns:DelUserResponse"/>
+ </operation>
+ <operation name="DelUsers">
+  <documentation>Service definition of function ns__DelUsers</documentation>
+  <input message="tns:DelUsersRequest"/>
+  <output message="tns:DelUsersResponse"/>
+ </operation>
+ <operation name="QueryUserAccountExisted">
+  <documentation>Service definition of function ns__QueryUserAccountExisted</documentation>
+  <input message="tns:QueryUserAccountExistedRequest"/>
+  <output message="tns:QueryUserAccountExistedResponse"/>
+ </operation>
+ <operation name="QueryBatchUserAccountExisted">
+  <documentation>Service definition of function ns__QueryBatchUserAccountExisted</documentation>
+  <input message="tns:QueryBatchUserAccountExistedRequest"/>
+  <output message="tns:QueryBatchUserAccountExistedResponse"/>
+ </operation>
+ <operation name="QueryUserConciseInfo">
+  <documentation>Service definition of function ns__QueryUserConciseInfo</documentation>
+  <input message="tns:QueryUserConciseInfoRequest"/>
+  <output message="tns:QueryUserConciseInfoResponse"/>
+ </operation>
+ <operation name="QueryUserDetailInfo">
+  <documentation>Service definition of function ns__QueryUserDetailInfo</documentation>
+  <input message="tns:QueryUserDetailInfoRequest"/>
+  <output message="tns:QueryUserDetailInfoResponse"/>
+ </operation>
+ <operation name="UpdateUserPwd">
+  <documentation>Service definition of function ns__UpdateUserPwd</documentation>
+  <input message="tns:UpdateUserPwdRequest"/>
+  <output message="tns:UpdateUserPwdResponse"/>
+ </operation>
+ <operation name="UpdateUserInfo">
+  <documentation>Service definition of function ns__UpdateUserInfo</documentation>
+  <input message="tns:UpdateUserInfoRequest"/>
+  <output message="tns:UpdateUserInfoResponse"/>
+ </operation>
+ <operation name="QueryUsers">
+  <documentation>Service definition of function ns__QueryUsers</documentation>
+  <input message="tns:QueryUsersRequest"/>
+  <output message="tns:QueryUsersResponse"/>
+ </operation>
+ <operation name="QueryUsersTotalCount">
+  <documentation>Service definition of function ns__QueryUsersTotalCount</documentation>
+  <input message="tns:QueryUsersTotalCountRequest"/>
+  <output message="tns:QueryUsersTotalCountResponse"/>
+ </operation>
+ <operation name="FuzzyQueryUserByCondition">
+  <documentation>Service definition of function ns__FuzzyQueryUserByCondition</documentation>
+  <input message="tns:FuzzyQueryUserByConditionRequest"/>
+  <output message="tns:FuzzyQueryUserByConditionResponse"/>
+ </operation>
+ <operation name="FuzzyQueryUserCountByCondition">
+  <documentation>Service definition of function ns__FuzzyQueryUserCountByCondition</documentation>
+  <input message="tns:FuzzyQueryUserCountByConditionRequest"/>
+  <output message="tns:FuzzyQueryUserCountByConditionResponse"/>
+ </operation>
+ <operation name="QueryOrgUserExisted">
+  <documentation>Service definition of function ns__QueryOrgUserExisted</documentation>
+  <input message="tns:QueryOrgUserExistedRequest"/>
+  <output message="tns:QueryOrgUserExistedResponse"/>
+ </operation>
+ <operation name="AddSMSAccount">
+  <documentation>Service definition of function ns__AddSMSAccount</documentation>
+  <input message="tns:AddSMSAccountRequest"/>
+  <output message="tns:AddSMSAccountResponse"/>
+ </operation>
+ <operation name="AddOrgSMSAccount">
+  <documentation>Service definition of function ns__AddOrgSMSAccount</documentation>
+  <input message="tns:AddOrgSMSAccountRequest"/>
+  <output message="tns:AddOrgSMSAccountResponse"/>
+ </operation>
+ <operation name="AddUserSMSAddNO">
+  <documentation>Service definition of function ns__AddUserSMSAddNO</documentation>
+  <input message="tns:AddUserSMSAddNORequest"/>
+  <output message="tns:AddUserSMSAddNOResponse"/>
+ </operation>
+ <operation name="QueryOrgSMSAccount">
+  <documentation>Service definition of function ns__QueryOrgSMSAccount</documentation>
+  <input message="tns:QueryOrgSMSAccountRequest"/>
+  <output message="tns:QueryOrgSMSAccountResponse"/>
+ </operation>
+ <operation name="QueryUserSMSInfo">
+  <documentation>Service definition of function ns__QueryUserSMSInfo</documentation>
+  <input message="tns:QueryUserSMSInfoRequest"/>
+  <output message="tns:QueryUserSMSInfoResponse"/>
+ </operation>
+ <operation name="QuerySMSAccount">
+  <documentation>Service definition of function ns__QuerySMSAccount</documentation>
+  <input message="tns:QuerySMSAccountRequest"/>
+  <output message="tns:QuerySMSAccountResponse"/>
+ </operation>
+ <operation name="UpdateSMSAccount">
+  <documentation>Service definition of function ns__UpdateSMSAccount</documentation>
+  <input message="tns:UpdateSMSAccountRequest"/>
+  <output message="tns:UpdateSMSAccountResponse"/>
+ </operation>
+ <operation name="DelSMSAccount">
+  <documentation>Service definition of function ns__DelSMSAccount</documentation>
+  <input message="tns:DelSMSAccountRequest"/>
+  <output message="tns:DelSMSAccountResponse"/>
+ </operation>
+ <operation name="DelOrgSMSAccount">
+  <documentation>Service definition of function ns__DelOrgSMSAccount</documentation>
+  <input message="tns:DelOrgSMSAccountRequest"/>
+  <output message="tns:DelOrgSMSAccountResponse"/>
+ </operation>
+ <operation name="DelUserSMS">
+  <documentation>Service definition of function ns__DelUserSMS</documentation>
+  <input message="tns:DelUserSMSRequest"/>
+  <output message="tns:DelUserSMSResponse"/>
+ </operation>
+ <operation name="QueryAllSMSAccount">
+  <documentation>Service definition of function ns__QueryAllSMSAccount</documentation>
+  <input message="tns:QueryAllSMSAccountRequest"/>
+  <output message="tns:QueryAllSMSAccountResponse"/>
+ </operation>
+ <operation name="QueryAllSMSAccountCount">
+  <documentation>Service definition of function ns__QueryAllSMSAccountCount</documentation>
+  <input message="tns:QueryAllSMSAccountCountRequest"/>
+  <output message="tns:QueryAllSMSAccountCountResponse"/>
+ </operation>
+ <operation name="QueryUserCallRecordByTime">
+  <documentation>Service definition of function ns__QueryUserCallRecordByTime</documentation>
+  <input message="tns:QueryUserCallRecordByTimeRequest"/>
+  <output message="tns:QueryUserCallRecordByTimeResponse"/>
+ </operation>
+ <operation name="QueryUserCallRecordCountByTime">
+  <documentation>Service definition of function ns__QueryUserCallRecordCountByTime</documentation>
+  <input message="tns:QueryUserCallRecordCountByTimeRequest"/>
+  <output message="tns:QueryUserCallRecordCountByTimeResponse"/>
+ </operation>
+ <operation name="QueryUserSMSRecordByTime">
+  <documentation>Service definition of function ns__QueryUserSMSRecordByTime</documentation>
+  <input message="tns:QueryUserSMSRecordByTimeRequest"/>
+  <output message="tns:QueryUserSMSRecordByTimeResponse"/>
+ </operation>
+ <operation name="QueryUserSMSRecodCountByTime">
+  <documentation>Service definition of function ns__QueryUserSMSRecodCountByTime</documentation>
+  <input message="tns:QueryUserSMSRecodCountByTimeRequest"/>
+  <output message="tns:QueryUserSMSRecodCountByTimeResponse"/>
+ </operation>
+ <operation name="QueryOrgCallRecordsByTime">
+  <documentation>Service definition of function ns__QueryOrgCallRecordsByTime</documentation>
+  <input message="tns:QueryOrgCallRecordsByTimeRequest"/>
+  <output message="tns:QueryOrgCallRecordsByTimeResponse"/>
+ </operation>
+ <operation name="QueryOrgCallRecordsCountByTime">
+  <documentation>Service definition of function ns__QueryOrgCallRecordsCountByTime</documentation>
+  <input message="tns:QueryOrgCallRecordsCountByTimeRequest"/>
+  <output message="tns:QueryOrgCallRecordsCountByTimeResponse"/>
+ </operation>
+ <operation name="QueryOrgSMSRecordsByTime">
+  <documentation>Service definition of function ns__QueryOrgSMSRecordsByTime</documentation>
+  <input message="tns:QueryOrgSMSRecordsByTimeRequest"/>
+  <output message="tns:QueryOrgSMSRecordsByTimeResponse"/>
+ </operation>
+ <operation name="QueryOrgSMSRecordsCountByTime">
+  <documentation>Service definition of function ns__QueryOrgSMSRecordsCountByTime</documentation>
+  <input message="tns:QueryOrgSMSRecordsCountByTimeRequest"/>
+  <output message="tns:QueryOrgSMSRecordsCountByTimeResponse"/>
+ </operation>
+ <operation name="QueryUserAdministrableAnnouncement">
+  <documentation>Service definition of function ns__QueryUserAdministrableAnnouncement</documentation>
+  <input message="tns:QueryUserAdministrableAnnouncementRequest"/>
+  <output message="tns:QueryUserAdministrableAnnouncementResponse"/>
+ </operation>
+ <operation name="QueryUserAdministrableAnnouncementTotalCount">
+  <documentation>Service definition of function ns__QueryUserAdministrableAnnouncementTotalCount</documentation>
+  <input message="tns:QueryUserAdministrableAnnouncementTotalCountRequest"/>
+  <output message="tns:QueryUserAdministrableAnnouncementTotalCountResponse"/>
+ </operation>
+ <operation name="QueryAnnouncementInfo">
+  <documentation>Service definition of function ns__QueryAnnouncementInfo</documentation>
+  <input message="tns:QueryAnnouncementInfoRequest"/>
+  <output message="tns:QueryAnnouncementInfoResponse"/>
+ </operation>
+ <operation name="QueryAnnounceOrgDepts">
+  <documentation>Service definition of function ns__QueryAnnounceOrgDepts</documentation>
+  <input message="tns:QueryAnnounceOrgDeptsRequest"/>
+  <output message="tns:QueryAnnounceOrgDeptsResponse"/>
+ </operation>
+ <operation name="AddAnnouncement">
+  <documentation>Service definition of function ns__AddAnnouncement</documentation>
+  <input message="tns:AddAnnouncementRequest"/>
+  <output message="tns:AddAnnouncementResponse"/>
+ </operation>
+ <operation name="AddAnnounceDepts">
+  <documentation>Service definition of function ns__AddAnnounceDepts</documentation>
+  <input message="tns:AddAnnounceDeptsRequest"/>
+  <output message="tns:AddAnnounceDeptsResponse"/>
+ </operation>
+ <operation name="UpdateAnnouncement">
+  <documentation>Service definition of function ns__UpdateAnnouncement</documentation>
+  <input message="tns:UpdateAnnouncementRequest"/>
+  <output message="tns:UpdateAnnouncementResponse"/>
+ </operation>
+ <operation name="DelAnnounceDepts">
+  <documentation>Service definition of function ns__DelAnnounceDepts</documentation>
+  <input message="tns:DelAnnounceDeptsRequest"/>
+  <output message="tns:DelAnnounceDeptsResponse"/>
+ </operation>
+ <operation name="DelAnnoucement">
+  <documentation>Service definition of function ns__DelAnnoucement</documentation>
+  <input message="tns:DelAnnoucementRequest"/>
+  <output message="tns:DelAnnoucementResponse"/>
+ </operation>
+ <operation name="IssueAnnouncement">
+  <documentation>Service definition of function ns__IssueAnnouncement</documentation>
+  <input message="tns:IssueAnnouncementRequest"/>
+  <output message="tns:IssueAnnouncementResponse"/>
+ </operation>
+ <operation name="AddFileBoxs">
+  <documentation>Service definition of function ns__AddFileBoxs</documentation>
+  <input message="tns:AddFileBoxsRequest"/>
+  <output message="tns:AddFileBoxsResponse"/>
+ </operation>
+ <operation name="QueryOrgFileBox">
+  <documentation>Service definition of function ns__QueryOrgFileBox</documentation>
+  <input message="tns:QueryOrgFileBoxRequest"/>
+  <output message="tns:QueryOrgFileBoxResponse"/>
+ </operation>
+ <operation name="QueryFileBox">
+  <documentation>Service definition of function ns__QueryFileBox</documentation>
+  <input message="tns:QueryFileBoxRequest"/>
+  <output message="tns:QueryFileBoxResponse"/>
+ </operation>
+ <operation name="DelFileBox">
+  <documentation>Service definition of function ns__DelFileBox</documentation>
+  <input message="tns:DelFileBoxRequest"/>
+  <output message="tns:DelFileBoxResponse"/>
+ </operation>
+ <operation name="AddAdminFileBoxResource">
+  <documentation>Service definition of function ns__AddAdminFileBoxResource</documentation>
+  <input message="tns:AddAdminFileBoxResourceRequest"/>
+  <output message="tns:AddAdminFileBoxResourceResponse"/>
+ </operation>
+ <operation name="QueryAdminFileBoxResource">
+  <documentation>Service definition of function ns__QueryAdminFileBoxResource</documentation>
+  <input message="tns:QueryAdminFileBoxResourceRequest"/>
+  <output message="tns:QueryAdminFileBoxResourceResponse"/>
+ </operation>
+ <operation name="AddAdmin">
+  <documentation>Service definition of function ns__AddAdmin</documentation>
+  <input message="tns:AddAdminRequest"/>
+  <output message="tns:AddAdminResponse"/>
+ </operation>
+ <operation name="AdminLogin">
+  <documentation>Service definition of function ns__AdminLogin</documentation>
+  <input message="tns:AdminLoginRequest"/>
+  <output message="tns:AdminLoginResponse"/>
+ </operation>
+ <operation name="QueryAdminInfo">
+  <documentation>Service definition of function ns__QueryAdminInfo</documentation>
+  <input message="tns:QueryAdminInfoRequest"/>
+  <output message="tns:QueryAdminInfoResponse"/>
+ </operation>
+ <operation name="QueryAdminByName">
+  <documentation>Service definition of function ns__QueryAdminByName</documentation>
+  <input message="tns:QueryAdminByNameRequest"/>
+  <output message="tns:QueryAdminByNameResponse"/>
+ </operation>
+ <operation name="QueryAdminAccountExisted">
+  <documentation>Service definition of function ns__QueryAdminAccountExisted</documentation>
+  <input message="tns:QueryAdminAccountExistedRequest"/>
+  <output message="tns:QueryAdminAccountExistedResponse"/>
+ </operation>
+ <operation name="UpdateAdminInfo">
+  <documentation>Service definition of function ns__UpdateAdminInfo</documentation>
+  <input message="tns:UpdateAdminInfoRequest"/>
+  <output message="tns:UpdateAdminInfoResponse"/>
+ </operation>
+ <operation name="QueryAdminOrgInfo">
+  <documentation>Service definition of function ns__QueryAdminOrgInfo</documentation>
+  <input message="tns:QueryAdminOrgInfoRequest"/>
+  <output message="tns:QueryAdminOrgInfoResponse"/>
+ </operation>
+ <operation name="QueryAdminSubordinate">
+  <documentation>Service definition of function ns__QueryAdminSubordinate</documentation>
+  <input message="tns:QueryAdminSubordinateRequest"/>
+  <output message="tns:QueryAdminSubordinateResponse"/>
+ </operation>
+ <operation name="AddUserPermission">
+  <documentation>Service definition of function ns__AddUserPermission</documentation>
+  <input message="tns:AddUserPermissionRequest"/>
+  <output message="tns:AddUserPermissionResponse"/>
+ </operation>
+ <operation name="QueryUserPermission">
+  <documentation>Service definition of function ns__QueryUserPermission</documentation>
+  <input message="tns:QueryUserPermissionRequest"/>
+  <output message="tns:QueryUserPermissionResponse"/>
+ </operation>
+ <operation name="UpdateUserPermission">
+  <documentation>Service definition of function ns__UpdateUserPermission</documentation>
+  <input message="tns:UpdateUserPermissionRequest"/>
+  <output message="tns:UpdateUserPermissionResponse"/>
+ </operation>
+ <operation name="UserLogin">
+  <documentation>Service definition of function ns__UserLogin</documentation>
+  <input message="tns:UserLoginRequest"/>
+  <output message="tns:UserLoginResponse"/>
+ </operation>
+ <operation name="AddOrgPermission">
+  <documentation>Service definition of function ns__AddOrgPermission</documentation>
+  <input message="tns:AddOrgPermissionRequest"/>
+  <output message="tns:AddOrgPermissionResponse"/>
+ </operation>
+ <operation name="QueryOrgPermission">
+  <documentation>Service definition of function ns__QueryOrgPermission</documentation>
+  <input message="tns:QueryOrgPermissionRequest"/>
+  <output message="tns:QueryOrgPermissionResponse"/>
+ </operation>
+ <operation name="UpdateOrgPermission">
+  <documentation>Service definition of function ns__UpdateOrgPermission</documentation>
+  <input message="tns:UpdateOrgPermissionRequest"/>
+  <output message="tns:UpdateOrgPermissionResponse"/>
+ </operation>
+ <operation name="QueryConsumeResource">
+  <documentation>Service definition of function ns__QueryConsumeResource</documentation>
+  <input message="tns:QueryConsumeResourceRequest"/>
+  <output message="tns:QueryConsumeResourceResponse"/>
+ </operation>
+ <operation name="ConnectMasterServer">
+  <documentation>Service definition of function ns__ConnectMasterServer</documentation>
+  <input message="tns:ConnectMasterServerRequest"/>
+  <output message="tns:ConnectMasterServerResponse"/>
+ </operation>
+ <operation name="DisConnectMasterServer">
+  <documentation>Service definition of function ns__DisConnectMasterServer</documentation>
+  <input message="tns:DisConnectMasterServerRequest"/>
+  <output message="tns:DisConnectMasterServerResponse"/>
+ </operation>
+ <operation name="QueryMasterConnection">
+  <documentation>Service definition of function ns__QueryMasterConnection</documentation>
+  <input message="tns:QueryMasterConnectionRequest"/>
+  <output message="tns:QueryMasterConnectionResponse"/>
+ </operation>
+ <operation name="ChangeDomainId">
+  <documentation>Service definition of function ns__ChangeDomainId</documentation>
+  <input message="tns:ChangeDomainIdRequest"/>
+  <output message="tns:ChangeDomainIdResponse"/>
+ </operation>
+ <operation name="QueryDomainName">
+  <documentation>Service definition of function ns__QueryDomainName</documentation>
+  <input message="tns:QueryDomainNameRequest"/>
+  <output message="tns:QueryDomainNameResponse"/>
+ </operation>
+ <operation name="NotifyCloseServer">
+  <documentation>Service definition of function ns__NotifyCloseServer</documentation>
+  <input message="tns:NotifyCloseServerRequest"/>
+  <output message="tns:NotifyCloseServerResponse"/>
+ </operation>
+ <operation name="NotifyStartServer">
+  <documentation>Service definition of function ns__NotifyStartServer</documentation>
+  <input message="tns:NotifyStartServerRequest"/>
+  <output message="tns:NotifyStartServerResponse"/>
+ </operation>
+ <operation name="NotifyAuthComplete">
+  <documentation>Service definition of function ns__NotifyAuthComplete</documentation>
+  <input message="tns:NotifyAuthCompleteRequest"/>
+  <output message="tns:NotifyAuthCompleteResponse"/>
+ </operation>
+ <operation name="AdjustPermission">
+  <documentation>Service definition of function ns__AdjustPermission</documentation>
+  <input message="tns:AdjustPermissionRequest"/>
+  <output message="tns:AdjustPermissionResponse"/>
+ </operation>
+ <operation name="QueryDongle">
+  <documentation>Service definition of function ns__QueryDongle</documentation>
+  <input message="tns:QueryDongleRequest"/>
+  <output message="tns:QueryDongleResponse"/>
+ </operation>
+ <operation name="PushMessage">
+  <documentation>Service definition of function ns__PushMessage</documentation>
+  <input message="tns:PushMessageRequest"/>
+  <output message="tns:PushMessageResponse"/>
+ </operation>
+ <operation name="DelBlackList">
+  <documentation>Service definition of function ns__DelBlackList</documentation>
+  <input message="tns:DelBlackListRequest"/>
+  <output message="tns:DelBlackListResponse"/>
+ </operation>
+</portType>
+
+<binding name="ConfWebServiceInterface" type="tns:ConfWebServiceInterfacePortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="CreateConf">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddConfParticipant">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelConfParticipants">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DestroyConf">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryConf">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryConfParticipants">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateConfInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserConfAccessible">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserConfAccessibleTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessibleConfByTimeInterval">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessbileConfByTimeIntervalTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessibleConfByStartTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessbileConfByStartTimeTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessibleConfByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessbileConfByTimeTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgConfByStartTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgConfByStartTimeTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddOrganization">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddDepartment">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddDeparmtmentUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddDepartmentBatchUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessibleDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptsOfDeptManager">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DeptSortOperationBatch">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DeptMembersSortOperationBatch">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptManagerLogin">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptManagersInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddDeptManager">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelDeptManager">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelDeptManagerByDeptId">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelAllDeptManagerByUserId">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="IsDeptManager">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAncestorManagerOfUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryChildManagerOfUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="IsChildDept">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="IsDeptManagerById">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptManagerInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddSipServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QuerySipServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelSipServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateSipServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="IsSipExtNumOccupied">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QuerySubDeptTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QuerySubDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAllSubDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptMember">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptMemberTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelOrganization">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelDepartment">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelDepartmentUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelDepartmentBatchUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrganization">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgManager">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgnameExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdataOrganization">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateDeptInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQuerySubDeptsInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQuerySubDeptsTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryDeptMember">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryDeptMemberTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccessibleOrganization">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryInvisibleDept">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddInvisibleDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddBlockedDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelInvisibleDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptMemberInDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptMemberInDeptsTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgAllMember">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgAllMemberTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryBlockedDeparts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelBatchDepartment">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDeptNameExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgs">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgsCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryOrgsByName">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryOrgsByNameCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddBatchUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelUser">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelUsers">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAccountExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryBatchUserAccountExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserConciseInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserDetailInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateUserPwd">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateUserInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUsers">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUsersTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryUserByCondition">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="FuzzyQueryUserCountByCondition">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgUserExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddOrgSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddUserSMSAddNO">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserSMSInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QuerySMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelOrgSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelUserSMS">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAllSMSAccount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAllSMSAccountCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserCallRecordByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserCallRecordCountByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserSMSRecordByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserSMSRecodCountByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgCallRecordsByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgCallRecordsCountByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgSMSRecordsByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgSMSRecordsCountByTime">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAdministrableAnnouncement">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserAdministrableAnnouncementTotalCount">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAnnouncementInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAnnounceOrgDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddAnnouncement">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddAnnounceDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateAnnouncement">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelAnnounceDepts">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelAnnoucement">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="IssueAnnouncement">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddFileBoxs">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgFileBox">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryFileBox">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelFileBox">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddAdminFileBoxResource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminFileBoxResource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddAdmin">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AdminLogin">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminByName">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminAccountExisted">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateAdminInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminOrgInfo">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryAdminSubordinate">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddUserPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryUserPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateUserPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UserLogin">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AddOrgPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryOrgPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="UpdateOrgPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryConsumeResource">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ConnectMasterServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DisConnectMasterServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryMasterConnection">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="ChangeDomainId">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDomainName">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="NotifyCloseServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="NotifyStartServer">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="NotifyAuthComplete">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="AdjustPermission">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="QueryDongle">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="PushMessage">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+ <operation name="DelBlackList">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:ConfWebServiceInterface" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="ConfWebServiceInterface">
+ <documentation>gSOAP 2.8.18 generated service definition</documentation>
+ <port name="ConfWebServiceInterface" binding="tns:ConfWebServiceInterface">
+  <SOAP:address location="http://localhost"/>
+ </port>
+</service>
+
+</definitions>

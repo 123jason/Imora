@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ExpoRecommend" table="expo_recommend">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="expoId" type="string" column="expo_id" length="40" nullable="true"/>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="true"/>
+    <field name="score" type="float" column="score" precision="10" scale="0" nullable="true"/>
+    <field name="reason" type="string" column="reason" length="40" nullable="true"/>
+    <field name="createtime" type="integer" column="createtime" nullable="true"/>
+  </entity>
+</doctrine-mapping>

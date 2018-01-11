@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicLoginRecord" table="account_basic_login_record">
+    <unique-constraints>
+      <unique-constraint name="user_id_UNIQUE" columns="user_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="lastLoginTime" type="integer" column="last_login_time" nullable="false"/>
+    <field name="lastLoginIp" type="string" column="last_login_ip" length="64" nullable="false"/>
+    <field name="loginTime" type="integer" column="login_time" nullable="false"/>
+    <field name="loginIp" type="string" column="login_ip" length="64" nullable="false"/>
+    <field name="state" type="integer" column="state" nullable="false"/>
+  </entity>
+</doctrine-mapping>

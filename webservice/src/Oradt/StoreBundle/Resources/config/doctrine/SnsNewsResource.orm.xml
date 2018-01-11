@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsNewsResource" table="sns_news_resource">
+    <indexes>
+      <index name="fk_sns_news_resource_1_idx" columns="news_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="res_id_UNIQUE" columns="res_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="resId" type="string" column="res_id" length="32" nullable="true"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="newsId" type="string" column="news_id" length="32" nullable="true"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

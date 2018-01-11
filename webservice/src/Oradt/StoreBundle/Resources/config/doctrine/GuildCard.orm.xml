@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\GuildCard" table="guild_card">
+    <indexes>
+      <index name="fk_guild_card_1_idx" columns="guild_id"/>
+      <index name="fk_guild_card_3_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="uk_guild_card_id" columns="card_id,guild_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardId" type="string" column="card_id" length="32" nullable="false"/>
+    <field name="cardType" type="string" column="card_type" nullable="false"/>
+    <field name="guildId" type="string" column="guild_id" length="32" nullable="false"/>
+    <field name="message" type="string" column="message" length="1024" nullable="true"/>
+    <field name="postDate" type="datetime" column="post_date" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+  </entity>
+</doctrine-mapping>

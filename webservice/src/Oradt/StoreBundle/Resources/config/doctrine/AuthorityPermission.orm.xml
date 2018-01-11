@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AuthorityPermission" table="authority_permission">
+    <indexes>
+      <index name="fk_permission_1_idx" columns="role_id"/>
+      <index name="fk_permission_2_idx" columns="action_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="uk_role_action" columns="action_id,role_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="actionId" type="integer" column="action_id" nullable="false"/>
+    <field name="roleId" type="integer" column="role_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

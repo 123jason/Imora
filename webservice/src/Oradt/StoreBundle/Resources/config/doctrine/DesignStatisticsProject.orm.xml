@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignStatisticsProject" table="design_statistics_project">
+    <unique-constraints>
+      <unique-constraint name="date_unitid" columns="date,unitid"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="unitid" type="integer" column="unitid" nullable="false"/>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="releasedNum" type="integer" column="released_num" nullable="true"/>
+    <field name="turnover" type="integer" column="turnover" nullable="true"/>
+    <field name="turnoverAmount" type="decimal" column="turnover_amount" precision="13" scale="2" nullable="true"/>
+    <field name="trading" type="integer" column="trading" nullable="true"/>
+    <field name="tradingAmount" type="decimal" column="trading_amount" precision="13" scale="2" nullable="true"/>
+    <field name="turnoverTotal" type="decimal" column="turnover_total" precision="13" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

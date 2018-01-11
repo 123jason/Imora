@@ -1,0 +1,9 @@
+Oradt\OauthBundle\Entity\LoginSession:
+    properties:
+        session:
+            - NotBlank: ~
+            - Length: 48
+        expire_time:
+            - NotBlank: ~
+        account_type:
+            - NotBlank: ~

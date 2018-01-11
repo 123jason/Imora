@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+ 	<avatarid>
+		<type>string</type>
+		<mapdb>avatar_id</mapdb>
+		<w> AND avatar_id=:avatarid</w></avatarid>
+  	<name>
+		<type>string</type>
+		<mapdb>name</mapdb>
+		<w> AND name LIKE :name</w></name>
+  	<fileurl>
+		<type>string</type>
+		<mapdb>path</mapdb>
+		<w>0</w></fileurl>
+	<type>
+		<type>string</type>
+		<mapdb>type</mapdb>
+		<w> AND type=:type</w></type>  	
+  </fields>
+  <provide_max_fields>avatarid,name,type,fileurl</provide_max_fields>
+  <default_dataparam>
+  </default_dataparam>
+  <sql>SELECT %s FROM system_avatar%s%s</sql>
+  <where>id>0</where>
+  <order> ORDER BY id DESC</order>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SysUserPromotion" table="sys_user_promotion">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="proId" type="string" column="pro_id" length="32" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="isalluser" type="integer" column="isalluser" nullable="false"/>
+    <field name="pushTime" type="integer" column="push_time" nullable="false"/>
+    <field name="nextPushTime" type="integer" column="next_push_time" nullable="false"/>
+    <field name="region" type="string" column="region" length="2000" nullable="false"/>
+    <field name="industry" type="string" column="industry" length="2000" nullable="false"/>
+    <field name="func" type="string" column="func" length="2000" nullable="false"/>
+    <field name="title" type="string" column="title" length="50" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="isntice" type="integer" column="isntice" nullable="false"/>
+    <field name="url" type="string" column="url" length="256" nullable="false"/>
+    <field name="jsonData" type="text" column="json_data" nullable="false"/>
+    <field name="startTime" type="integer" column="start_time" nullable="false"/>
+    <field name="endTime" type="integer" column="end_time" nullable="false"/>
+    <field name="isloop" type="integer" column="isloop" nullable="false"/>
+    <field name="pushCount" type="integer" column="push_count" nullable="false"/>
+    <field name="isget" type="integer" column="isget" nullable="false"/>
+    <field name="pushStatus" type="integer" column="push_status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

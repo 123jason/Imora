@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsCandidateVideo" table="sns_candidate_video">
+    <unique-constraints>
+      <unique-constraint name="video_id" columns="video_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="videoId" type="string" column="video_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="path" type="string" column="path" length="256" nullable="false"/>
+    <field name="thumb" type="string" column="thumb" length="256" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

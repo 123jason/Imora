@@ -1,0 +1,7 @@
+parameters:
+#    oradt_cron.example.class: Oradt\CronBundle\Example
+
+services:
+#    oradt_cron.example:
+#        class: %oradt_cron.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCardExchangeMapLog" table="contact_card_exchange_map_log">
+    <indexes>
+      <index name="exchange_index_user_id" columns="user_id"/>
+      <index name="exchange_vcardid" columns="vcardid"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="user_id" columns="user_id,vcardid"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="userId1" type="string" column="user_id1" length="40" nullable="false"/>
+    <field name="vcardid" type="string" column="vcardid" length="32" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

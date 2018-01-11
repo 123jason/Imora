@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidateCertification" table="hr_candidate_certification">
+    <indexes>
+      <index name="candidate_id_idx" columns="candidate_id"/>
+      <index name="user_id_idx_1" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="certification_id_uni" columns="certification_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="certificationId" type="string" column="certification_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="certiName" type="string" column="certi_name" length="100" nullable="false"/>
+    <field name="certiInsti" type="string" column="certi_insti" length="100" nullable="false"/>
+    <field name="certiNum" type="string" column="certi_num" length="80" nullable="false"/>
+    <field name="certiUrl" type="string" column="certi_url" length="255" nullable="false"/>
+    <field name="certiDate" type="string" column="certi_date" length="20" nullable="false"/>
+    <field name="validtime" type="string" column="validtime" length="20" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

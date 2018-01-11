@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidateEmail" table="hr_candidate_email">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizid" type="string" column="bizid" length="40" nullable="true"/>
+    <field name="emailid" type="string" column="emailid" length="32" nullable="true"/>
+    <field name="email" type="string" column="email" length="96" nullable="true"/>
+    <field name="createTime" type="datetime" column="create_time" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+  </entity>
+</doctrine-mapping>

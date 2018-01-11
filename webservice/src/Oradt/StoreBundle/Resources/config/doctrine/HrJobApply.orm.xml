@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrJobApply" table="hr_job_apply">
+    <indexes>
+      <index name="biz_id_idx" columns="biz_id"/>
+      <index name="recruiter_id_idx" columns="recruiter_id"/>
+      <index name="user_id_idx_1" columns="user_id"/>
+      <index name="job_id_idx" columns="jod_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="comp_uni" columns="candidate_id,jod_id"/>
+      <unique-constraint name="apply_id_UNIQUE" columns="apply_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="applyId" type="string" column="apply_id" length="32" nullable="false"/>
+    <field name="jobId" type="string" column="job_id" length="32" nullable="false"/>
+    <field name="recruiterId" type="string" column="recruiter_id" length="32" nullable="false"/>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="remark" type="string" column="remark" length="512" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="retract" type="string" column="retract" nullable="false"/>
+    <field name="retractTime" type="datetime" column="retract_time" nullable="true"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+  </entity>
+</doctrine-mapping>

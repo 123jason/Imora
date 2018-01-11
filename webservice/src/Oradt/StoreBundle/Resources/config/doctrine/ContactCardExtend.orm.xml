@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCardExtend" table="contact_card_extend">
+    <unique-constraints>
+      <unique-constraint name="uuid" columns="uuid"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="vcard" type="text" column="vcard" nullable="false"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="true"/>
+    <field name="markPoint" type="string" column="mark_point" length="8096" nullable="false"/>
+    <field name="resMd5" type="string" column="res_md5" length="32" nullable="false"/>
+    <field name="layout" type="string" column="layout" length="8096" nullable="false"/>
+    <field name="picPathA" type="string" column="pic_path_a" length="256" nullable="false"/>
+    <field name="picPathB" type="string" column="pic_path_b" length="256" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="reOrder" type="string" column="re_order" length="256" nullable="false"/>
+    <field name="latLng" type="string" column="lat_lng"  nullable="false"/>
+  </entity>
+</doctrine-mapping>

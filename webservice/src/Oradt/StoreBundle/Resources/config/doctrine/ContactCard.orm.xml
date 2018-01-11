@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCard" table="contact_card">
+    <indexes>
+      <index name="user_id_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="uuid_UNIQUE" columns="uuid"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="localUuid" type="string" column="local_uuid" length="32" nullable="false"/>
+    <field name="identityName" type="string" column="identity_name" nullable="false"/>
+    <field name="avatar" type="string" column="avatar" nullable="false"/>
+    <field name="isfriend" type="string" column="isfriend" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="cardFrom" type="string" column="card_from" nullable="false"/>
+    <field name="cardType" type="string" column="card_type" nullable="false"/>
+    <field name="useTemp" type="string" column="use_temp" nullable="false"/>
+    <field name="version" type="string" column="version" length="6" nullable="false"/>
+    <field name="shareReference" type="bigint" column="share_reference" nullable="false"/>
+    <field name="lastModified" type="integer" column="last_modified" nullable="false"/>
+    <field name="sortTime" type="integer" column="sort_time" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="clientTimestamp" type="integer" column="client_timestamp" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="256" nullable="false"/>
+    <field name="public" type="string" column="public" nullable="false"/>
+    <field name="nindex" type="integer" column="nindex" nullable="true"/>
+    <field name="selfMark" type="string" column="self_mark" length="256" nullable="false"/>
+    <field name="md5Value" type="string" column="md5_value" length="32" nullable="false"/>
+    <field name="contactName" type="string" column="contact_name" length="64" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="false"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="false"/>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="false"/>
+    <field name="namePre" type="string" column="name_pre" length="1" nullable="false"/>
+    <field name="self" type="string" column="self" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="private" type="integer" column="private" nullable="false"/>
+    <field name="picture" type="string" column="picture" length="256" nullable="false"/>
+    <field name="ifupdate" type="integer" column="ifupdate" nullable="false"/>
+    <field name="xLatitude" type="decimal" column="x_latitude" precision="13" scale="8" nullable="false"/>
+    <field name="xLongitude" type="decimal" column="x_longitude" precision="13" scale="8" nullable="false"/>
+    <field name="xyz" type="string" column="xyz" nullable="false"/>
+    <field name="xyztime" type="integer" column="xyztime" nullable="false"/>
+    <field name="language" type="string" length="30" column="language" nullable="false"/>
+    <field name="exchId" type="string" length="32" column="exch_id" nullable="false"/>
+    <field name="tempId" type="string" length="32" column="temp_id" nullable="false"/>
+    <field name="basicStatus" type="string" length="32" column="basic_status" nullable="false"/>
+    <field name="handleState" type="string" length="15" column="handle_state" nullable="false"/>
+    <field name="reasonId" type="integer" column="reason_id" nullable="true"/>
+    <field name="sourceUuid" type="string" length="32" column="source_uuid" nullable="false"/>
+    <field name="payfee" type="float" column="payfee" default="0" nullable="false"/>
+    <field name="bizId" type="string" length="40" column="biz_id" nullable="false"/>
+    <field name="background" type="string" length="256" column="background" nullable="false"/>
+    <field name="signature" type="string" length="150" column="signature" nullable="true"/>
+    <field name="certifcation" type="integer" column="certifcation" nullable="false"/>
+    <field name="isimportant" type="integer" column="isimportant" nullable="false"/>
+    <field name="md5ValueFm" type="string" length="32" column="md5_value_fm" nullable="false"/>
+    <field name="sourceType" type="string" length="20" column="source_type" nullable="false"/>
+    <field name="showBtn" type="integer" column="show_btn" nullable="false"/>
+  </entity>
+</doctrine-mapping>

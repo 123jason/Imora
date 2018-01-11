@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DeviceInstruction" table="device_instruction">
+    <indexes>
+      <index name="fk_device_instruction_1_idx" columns="device_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="deviceId" type="string" column="device_id" length="32" nullable="false"/>
+    <field name="instructionId" type="string" column="instruction_id" length="32" nullable="false"/>
+    <field name="instruction" type="string" column="instruction" length="4196" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="execResult" type="string" column="exec_result" nullable="false"/>
+    <field name="execTime" type="datetime" column="exec_time" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

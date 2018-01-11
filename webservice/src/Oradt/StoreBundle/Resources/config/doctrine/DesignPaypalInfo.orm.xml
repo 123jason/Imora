@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignPaypalInfo" table="design_paypal_info">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="paypalId" type="string" column="paypal_id" length="32" nullable="false"/>
+    <field name="tradeNo" type="string" column="trade_no" length="32" nullable="true"/>
+    <field name="payerId" type="string" column="payer_id" length="32" nullable="true"/>
+    <field name="payerEmail" type="string" column="payer_email" length="100" nullable="true"/>
+    <field name="receiverId" type="string" column="receiver_id" length="32" nullable="true"/>
+    <field name="receiverEmail" type="string" column="receiver_email" length="100" nullable="true"/>
+    <field name="mcGross" type="decimal" column="mc_gross" precision="12" scale="2" nullable="true"/>
+    <field name="mcFee" type="decimal" column="mc_fee" precision="12" scale="2" nullable="true"/>
+    <field name="exchangeRate" type="decimal" column="exchange_rate" precision="10" scale="2" nullable="true"/>
+    <field name="mcCurrency" type="string" column="mc_currency" length="64" nullable="true"/>
+    <field name="mcHanding" type="decimal" column="mc_handing" precision="10" scale="2" nullable="true"/>
+    <field name="settleAmount" type="decimal" column="settle_amount" precision="12" scale="2" nullable="true"/>
+    <field name="settleCurrency" type="string" column="settle_currency" length="64" nullable="true"/>
+    <field name="txnId" type="string" column="txn_id" length="32" nullable="false"/>
+    <field name="txnType" type="string" column="txn_type" length="32" nullable="true"/>
+    <field name="parentTxnId" type="string" column="parent_txn_id" length="32" nullable="true"/>
+    <field name="paymentDate" type="string" column="payment_date" length="100" nullable="true"/>
+    <field name="paymentStatus" type="string" column="payment_status" length="32" nullable="true"/>
+    <field name="paymentType" type="string" column="payment_type" nullable="true"/>
+    <field name="pendingReason" type="string" column="pending_reason" length="32" nullable="true"/>
+    <field name="reasonCode" type="string" column="reason_code" length="32" nullable="true"/>
+    <field name="designFailReason" type="string" column="design_fail_reason" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

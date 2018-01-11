@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\PopularCard" table="popular_card">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="uuid" type="string" column="uuid"  length="32" nullable="true"/>
+    <field name="mobile" type="string" column="mobile"  length="18" nullable="true"/>
+    <field name="compony" type="string" column="compony"  length="128" nullable="true"/>
+    <field name="popularTime" type="integer" column="popular_time" nullable="false"/>
+    <field name="popularMsg" type="integer" column="popular_msg" nullable="true"/>
+  </entity>
+</doctrine-mapping>

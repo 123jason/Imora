@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeMembershipBin" table="orange_membership_bin">
+    <indexes>
+      <index name="temp_ind" columns="temp_id"/>
+      <index name="bind_ind" columns="bin_code"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="tempId" type="integer" column="temp_id" nullable="false"/>
+    <field name="binCode" type="string" column="bin_code" length="10" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\MessageQueue" table="message_queue">
+    <indexes>
+      <index name="to_uid_queue_idx" columns="to_uid"/>
+      <index name="from_uid_queue_idx" columns="from_uid"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="type" type="smallint" column="type" nullable="false"/>
+    <field name="toUid" type="string" column="to_uid" length="40" nullable="true"/>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="true"/>
+    <field name="content" type="string" column="content" length="8192" nullable="true"/>
+    <field name="nflag" type="integer" column="nflag" nullable="false"/>
+    <field name="createdTime" type="bigint" column="created_time" nullable="false"/>
+    <field name="modifiedTime" type="bigint" column="modified_time" nullable="true"/>
+    <field name="isread" type="integer" column="isread" nullable="false"/>
+    <field name="title" type="string" column="title" length="100" nullable="false"/>
+  </entity>
+</doctrine-mapping>

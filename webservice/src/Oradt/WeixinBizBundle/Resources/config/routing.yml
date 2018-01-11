@@ -1,0 +1,92 @@
+wx_biz_employee_post:
+    path:     /wxbiz/employee/{act}
+    defaults: { _controller: OradtWeixinBizBundle:Employee:post }
+    requirements:
+            _method: POST
+wx_biz_oauth_post:
+    path:     /wxbiz/oauth/{act}
+    defaults: { _controller: OradtWeixinBizBundle:Oauth:post }
+    requirements:
+            _method: POST
+wx_biz_oauth_get:
+    path:     /wxbiz/oauth/{act}
+    defaults: { _controller: OradtWeixinBizBundle:Oauth:get }
+    requirements:
+            _method: GET
+wx_biz_admin_post:
+    path:     /wxbiz/admin/{act}
+    defaults: { _controller: OradtWeixinBizBundle:WxBiz:post }
+    requirements:
+        _method: POST
+wx_biz_admin_get:
+    path:     /wxbiz/admin/{act}
+    defaults: { _controller: OradtWeixinBizBundle:WxBiz:get }
+    requirements:
+        _method: GET
+wx_biz_card_post:
+    path:     /wxbiz/bizcard/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BizCard:post }
+    requirements:
+        _method: POST
+
+wx_biz_card_get:
+    path:     /wxbiz/bizcard/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BizCard:get }
+    requirements:
+        _method: GET
+
+wx_biz_card_share_post:
+    path:     /wxbiz/cardshare/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BizCardShare:post }
+    requirements:
+        _method: POST
+wx_biz_card_share_get:
+    path:     /wxbiz/cardshare/get
+    defaults: { _controller: OradtWeixinBizBundle:BizCardShare:get }
+    requirements:
+        _method: GET
+
+wx_biz_payment_post:
+    path:     /wxbiz/payment/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BizPayment:post }
+    requirements:
+        _method: POST
+wx_biz_payment_get:
+    path:     /wxbiz/payment/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BizPayment:get }
+    requirements:
+        _method: GET
+
+wx_biz_sysmsg_post:
+    path:     /wxbiz/sysmsg/{act}
+    defaults: { _controller: OradtWeixinBizBundle:SystemMsg:post }
+    requirements:
+        _method: POST
+wx_biz_sysmsg_get:
+    path:     /wxbiz/sysmsg/{act}
+    defaults: { _controller: OradtWeixinBizBundle:SystemMsg:get }
+    requirements:
+        _method: GET
+
+wx_biz_doccomment_post:
+    path:     /wxbiz/doccomment/{act}
+    defaults: { _controller: OradtWeixinBizBundle:DocComment:post }
+    requirements:
+        _method: POST
+wx_biz_doccomment_get:
+    path:     /wxbiz/doccomment/{act}
+    defaults: { _controller: OradtWeixinBizBundle:DocComment:get }
+    requirements:
+        _method: GET
+        
+wx_business_note_post:
+    path:     /wxbiz/business/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BusinessNote:post }
+    requirements:
+        _method: POST
+wx_business_note_get:
+    path:     /wxbiz/business/{act}
+    defaults: { _controller: OradtWeixinBizBundle:BusinessNote:get }
+    requirements:
+        _method: GET
+

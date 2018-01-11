@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsNewsInterest" table="sns_news_interest">
+    <indexes>
+      <index name="maxim_id_idx" columns="news_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="type" type="string" column="type" nullable="false"/>
+    <field name="newsId" type="string" column="news_id" length="32" nullable="false"/>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

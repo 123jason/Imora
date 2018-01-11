@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BasicOrderWxpayInfo" table="basic_order_wxpay_info">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="orderId" type="string" column="order_id" length="32" nullable="false"/>
+    <field name="totalFee" type="integer" column="total_fee" nullable="true"/>
+    <field name="feeType" type="string" column="fee_type" length="8" nullable="true"/>
+    <field name="prepayId" type="string" column="prepay_id" length="100" nullable="true"/>
+    <field name="tradeType" type="string" column="trade_type" nullable="true"/>
+    <field name="returnCode" type="string" column="return_code" nullable="true"/>
+    <field name="returnMsg" type="string" column="return_msg" length="128" nullable="true"/>
+    <field name="resultCode" type="string" column="result_code" nullable="true"/>
+    <field name="deviceInfo" type="string" column="device_info" length="32" nullable="true"/>
+    <field name="errCode" type="string" column="err_code" length="32" nullable="true"/>
+    <field name="errCodeDes" type="string" column="err_code_des" length="128" nullable="true"/>
+    <field name="startTime" type="string" column="start_time" length="14" nullable="true"/>
+    <field name="transactionId" type="string" column="transaction_id" length="100" nullable="true"/>
+    <field name="notifyRetcode" type="string" column="notify_retcode" nullable="true"/>
+    <field name="notifyRetmsg" type="string" column="notify_retmsg" length="128" nullable="true"/>
+    <field name="notifyResult" type="string" column="notify_result" nullable="true"/>
+    <field name="notifyErrcode" type="string" column="notify_errcode" length="32" nullable="true"/>
+    <field name="notifyErrdes" type="string" column="notify_errdes" length="128" nullable="true"/>
+    <field name="tradeState" type="string" column="trade_state" nullable="true"/>
+    <field name="queryReturnCode" type="string" column="query_return_code" nullable="true"/>
+    <field name="queryReturnMsg" type="string" column="query_return_msg" length="128" nullable="true"/>
+    <field name="queryResultCode" type="string" column="query_result_code" nullable="true"/>
+    <field name="queryErrCode" type="string" column="query_err_code" length="32" nullable="true"/>
+    <field name="queryErrCodeDes" type="string" column="query_err_code_des" length="128" nullable="true"/>
+    <field name="timeEnd" type="string" column="time_end" length="14" nullable="true"/>
+    <field name="tradeStateDesc" type="string" column="trade_state_desc" length="256" nullable="true"/>
+    <field name="orderRefundId" type="string" column="order_refund_id" length="32" nullable="true"/>
+    <field name="isRefund" type="integer" column="is_refund" nullable="true"/>
+    <field name="refundId" type="string" column="refund_id" length="28" nullable="true"/>
+    <field name="refundStatus" type="string" column="refund_status" length="16" nullable="true"/>
+    <field name="refundChannel" type="string" column="refund_channel" length="16" nullable="true"/>
+    <field name="refundFee" type="integer" column="refund_fee" nullable="true"/>
+    <field name="settlementRefundFee" type="integer" column="settlement_refund_fee" nullable="true"/>
+    <field name="refundRecvAccount" type="string" column="refund_recv_account" length="64" nullable="true"/>
+  </entity>
+</doctrine-mapping>

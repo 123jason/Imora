@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\WeixinCard" table="weixin_card">
+    <indexes>
+      <index name="wechat_id" columns="wechat_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="wechatId" type="string" column="wechat_id" length="90"/>
+    <field name="cardType" type="smallint" column="card_type"/>
+    <field name="wechatPicture" type="string" column="wechat_picture" length="255"/>
+    <field name="wechatPictureB" type="string" column="wechat_picture_b" length="255"/>
+    <field name="smallWechatPicture" type="string" column="small_wechat_picture" length="255"/>
+    <field name="createdTime" type="integer" column="created_time"/>
+    <field name="modifyTime" type="integer" column="modify_time"/>
+    <field name="vcard" type="text" column="vcard"/>
+    <field name="md5PictureName" type="string" column="md5_picture_name" length="70"/>
+    <field name="ocrStatus" type="integer" column="ocr_status"/>
+    <field name="isSelf" type="smallint" column="is_self"/>
+    <field name="upway" type="smallint" column="upway"/>
+    <field name="buystatus" type="smallint" column="buystatus"/>
+    <field name="batchid" type="string" column="batchid" length="20"/>
+    <field name="appType" type="smallint" column="app_type"/>
+    <field name="ocrResult" type="string" column="ocr_result" length="10"/>
+    <field name="uuid" type="string" column="uuid" length="32"/>
+    <field name="initial" type="string" column="initial" length="4"/>
+    <field name="markPoint" type="string" column="mark_point" length="8096"/>
+    <field name="deviceId" type="string" column="device_id" length="42"/>
+    <field name="longitude" type="decimal" column="longitude"/>
+    <field name="latitude" type="decimal" column="latitude"/>
+    <field name="status" type="smallint" column="status"/>
+  </entity>
+</doctrine-mapping>

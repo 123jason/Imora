@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeCardStrategyRelation" table="orange_card_strategy_relation">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="froms" type="string" column="froms" nullable="false"/>
+    <field name="cardTypeId" type="integer" column="card_type_id" nullable="false"/>
+    <field name="chooseCardTypeId" type="integer" column="choose_card_type_id" nullable="false"/>
+    <field name="tagtypeid" type="integer" column="tagtypeid" nullable="false"/>
+    <field name="fromid" type="integer" column="fromid" nullable="false"/>
+    <field name="sort" type="integer" column="sort" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+  	<messageid>
+		<type>string</type>
+		<mapdb>msg_id</mapdb>
+		<w> AND msg_id=:messageid</w></messageid>
+	<sender>
+		<type>string</type>
+		<mapdb>sender_name</mapdb>
+		<w> AND sender_name LIKE :sender</w></sender>
+  	<content>
+		<type>string</type>
+		<mapdb>content</mapdb>
+		<w> AND content LIKE :content</w></content>
+  	<date>
+		<type>string</type>
+		<mapdb>created_time</mapdb>
+		<w>Range</w></date>
+  	<type>
+		<type>string</type>
+		<mapdb>type</mapdb>
+		<w> AND type=:type</w></type>
+  </fields>
+  <provide_max_fields>messageid,sender,content,date,type</provide_max_fields>
+  <default_dataparam>
+  <userId><type>string</type></userId>
+  </default_dataparam>
+  <sql><![CDATA[SELECT %s
+                    FROM notification AS a%s%s]]></sql>
+  <where><![CDATA[]]>to_uid=:userId</where>
+  <order> ORDER BY date DESC</order>
+</root>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignAttachments" table="design_attachments">
+    <indexes>
+      <index name="idx_record_status" columns="status"/>
+      <index name="fk_design_attachments_design_project1_idx" columns="project_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="attachId" type="string" column="attach_id" length="32" nullable="false"/>
+    <field name="projectId" type="string" column="project_id" length="32" nullable="false"/>
+    <field name="name" type="string" column="name" length="100" nullable="true"/>
+   	<field name="url" type="string" column="url" length="255" nullable="false"/>
+    <field name="downloads" type="integer" column="downloads" nullable="false"/>
+    <field name="sort" type="integer" column="sort" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="updateTime" type="integer" column="update_time" nullable="false"/>
+	<field name="type" type="integer" column="type" nullable="true"/>
+	<field name="status" type="integer" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

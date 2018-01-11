@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCardGroupSync" table="contact_card_group_sync">
+    <indexes>
+      <index name="index2" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="index3" columns="group_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="groupId" type="string" column="group_id" length="32" nullable="false"/>
+    <field name="lastModified" type="integer" column="last_modified" nullable="false"/>
+    <field name="operation" type="string" column="operation" nullable="false"/>
+  </entity>
+</doctrine-mapping>

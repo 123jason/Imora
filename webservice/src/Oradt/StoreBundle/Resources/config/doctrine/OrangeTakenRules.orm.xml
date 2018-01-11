@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeTakenRules" table="orange_taken_rules">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="ruleType" type="string" column="rule_type" nullable="false"/>
+    <field name="contentType" type="integer" column="content_type" nullable="false"/>
+    <field name="cardType" type="integer" column="card_type" nullable="false"/>
+    <field name="cardLssuer" type="integer" column="card_lssuer" nullable="false"/>
+    <field name="contentExample" type="text" column="content_example" nullable="false"/>
+    <field name="froms" type="string" column="froms" length="50" nullable="false"/>
+    <field name="keyword" type="string" column="keyword" length="100" nullable="false"/>
+    <field name="sign" type="string" column="sign" length="50" nullable="false"/>
+    <field name="status" type="boolean" column="status" nullable="false"/>
+    <field name="url" type="string" column="url" length="50" nullable="false"/>
+    <field name="verifyType" type="string" column="verify_type" nullable="false"/>
+    <field name="createtime" type="integer" column="createtime" nullable="false"/>
+  </entity>
+</doctrine-mapping>

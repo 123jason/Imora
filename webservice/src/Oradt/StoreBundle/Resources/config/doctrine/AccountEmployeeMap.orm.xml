@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountEmployeeMap" table="account_employee_map">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="empid" type="string" column="empid" length="32" nullable="false"/>
+    <field name="email" type="string" column="email" length="225" nullable="false"/>
+    <field name="passwd" type="string" column="passwd" length="40" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

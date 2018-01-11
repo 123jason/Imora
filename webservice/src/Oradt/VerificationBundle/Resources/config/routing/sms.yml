@@ -1,0 +1,11 @@
+sms_get:
+    path:     /sms
+    defaults: { _controller: OradtVerificationBundle:Sms:get }
+    requirements:
+        _method:  GET
+        
+sms_post:
+    path:     /sms
+    defaults: { _controller: OradtVerificationBundle:Sms:post }
+    requirements:
+        _method:  POST

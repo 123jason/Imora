@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\CardpackageGroup" table="cardpackage_group">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="groupid" type="string" column="groupid" length="32" nullable="true"/>
+    <field name="groupname" type="string" column="groupname" length="48" nullable="true"/>
+    <field name="color" type="string" column="color" length="7" nullable="true"/>
+    <field name="sorting" type="integer" column="sorting" nullable="true"/>
+    <field name="createTime" type="datetime" column="create_time" nullable="true"/>
+  </entity>
+</doctrine-mapping>

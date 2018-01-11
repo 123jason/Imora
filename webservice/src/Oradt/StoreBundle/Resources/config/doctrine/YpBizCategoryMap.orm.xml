@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\YpBizCategoryMap" table="yp_biz_category_map">
+    <indexes>
+      <index name="biz_id_idx" columns="biz_id"/>
+      <index name="index2" columns="category_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="categoryId" type="integer" column="category_id" nullable="false"/>
+    <field name="type" type="string" column="type" nullable="false"/>
+  </entity>
+</doctrine-mapping>

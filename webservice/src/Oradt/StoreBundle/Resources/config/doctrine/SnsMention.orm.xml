@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsMention" table="sns_mention">
+    <indexes>
+      <index name="fk_sns_maxim_1_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="maxim_id_UNIQUE" columns="mention_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="mentionId" type="string" column="mention_id" length="32" nullable="false"/>
+    <field name="content" type="string" column="content" length="256" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <!--<many-to-one field="user" target-entity="AccountBasic">
+      <join-columns>
+        <join-column name="user_id" referenced-column-name="user_id"/>
+      </join-columns>
+    </many-to-one>-->
+  </entity>
+</doctrine-mapping>

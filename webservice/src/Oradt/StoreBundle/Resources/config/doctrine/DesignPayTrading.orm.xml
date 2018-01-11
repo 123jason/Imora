@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignPayTrading" table="design_pay_trading">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="orderNo" type="string" column="order_no" length="100" nullable="false"/>
+    <field name="tradingNumber" type="string" column="trading_number" length="100" nullable="false"/>
+    <field name="price" type="decimal" column="price" precision="8" scale="2" nullable="true"/>
+    <field name="unitId" type="integer" column="unit_id" nullable="true"/>
+    <field name="payAccount" type="string" column="pay_account" length="100" nullable="true"/>
+    
+	<field name="paymethod" type="integer" column="paymethod" nullable="true"/>
+    <field name="paytype" type="integer" column="paytype" length="4" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="updateTime" type="integer" column="update_time" nullable="true"/>
+    <field name="memberId" type="string" column="member_id" length="40" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+    <field name="endTime" type="integer" column="end_time" nullable="true"/>
+  </entity>
+</doctrine-mapping>

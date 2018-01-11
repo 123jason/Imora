@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactPrivateLocation" table="contact_private_location">
+    <indexes>
+      <index name="fk_contact_private_location_1_idx" columns="contact_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="contactId" type="string" column="contact_id" length="32" nullable="false"/>
+    <field name="address" type="string" column="address" length="96" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="true"/>
+  </entity>
+</doctrine-mapping>

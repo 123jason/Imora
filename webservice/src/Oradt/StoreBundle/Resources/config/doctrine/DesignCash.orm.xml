@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignCash" table="design_cash">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cashId" type="string" column="cash_id" length="32" nullable="false"/>
+    <field name="tradeNo" type="string" column="trade_no" length="32" nullable="true"/>
+    <field name="payMethod" type="string" column="pay_method" nullable="true"/>
+    <field name="payId" type="string" column="pay_id" length="64" nullable="true"/>
+    <field name="batchId" type="string" column="batch_id" length="64" nullable="true"/>
+    <field name="money" type="decimal" column="money" precision="13" scale="2" nullable="true"/>
+    <field name="unitId" type="string" column="unit_id" length="10" nullable="true"/>
+    <field name="fees" type="decimal" column="fees" precision="13" scale="2" nullable="true"/>
+    <field name="description" type="string" column="description" length="100" nullable="true"/>
+    <field name="payAccount" type="string" column="pay_account" length="100" nullable="true"/>
+    <field name="recvAccount" type="string" column="recv_account" length="100" nullable="true"/>
+    <field name="payStatus" type="string" column="pay_status" length="20" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="true"/>
+    <field name="errCode" type="string" column="err_code" length="20" nullable="true"/>
+    <field name="errInfo" type="string" column="err_info" length="200" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="payTime" type="string" column="pay_time" length="32" nullable="true"/>
+  </entity>
+</doctrine-mapping>

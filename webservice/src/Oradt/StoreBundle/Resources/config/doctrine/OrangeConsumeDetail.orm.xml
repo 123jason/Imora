@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeConsumeDetail" table="orange_consume_detail">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="42" nullable="false"/>
+    <field name="cardId" type="string" column="card_id" length="32" nullable="false"/>
+    <field name="bankcardId" type="string" column="bankcard_id" length="32" nullable="false"/>
+    <field name="bankName" type="string" column="bank_name" length="90" nullable="false"/>
+    <field name="billType" type="boolean" column="bill_type" nullable="false"/>
+    <field name="bill" type="float" column="bill" precision="10" scale="2" nullable="false"/>
+    <field name="balance" type="float" column="balance" precision="10" scale="2" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

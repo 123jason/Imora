@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizFollowsGroup" table="account_biz_follows_group">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="true"/>
+    <field name="expoid" type="string" column="expoid" length="40" nullable="true"/>
+    <field name="parentId" type="string" column="parent_id" length="40" nullable="true"/>
+    <field name="groupName" type="string" column="group_name" length="48" nullable="true"/>
+    <field name="sorting" type="integer" column="sorting" nullable="true"/>
+    <field name="createTime" type="datetime" column="create_time" nullable="true"/>
+    <field name="type" type="integer" column="type" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+    <field name="grouptype" type="integer" column="grouptype" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+ 	<adminid>
+		<type>string</type>
+		<mapdb>empl_id</mapdb>
+		<w> AND empl_id IN (%s)</w></adminid>
+ 	<roleid>
+		<type>string</type>
+		<mapdb>role_id</mapdb>
+		<w> AND role_id=:roleid</w></roleid>
+  	<realname>
+		<type>string</type>
+		<mapdb>real_name</mapdb>
+		<w> AND real_name LIKE :realname</w></realname>
+  	<mobile>
+		<type>string</type>
+		<mapdb>mobile</mapdb>
+		<w> AND mobile=:mobile</w></mobile>
+	<email>
+		<type>string</type>
+		<mapdb>email</mapdb>
+		<w> AND email LIKE :email</w></email>
+	<state>
+		<type>string</type>
+		<mapdb>status</mapdb>
+		<w> AND status=:state</w></state>
+	<date>
+		<type>string</type>
+		<mapdb>created_time</mapdb>
+		<w>Range</w></date>
+  </fields>
+  <provide_max_fields>adminid,roleid,realname,mobile,email,state,date</provide_max_fields>
+  <default_dataparam>
+  </default_dataparam>
+  <sql>SELECT %s FROM account_employee%s%s</sql>
+  <where>id>0</where>
+  <order> ORDER BY id DESC</order>
+</root>

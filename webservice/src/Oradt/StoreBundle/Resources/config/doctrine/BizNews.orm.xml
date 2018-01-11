@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BizNews" table="biz_news">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="bizNewsId" type="string" column="biz_news_id" length="40" nullable="false"/>
+    <field name="title" type="string" column="title" length="128" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="releaseTime" type="integer" column="release_time" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="type" type="string" column="type" nullable="false"/>
+    <field name="releaser" type="string" column="releaser" length="255" nullable="true"/>
+    <field name="releaseType" type="integer" column="release_type" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScannerV2" table="scanner_v2">
+    <indexes>
+      <index name="sc_u_id" columns="scanner_id"/>
+      <index name="l_u_t" columns="last_use_time"/>
+      <index name="r_b_t" columns="report_time"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="scannerId" type="string" column="scanner_id" length="20" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="province" type="string" column="province" length="64" nullable="false"/>
+    <field name="city" type="string" column="city" length="64" nullable="false"/>
+    <field name="address" type="string" column="address" length="256" nullable="false"/>
+    <field name="loctype" type="integer" column="loctype" nullable="false"/>
+    <field name="ownername" type="string" column="ownername" length="56" nullable="false"/>
+    <field name="contactName" type="string" column="contact_name" length="30" nullable="false"/>
+    <field name="contactInfo" type="string" column="contact_info" length="96" nullable="false"/>
+    <field name="state" type="integer" column="state" nullable="false"/>
+    <field name="lastModiy" type="integer" column="last_modiy" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="firstUseTime" type="integer" column="first_use_time" nullable="false"/>
+    <field name="lastUseTime" type="integer" column="last_use_time" nullable="false"/>
+    <field name="reportType" type="integer" column="report_type" nullable="false"/>
+    <field name="reportTime" type="integer" column="report_time" nullable="false"/>
+    <field name="isdelete" type="integer" column="isdelete" nullable="false"/>
+  </entity>
+</doctrine-mapping>

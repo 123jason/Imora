@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ExpoStatistic" table="expo_statistic">
+    <indexes>
+      <index name="expo_count" columns="biz_id,expo_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="true"/>
+    <field name="expoId" type="string" column="expo_id" length="40" nullable="false"/>
+    <field name="type" type="boolean" column="type" nullable="false"/>
+    <field name="name" type="string" column="name" length="255" nullable="true"/>
+    <field name="bizName" type="string" column="biz_name" length="255" nullable="true"/>
+    <field name="expoCount" type="integer" column="expo_count" nullable="true"/>
+    <field name="exhibitorCount" type="integer" column="exhibitor_count" nullable="true"/>
+    <field name="count" type="integer" column="count" nullable="true"/>
+    <field name="expoCzsCount" type="integer" column="expo_czs_count" nullable="true"/>
+    <field name="expoGzCount" type="integer" column="expo_gz_count" nullable="true"/>
+    <field name="comeCount" type="integer" column="come_count" nullable="true"/>
+    <field name="comeCzsCount" type="integer" column="come_czs_count" nullable="true"/>
+    <field name="comeGzCount" type="integer" column="come_gz_count" nullable="true"/>
+    <field name="nocomeCzsCount" type="integer" column="nocome_czs_count" nullable="true"/>
+    <field name="nocomeGzCount" type="integer" column="nocome_gz_count" nullable="true"/>
+    <field name="attendanceRate" type="string" column="attendance_rate" length="10" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="exhibitorUserCount" type="integer" column="exhibitor_user_count" nullable="true"/>
+    <field name="attendanceRateCzs" type="string" column="attendance_rate_czs" length="10" nullable="true"/>
+  </entity>
+</doctrine-mapping>

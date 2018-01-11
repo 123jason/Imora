@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DocumentDirectory" table="document_directory">
+    <indexes>
+      <index name="user_id_idx" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="directory_id_unique" columns="directory_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="parentId" type="string" column="parent_id" length="32" nullable="true"/>
+    <field name="directoryId" type="string" column="directory_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="directoryName" type="string" column="directory_name" length="128" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="totalFiles" type="integer" column="total_files" nullable="false"/>
+    <field name="totalItems" type="integer" column="total_items" nullable="false"/>
+    <field name="lastModified" type="datetime" column="last_modified" nullable="false"/>
+  </entity>
+</doctrine-mapping>

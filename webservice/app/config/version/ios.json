@@ -1,0 +1,34 @@
+{
+"versions":[
+		{
+			"app_id":"0.0.20160423.0",
+			"device":"ios",
+			"leftbutton":"取消",
+			"rightbutton":"升级",
+			"message":"本版本更新了xxxxxx",
+			"update_install":"2",
+			"update_log":"asd",
+			"datetime":"2016-04-19"
+		},
+		{
+			"app_id":"0.2.20160523.1",
+			"device":"ios",
+			"leftbutton":"取消",
+			"rightbutton":"升级",
+			"message":"本版本更新了xxxxxx",
+			"update_install":"1",
+			"update_log":"asd",
+			"datetime":"2017-05-23"
+		},
+		{
+			"app_id":"0.2.20160524.0",
+			"device":"ios",
+			"leftbutton":"取消",
+			"rightbutton":"升级",
+			"message":"本版本更新了xxxxxx",
+			"update_install":"1",
+			"update_log":"asd",
+			"datetime":"2017-05-24"
+		}
+	]
+}

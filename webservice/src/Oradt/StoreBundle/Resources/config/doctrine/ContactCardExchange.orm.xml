@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactCardExchange" table="contact_card_exchange">
+    <indexes>
+      <index name="index_user_id" columns="user_id"/>
+      <index name="groupid" columns="groupid"/>
+      <index name="vcardid" columns="vcardid"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="groupid" type="string" column="groupid" length="6" nullable="false"/>
+    <field name="vcardid" type="string" column="vcardid" length="32" nullable="false"/>
+  </entity>
+</doctrine-mapping>

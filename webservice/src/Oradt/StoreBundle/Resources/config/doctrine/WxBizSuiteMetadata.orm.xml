@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\WxBizSuiteMetadata" table="wx_biz_suite_metadata">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="name" type="string" column="name" length="255"/>
+    <field name="suiteDesc" type="string" column="suite_desc" length="255"/>
+    <field name="level" type="integer" column="level"/>
+    <field name="type" type="integer" column="type"/>
+    <field name="price" type="decimal" column="price"/>
+    <field name="num" type="integer" column="num"/>
+    <field name="sheet" type="integer" column="sheet"/>
+    <field name="buyMonth" type="integer" column="buy_month"/>
+    <field name="status" type="integer" column="status"/>
+    <field name="createTime" type="integer" column="create_time"/>
+    <field name="modifyTime" type="integer" column="modify_time"/>
+  </entity>
+</doctrine-mapping>

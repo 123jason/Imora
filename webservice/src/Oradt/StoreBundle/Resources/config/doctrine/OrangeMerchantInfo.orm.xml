@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeMerchantInfo" table="orange_merchant_info">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardTempId" type="string" column="card_temp_id" length="1024" nullable="false"/>
+    <field name="cardUnitsId" type="integer" column="card_units_id" nullable="false"/>
+    <field name="cardTypeId" type="integer" column="card_type_id" nullable="false"/>
+    <field name="imoraRights" type="string" column="imora_rights" length="1024" nullable="false"/>
+    <field name="serviceGallery" type="text" column="service_gallery" nullable="false"/>
+    <field name="name" type="string" column="name" length="1024" nullable="false"/>
+    <field name="introduce" type="text" column="introduce" nullable="false"/>
+    <field name="phones" type="string" column="phones" length="1024" nullable="false"/>
+    <field name="address" type="string" column="address" length="1024" nullable="false"/>
+    <field name="openHours" type="string" column="open_hours" length="1024" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="ifHold" type="integer" column="if_hold" nullable="false"/>
+    <field name="ifKey" type="integer" column="if_key" nullable="false"/>
+    <field name="url" type="string" column="url" length="1025" nullable="false"/>
+  </entity>
+</doctrine-mapping>

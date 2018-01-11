@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicDetail" table="account_basic_detail">
+    <indexes>
+      <index name="user_im_index" columns="imid"/>
+      <index name="reg_from" columns="reg_from"/>
+      <index name="i_realname" columns="real_name"/>
+      <index name="i_createdtime" columns="created_time"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="user_id_UNIQUE" columns="user_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="realName" type="string" column="real_name" length="96" nullable="false"/>
+    <field name="nickName" type="string" column="nick_name" length="32" nullable="true"/>
+    <field name="avatarPath" type="string" column="avatar_path" length="256" nullable="false"/>
+    <field name="gender" type="string" column="gender" nullable="true"/>
+    <field name="birthday" type="string" column="birthday" length="10" nullable="true"/>
+    <field name="countryCode" type="string" column="country_code" length="3" nullable="false"/>
+    <field name="imid" type="bigint" column="imid" nullable="false"/>
+    <field name="remark" type="string" column="remark" length="256" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="false"/>
+    <field name="misLatitude" type="decimal" column="mis_latitude" precision="13" scale="8" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="false"/>
+    <field name="misLongitude" type="decimal" column="mis_longitude" precision="13" scale="8" nullable="true"/>
+    <field name="languageid" type="integer" column="languageid" nullable="false"/>
+    <field name="cardId" type="string" column="card_id" length="32" nullable="false"/>
+    <field name="regFrom" type="string" column="reg_from" length="20" nullable="false"/>
+    <field name="md5city" type="string" column="md5city" length="32" nullable="false"/>
+    <field name="regType" type="integer" column="reg_type" nullable="false"/>
+    <field name="violateCount" type="integer" column="violate_count" nullable="false"/>
+    <field name="popularFlag" type="integer" column="popular_flag" nullable="false"/>
+    <field name="lastLoginTime" type="integer" column="last_login_time" nullable="false"/>
+    <field name="lastLoginIp" type="string" column="last_login_ip" length="64" nullable="false"/>
+    <field name="loginTime" type="integer" column="login_time" nullable="false"/>
+    <field name="loginIp" type="string" column="login_ip" length="64" nullable="false"/>
+    <field name="registerIp" type="string" column="register_ip" length="64" nullable="false"/>
+    <field name="cardCapacity" type="integer" column="card_capacity" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="expiryDate" type="bigint" column="expiry_date" nullable="false"/>
+    <field name="shared" type="integer" column="shared" nullable="false"/>
+    <field name="isbinding" type="integer" column="isbinding" nullable="false"/>
+    <field name="bindAccount" type="string" column="bind_account" length="255" nullable="false"/>
+    <field name="bindName" type="string" column="bind_name" length="255" nullable="false"/>
+    <field name="bindTime" type="integer" column="bind_time" nullable="false"/>
+    <field name="cityCode" type="string" column="city_code" length="8" nullable="false"/>
+    <field name="ispassed" type="boolean" column="ispassed" nullable="true"/>
+    <field name="capacitySwitch" type="integer" column="capacity_switch" nullable="false"/>
+    <field name="memberLevel" type="integer" column="member_level" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\WxBiz" table="wx_biz">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="bizName" type="string" column="biz_name" length="256" nullable="false"/>
+    <field name="bizAddress" type="string" column="biz_address" length="256" nullable="false"/>
+    <field name="bizEmail" type="string" column="biz_email" length="96" nullable="false"/>
+    <field name="bizInfo" type="text" column="biz_info" nullable="false"/>
+    <field name="website" type="string" column="website" length="128" nullable="false"/>
+    <field name="logoPath" type="string" column="logo_path" length="256" nullable="false"/>
+    <field name="bizSize" type="integer" column="biz_size" nullable="false"/>
+    <field name="bizType" type="string" column="biz_type" length="45" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="96" nullable="false"/>
+    <field name="contact" type="string" column="contact" length="50" nullable="false"/>
+    <field name="prespell" type="string" column="prespell" length="1" nullable="false"/>
+    <field name="wechatId" type="string" column="wechat_id" length="32" nullable="false"/>
+    <field name="wechatPath" type="string" column="wechat_path" length="256" nullable="false"/>
+    <field name="openStatus" type="integer" column="open_status" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="count" type="integer" column="count" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="qrcodeTime" type="integer" column="qrcode_time" nullable="false"/>
+    <field name="addId" type="integer" column="add_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

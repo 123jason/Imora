@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScanCardPictureExt" table="scan_card_picture_ext">
+    <unique-constraints>
+      <unique-constraint name="cardid" columns="cardid"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardid" type="string" column="cardid" length="32" nullable="false"/>
+    <field name="picPathA" type="string" column="pic_path_a" length="256" nullable="false"/>
+    <field name="picPathB" type="string" column="pic_path_b" length="256" nullable="false"/>
+    <field name="vcard" type="text" column="vcard" nullable="false"/>
+    <field name="markpoint" type="string" column="markpoint" length="8096" nullable="false"/>
+    <field name="thumbnail" type="string" column="thumbnail" length="256" nullable="false"/>
+  </entity>
+</doctrine-mapping>

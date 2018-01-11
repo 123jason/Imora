@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBasicPrivacySettings" table="account_basic_privacy_settings">
+    <unique-constraints>
+      <unique-constraint name="user_id_UNIQUE" columns="user_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="whoCanLookMyhomepage" type="string" column="who_can_look_myhomepage" length="2000" nullable="false"/>
+    <field name="updateCardTellWho" type="string" column="update_card_tell_who" length="2000" nullable="false"/>
+    <field name="whoCanLookMytrends" type="string" column="who_can_look_mytrends" length="2000" nullable="false"/>
+    <field name="sharedAnonymity" type="string" column="shared_anonymity" length="2000" nullable="false"/>
+    <field name="pushNotice" type="string" column="push_notice" length="2000" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

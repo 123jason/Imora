@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\Upload" table="upload">
+    <unique-constraints>
+      <unique-constraint name="upload_id" columns="upload_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="uploadId" type="string" column="upload_id" length="40" nullable="false"/>
+    <field name="uploadTime" type="datetime" column="upload_time" nullable="false"/>
+    <field name="path" type="string" column="path" length="55" nullable="false"/>
+    <field name="thumPath" type="string" column="thum_path" length="55" nullable="false"/>
+    <field name="type" type="string" column="type" length="8" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\I18nCity" table="i18n_city">
+    <indexes>
+      <index name="fk_i18n_city_1_idx" columns="country_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="index3" columns="syscode"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="provinceSc" type="string" column="province_sc" length="16" nullable="false"/>
+    <field name="parentSc" type="string" column="parent_sc" length="16" nullable="true"/>
+    <field name="syscode" type="string" column="syscode" length="16" nullable="false"/>
+    <field name="stateId" type="string" column="state_id" length="13" nullable="true"/>
+    <field name="enName" type="string" column="en_name" length="128" nullable="true"/>
+    <field name="nativeName" type="string" column="native_name" length="128" nullable="true"/>
+    <field name="abbreviation" type="string" column="abbreviation" length="32" nullable="true"/>
+    <field name="countryId" type="string" column="country_id" length="3" nullable="false"/>
+    <field name="timezone" type="integer" column="timezone" nullable="true"/>
+    <field name="height" type="decimal" column="height" precision="13" scale="6" nullable="true"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="true"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="true"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="popular" type="integer" column="popular" nullable="false"/>
+    <field name="bdCityName" type="string" column="bd_city_name" length="50" nullable="false"/>
+    <field name="nlevel" type="integer" column="nlevel" nullable="false"/>
+    <field name="ifupdate" type="integer" column="ifupdate" nullable="false"/>
+  </entity>
+</doctrine-mapping>

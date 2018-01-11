@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+  	<mapid>
+		<type>string</type>
+		<mapdb>b.map_id</mapdb>
+		<w> AND b.map_id=:mapid</w></mapid>
+  	<introducerid>
+		<type>string</type>
+		<mapdb>map.introducer_uid</mapdb>
+		<w> AND map.introducer_uid=:introducerid</w></introducerid>
+	<contactid>
+		<type>string</type>
+		<mapdb>b.contact_id</mapdb>
+		<w> AND b.contact_id=:contactid</w></contactid>  	
+    <fromuid><type>string</type>
+		<mapdb>a.from_uid</mapdb>
+		<w> AND a.from_uid=:fromuid</w></fromuid>
+	<date><type>string</type>
+		<mapdb>map.created_time</mapdb>
+		<w> AND map.created_time>=:date</w></date>
+  </fields>
+  <provide_max_fields>mapid,introducerid,contactid,date,fromuid</provide_max_fields>
+  <default_dataparam>
+  <userId></userId>
+  </default_dataparam>
+  <sql><![CDATA[
+		 SELECT %s FROM
+(SELECT * FROM contact WHERE user_id=:userId AND status<>'deleted') AS a INNER JOIN contact_from_introducation AS b ON a.contact_id=b.contact_id
+INNER JOIN introducation_map AS map ON b.map_id=map.map_id
+%s%s
+   ]]></sql>
+  <where><![CDATA[]]></where>
+  <order> ORDER BY a.id DESC</order>
+
+</root>

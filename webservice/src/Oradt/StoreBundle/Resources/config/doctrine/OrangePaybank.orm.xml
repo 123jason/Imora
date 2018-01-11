@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangePaybank" table="orange_paybank">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+    <field name="name" type="string" column="name" length="90" nullable="false"/>
+    <field name="debitCard" type="integer" column="debit_card" nullable="false"/>
+    <field name="debitCardCity" type="string" column="debit_card_city" length="255" nullable="false"/>
+    <field name="creditCard" type="integer" column="credit_card" nullable="false"/>
+    <field name="creditCardCity" type="string" column="credit_card_city" length="255" nullable="false"/>
+    <field name="logo" type="string" column="logo" length="255" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="customer" type="string" column="customer" length="40" nullable="false"/>
+  </entity>
+</doctrine-mapping>

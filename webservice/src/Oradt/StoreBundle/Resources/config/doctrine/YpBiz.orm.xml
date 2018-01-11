@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\YpBiz" table="yp_biz">
+    <indexes>
+      <index name="yps_biz_categoryid_index" columns="category_id,category_id2"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="biz_id_uni" columns="biz_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="principal" type="string" column="principal" length="96" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="32" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="categoryId" type="string" column="category_id" length="50" nullable="false"/>
+    <field name="categoryId2" type="string" column="category_id2" length="50" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="true"/>
+  </entity>
+</doctrine-mapping>

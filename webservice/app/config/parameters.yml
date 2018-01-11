@@ -1,0 +1,100 @@
+# This file is auto-generated during the composer install
+# 注：相关依赖： 1 mysql\4 kafka(包括PHP扩展)\8 elasticsearch(暂未用)\9 aws s3配置参数(现测试阶段用的都是测试桶)\11 gearman\飞常准航班\3 redis
+#
+parameters:    
+    ###-----1：API版本号 ------------------------
+    api_version: Wechat_1.1.9
+    
+    ###-----2 数据库相关配置开始 共风格项
+    #：1 微信主数据库配置----------
+    database_driver: pdo_mysql
+    database_host: 192.168.30.11
+    database_port: 3306
+    database_name: wechatdb
+    database_user: iuser
+    database_password: dbpasswd        
+    # 2 api主数据库配置-------
+    api_database_driver: pdo_mysql
+    api_database_host: 192.168.30.11
+    api_database_port: 3306
+    api_database_name: oradt_cloud
+    api_database_user: iuser
+    api_database_password: dbpasswd
+    
+    ### 数据库相关配置结束
+
+    ###-----3：redis开关及配置地址------------
+    #注：predis_clusters:配置多个用;分开  redis_open 项为是否启用redis开关
+    redis_open: false
+    predis_clusters: 'tcp://127.0.0.1:7001;tcp://127.0.0.1:7002'
+    #API唯一标示，每个API服都需要配一个唯一的前缀
+    redis_key_pre: '191'
+    
+    ###-----4：kafka配置参数及主题名配置------------
+    #注：kafka 关闭注释掉kafka_host这一项就OK
+    kafka_host: '127.0.0.1:9092,127.0.0.1:9092,127.0.0.1:9092'
+    #联系人名片kafka主题 3 
+    kafka_contactcard: api_contactcard
+    #微信demo kafka主题 4 微信项目独有
+    kafka_fbusinesscardcorrect: business-card-correct
+    # 微信任意扫 kafka：主题 4 微信任意扫
+    kafka_any_scan: weixin_other_pic
+    #kafka_any_scan: weixin_card_2
+    # 企业名片
+    kafka_fscancardcorrect: wxapi_bizcardpoll
+    # 日志记录
+    kafka_bs_log: apiweb_log
+
+
+    ###-----5：短信服务相关配置(在不更换服务商的情况下修改 基本上可以不用动)------------
+    #短信接口配置，1美联软通（支持国内外），2亿美软通（目前我们用的是亿美软通）
+    SMS_ID: 2
+    
+    ###-----6：API接口地址域名及文件下载域名------------------------
+    HOST_URL: http://127.0.0.1
+    #WEB对应的地址域名（在不同服务器上需要根据WEB地址更新）
+    WEB_HOST_URL: http://127.0.0.1
+    ###-----13 微信项目独有配置   ,名片搜索地址 （AI组搜索地址）
+    fullsearch: http://127.0.0.1:8080
+    
+    ###-----7：API上传文件存放目录------------------------
+    DOC_ROOT: /home/wwwfile/images1520/
+    
+    ###-----9:AWS S3 账户配置, 并配置存储桶（需先在S3后台创建）
+    #访问密钥 ID
+    s3key: test
+    #私有访问密钥
+    s3secret: test
+    #区域
+    s3region: cn-north-1
+    #桶名称，需先创建
+    s3bucketname: test
+    #临时目录，用于生成缩略图, 前+ DOC_ROOT
+    s3temp: temp/
+     
+    ###-----11 gearman Server 配置 多个用逗号分开 例：10.0.0.1,10.0.0.2:7003 
+    gearman_server: '127.0.0.1:4730'
+    interval_time:  300
+    ###-----12 ocr配置地址
+    #本机ocr 方式  配置 命令目录
+    OCR_PATH: /data/ocr/release/
+    #分布式ocr 方式  1 上传图片交换目录  2 gearman 方法名   ，该方式依赖gearman ，nfs共享
+    OCRFILE: /home/ocrfile/
+    ocr_gearman_function: Ocr_function
+    #gearman 根据批次号批量分享
+    gearman_wxcard_sync: CardSync002
+    gearman_wxexcle_sync: WechatDownExcelCard
+
+    ###-----14 Api接口日志开关 【性能调试开启 】
+    API_LOG_ON-OFF: true
+    
+    ### 支付相关结束
+    ### 微信开发者应用设置appid和appsecret(微信企业员工登录)
+    WE_WxID : 'test'
+    WE_WxSecret : 'test'
+
+    #### 图片识别API
+    picture_recognition: 'http://127.0.0.1/vision/'
+
+    ### 套餐元数据 ID
+    suite_meta_id: 2

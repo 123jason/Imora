@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignPayOrder" table="design_pay_order">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="productId" type="string" column="product_id" length="32" nullable="true"/>
+    <field name="orderNo" type="string" column="order_no" length="100" nullable="true"/>
+    <field name="state" type="integer" column="state" nullable="true"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="true"/>
+    <field name="updateTime" type="integer" column="update_time" nullable="true"/>
+    <field name="endTime" type="integer" column="end_time" nullable="true"/>
+    <field name="newCardId" type="string" column="new_card_id" length="32" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ContactRelationPermission" table="contact_relation_permission">
+    <indexes>
+      <index name="fr_to_uid" columns="from_uid,to_uid"/>
+      <index name="sta_last_idx" columns="status,last_modified"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="false"/>
+    <field name="toUid" type="string" column="to_uid" length="40" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="lastModified" type="integer" column="last_modified" nullable="false"/>
+    <field name="lastPush" type="integer" column="last_push" nullable="false"/>
+  </entity>
+</doctrine-mapping>

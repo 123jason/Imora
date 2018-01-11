@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidateExperience" table="hr_candidate_experience">
+    <indexes>
+      <index name="candidate_id_idx" columns="candidate_id"/>
+      <index name="user_id_idx_1" columns="user_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="experience_id_uni" columns="experience_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="experienceId" type="string" column="experience_id" length="32" nullable="false"/>
+    <field name="company" type="string" column="company" length="96" nullable="false"/>
+    <field name="position" type="string" column="position" length="96" nullable="false"/>
+    <field name="workarea" type="string" column="workarea" length="96" nullable="false"/>
+    <field name="startDate" type="date" column="start_date" nullable="false"/>
+    <field name="endDate" type="string" column="end_date" length="12" nullable="true"/>
+    <field name="responsibility" type="string" column="responsibility" length="256" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+
+  </entity>
+</doctrine-mapping>

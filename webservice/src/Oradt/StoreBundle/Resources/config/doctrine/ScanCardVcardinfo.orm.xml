@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScanCardVcardinfo" table="scan_card_vcardinfo">
+    <indexes>
+      <index name="user_id" columns="user_id"/>
+      <index name="TEL" columns="TEL"/>
+      <index name="CELL" columns="CELL"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="card_id" columns="card_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardId" type="string" column="card_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="fn" type="string" column="FN" length="128" nullable="false"/>
+    <field name="org" type="string" column="ORG" length="400" nullable="false"/>
+    <field name="depar" type="string" column="DEPAR" length="128" nullable="false"/>
+    <field name="title" type="string" column="TITLE" length="256" nullable="false"/>
+    <field name="url" type="string" column="URL" length="5140" nullable="false"/>
+    <field name="cell" type="string" column="CELL" length="256" nullable="false"/>
+    <field name="tel" type="string" column="TEL" length="1500" nullable="false"/>
+    <field name="email" type="string" column="EMAIL" length="350" nullable="false"/>
+    <field name="adr" type="string" column="ADR" length="400" nullable="false"/>
+    <field name="industry" type="string" column="INDUSTRY" length="128" nullable="false"/>
+    <field name="sn" type="string" column="SN" length="64" nullable="true"/>
+    <field name="gn" type="string" column="GN" length="64" nullable="true"/>
+  </entity>
+</doctrine-mapping>

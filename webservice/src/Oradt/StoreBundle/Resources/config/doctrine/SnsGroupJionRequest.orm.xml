@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsGroupJionRequest" table="sns_group_jion_request">
+    <indexes>
+      <index name="group_id_idx" columns="group_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="groupId" type="string" column="group_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="message" type="string" column="message" length="256" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="handleResult" type="string" column="handle_result" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignPageView" table="design_page_view">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="date" type="string" column="date" nullable="true"/>
+    <field name="loginDesigner" type="integer" column="login_designer" nullable="true"/>
+    <field name="loginMember" type="integer" column="login_member" nullable="true"/>
+    <field name="loginAnony" type="integer" column="login_anony" nullable="true"/>
+    <field name="pvDesigner" type="integer" column="pv_designer" nullable="true"/>
+    <field name="pvMember" type="integer" column="pv_member" nullable="true"/>
+    <field name="pvAnony" type="integer" column="pv_anony" nullable="true"/>
+  </entity>
+</doctrine-mapping>

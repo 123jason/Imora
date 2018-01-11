@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\TopicComment" table="topic_comment">
+    <indexes>
+      <index name="fk_topic_comment_1_idx" columns="topic_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="commentId" type="string" column="comment_id" length="32" nullable="false"/>
+    <field name="parentId" type="string" column="parent_id" length="32" nullable="true"/>
+    <field name="topicId" type="string" column="topic_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="comment" type="string" column="comment" length="8192" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

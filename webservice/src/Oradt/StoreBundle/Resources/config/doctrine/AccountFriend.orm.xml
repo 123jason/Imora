@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountFriend" table="account_friend">
+    <indexes>
+      <index name="fuser_id" columns="fuser_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="fuserId" type="string" column="fuser_id" length="40" nullable="false"/>
+    <field name="fmobile" type="string" column="fmobile" length="15" nullable="false"/>
+    <field name="fusername" type="string" column="fusername" length="15" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="gid" type="smallint" column="gid" nullable="false"/>
+    <field name="note" type="string" column="note" length="50" nullable="false"/>
+    <field name="num" type="integer" column="num" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="lastContactTime" type="integer" column="last_contact_time" nullable="false"/>
+    <field name="tags" type="string" column="tags" length="60" nullable="false"/>
+    <field name="imid" type="bigint" column="imid" nullable="false"/>
+    <field name="fuserSort" type="smallint" column="fuser_sort" nullable="false"/>
+  </entity>
+</doctrine-mapping>

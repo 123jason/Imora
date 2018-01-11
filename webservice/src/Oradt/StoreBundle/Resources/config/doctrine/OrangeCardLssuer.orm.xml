@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeCardLssuer" table="orange_card_lssuer">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardtypeid" type="integer" column="cardtypeid" nullable="false"/>
+    <field name="lssuerName" type="string" column="lssuer_name" length="50" nullable="false"/>
+    <field name="simplename" type="string" column="simplename" length="50" nullable="false"/>
+    <field name="lssuerNumber" type="string" column="lssuer_number" length="100" nullable="false"/>
+    <field name="iscoop" type="integer" column="iscoop" nullable="false"/>
+    <field name="attribute" type="text" column="attribute" nullable="false"/>
+    <field name="createtime" type="integer" column="createtime" nullable="false"/>
+  </entity>
+</doctrine-mapping>

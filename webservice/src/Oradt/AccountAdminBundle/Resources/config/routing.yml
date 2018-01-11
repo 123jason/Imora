@@ -1,0 +1,260 @@
+oradt_authority_module_find:
+    path:   /authority/module/
+    defaults: { _controller: OradtAccountAdminBundle:Module:find }
+    requirements:
+        _method:   GET
+  
+oradt_authority_module_add:
+    path:   /authority/module/
+    defaults: { _controller: OradtAccountAdminBundle:Module:add }
+    requirements:
+        _method:   POST
+
+oradt_authority_module_update:
+    path:   /authority/module/
+    defaults: { _controller: OradtAccountAdminBundle:Module:update }
+    requirements:
+        _method:  PUT
+    
+oradt_authority_module_delete:
+    path:   /authority/module/
+    defaults: { _controller: OradtAccountAdminBundle:Module:delete }
+    requirements:
+        _method:  DELETE
+##管理员账号开始
+oradt_account_employee_add:
+    path:   /admin/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Employee:post }
+    requirements:
+        _method:   POST
+oradt_account_employee_find:
+    path:   /admin/get
+    defaults: { _controller: OradtAccountAdminBundle:Employee:get }
+    requirements:
+        _method:   GET
+        
+##管理员账号结束
+##安全模式开始
+oradt_account_security_find:
+    path:   /security
+    defaults: { _controller: OradtAccountAdminBundle:Security:get }
+    requirements:
+        _method:   GET
+oradt_account_security_update:
+    path:   /security
+    defaults: { _controller: OradtAccountAdminBundle:Security:put }
+    requirements:
+        _method:   PUT
+##安全模式结束
+##角色开始
+oradt_authority_role_add:
+    path:   /admin/role
+    defaults: { _controller: OradtAccountAdminBundle:Role:post }
+    requirements:
+        _method:   POST
+
+oradt_authority_role_update:
+    path:   /admin/role
+    defaults: { _controller: OradtAccountAdminBundle:Role:put }
+    requirements:
+        _method:   PUT
+        
+oradt_authority_role_delete:
+    path:   /admin/role
+    defaults: { _controller: OradtAccountAdminBundle:Role:delete }
+    requirements:
+        _method:   DELETE
+        
+oradt_authority_role_find:
+    path:   /admin/role
+    defaults: { _controller: OradtAccountAdminBundle:Role:get }
+    requirements:
+        _method:   GET
+
+#####  Apistore  （目前仅有后台操作日志部分）
+oradt_accountadmin_store_post:
+    path:     /admin/apistore/{act}
+    defaults: { _controller: OradtAccountAdminBundle:ApiStore:post }
+    requirements:
+        _method: POST
+oradt_accountadmin_store_get:
+    path:     /admin/apistore/{act}
+    defaults: { _controller: OradtAccountAdminBundle:ApiStore:get }
+    requirements:
+        _method: GET
+
+#####  Scanner  （扫描仪）
+oradt_admin_scanner_post:
+    path:     /admin/scanner/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Scanner:post }
+    requirements:
+        _method: POST
+oradt_admin_scanner_get:
+    path:     /admin/scanner/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Scanner:get }
+    requirements:
+        _method: GET
+        
+#####  ScannerV2  （扫描仪V2）
+oradt_admin_scannerv2_post:
+    path:     /admin/scannerv2/{act}
+    defaults: { _controller: OradtAccountAdminBundle:ScannerV2:post }
+    requirements:
+        _method: POST
+oradt_admin_scannerv2_get:
+    path:     /admin/scannerv2/{act}
+    defaults: { _controller: OradtAccountAdminBundle:ScannerV2:get }
+    requirements:
+        _method: GET
+        
+#####  Cardshare  （名片分享）
+oradt_admin_cardshare_post:
+    path:     /admin/cardshare/{act}
+    defaults: { _controller: OradtAccountAdminBundle:CardShare:post }
+    requirements:
+        _method: POST
+oradt_admin_cardshare_get:
+    path:     /admin/cardshare/{act}
+    defaults: { _controller: OradtAccountAdminBundle:CardShare:get }
+    requirements:
+        _method: GET
+
+#######企业标签
+oradt_admin_biztags_post:
+    path:     /admin/biztags
+    defaults: { _controller: OradtAccountAdminBundle:BizTags:post }
+    requirements:
+        _method: POST
+oradt_admin_biztags_get:
+    path:     /admin/biztags
+    defaults: { _controller: OradtAccountAdminBundle:BizTags:get }
+    requirements:
+        _method: GET
+oradt_admin_biztags_delete:
+    path:     /admin/biztags
+    defaults: { _controller: OradtAccountAdminBundle:BizTags:delete }
+    requirements:
+        _method: DELETE
+
+#######职能管理
+oradt_admin_position_post:
+    path:     /admin/position
+    defaults: { _controller: OradtAccountAdminBundle:Position:post }
+    requirements:
+        _method: POST
+oradt_admin_position_get:
+    path:     /admin/position
+    defaults: { _controller: OradtAccountAdminBundle:Position:get }
+    requirements:
+        _method: GET
+oradt_admin_position_put:
+    path:     /admin/position
+    defaults: { _controller: OradtAccountAdminBundle:Position:put }
+    requirements:
+        _method: PUT
+oradt_admin_position_delete:
+    path:     /admin/position
+    defaults: { _controller: OradtAccountAdminBundle:Position:delete }
+    requirements:
+        _method: DELETE
+
+#######活动管理
+oradt_admin_operation_activity:
+    path:     /admin/activity/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Activity:post, act: new }
+    requirements:
+        _method: POST
+
+#######到期提醒
+oradt_admin_operation_alert:
+    path:     /admin/alert/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Alert:post, act: new }
+    requirements:
+        _method: POST
+oradt_admin_operation_alert_get:
+    path:     /admin/alert
+    defaults: { _controller: OradtAccountAdminBundle:Alert:get }
+    requirements:
+        _method: GET
+        
+#####  Task 运营任务
+oradt_admin_task_post:
+    path:     /admin/task/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Task:post }
+    requirements:
+        _method: POST
+oradt_admin_task_get:
+    path:     /admin/task/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Task:get }
+    requirements:
+        _method: GET
+
+##  橙子
+orange_tag_post:
+    path:     /admin/orange/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Orange:post }
+    requirements:
+        _method: POST
+orange_tag_get:
+    path:     /admin/orange/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Orange:get }
+    requirements:
+        _method: GET
+
+
+##  商户及其他
+orange_store_post:
+    path:     /admin/orangestore/{act}
+    defaults: { _controller: OradtAccountAdminBundle:OrangeStore:post }
+    requirements:
+        _method: POST
+orange_store_get:
+    path:     /admin/orangestore/{act}
+    defaults: { _controller: OradtAccountAdminBundle:OrangeStore:get }
+    requirements:
+        _method: GET
+        
+##  企业信息
+biz_post:
+    path:     /admin/biz/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Biz:post }
+    requirements:
+        _method: POST
+biz_get:
+    path:     /admin/biz/{act}
+    defaults: { _controller: OradtAccountAdminBundle:Biz:get }
+    requirements:
+        _method: GET
+##  企业套餐
+biz_suite_post:
+    path:     /admin/suite/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizSuite:post }
+    requirements:
+        _method: POST
+biz_suite_get:
+    path:     /admin/suite/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizSuite:get }
+    requirements:
+        _method: GET
+##  企业订单
+biz_order_post:
+    path:     /admin/order/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizOrder:post }
+    requirements:
+        _method: POST
+biz_order_get:
+    path:     /admin/order/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizOrder:get }
+    requirements:
+        _method: GET
+##  企业名片
+biz_card_post:
+    path:     /admin/card/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizCard:post }
+    requirements:
+        _method: POST
+biz_card_get:
+    path:     /admin/card/{act}
+    defaults: { _controller: OradtAccountAdminBundle:BizCard:get }
+    requirements:
+        _method: GET

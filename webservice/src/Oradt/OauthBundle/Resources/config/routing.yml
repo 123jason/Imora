@@ -1,0 +1,30 @@
+_default:
+    path:     /
+    defaults: { _controller: OradtOauthBundle:Default:index }
+    
+
+#鉴权
+oradt_oauth:
+    path:     /oauth
+    defaults: { _controller: OradtOauthBundle:Oauth:post }
+    requirements:
+            _method:  POST
+oradt_oauth_delete:
+    path:     /oauth
+    defaults: { _controller: OradtOauthBundle:Oauth:delete }
+    requirements:
+            _method:  DELETE
+            
+            
+####################################### api store #############################
+oradt_oauth_store_post:
+    path:     /oauth/apistore/{act}
+    defaults: { _controller: OradtOauthBundle:ApiStore:post }
+    requirements:
+        _method: POST
+        
+oradt_oauth_store_get:
+    path:     /oauth/apistore/{act}
+    defaults: { _controller: OradtOauthBundle:ApiStore:get }
+    requirements:
+        _method: GET

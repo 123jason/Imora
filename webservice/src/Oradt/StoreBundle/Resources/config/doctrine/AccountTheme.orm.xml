@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountTheme" table="account_theme">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="false"/>
+    <field name="name" type="string" column="name" length="96" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="version" type="string" column="version" length="96" nullable="false"/>
+    <field name="url" type="string" column="url" length="96" nullable="false"/>
+    <field name="size" type="float" column="size" precision="13" scale="6" nullable="false"/>
+    <field name="unit" type="string" column="unit" length="20" nullable="false"/>
+    <field name="author" type="string" column="author" length="96" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+  </entity>
+</doctrine-mapping>

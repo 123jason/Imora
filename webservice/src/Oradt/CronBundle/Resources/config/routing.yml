@@ -1,0 +1,3 @@
+oradt_cron_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OradtCronBundle:Default:index }

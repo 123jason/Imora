@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\PasswdReset" table="passwd_reset">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="account" type="string" column="account" length="96" nullable="false"/>
+    <field name="accountId" type="string" column="account_id" length="40" nullable="false"/>
+    <field name="ip" type="string" column="ip" length="64" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="resetTime" type="datetime" column="reset_time" nullable="true"/>
+    <field name="accountType" type="string" column="account_type" nullable="false"/>
+    <field name="resetType" type="string" column="reset_type" nullable="false"/>
+  </entity>
+</doctrine-mapping>

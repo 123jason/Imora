@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ExpoPersonnel" table="expo_personnel">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizid" type="string" column="bizid" length="32" nullable="true"/>
+    <field name="personnelid" type="string" column="personnelid" length="32" nullable="true"/>
+    <field name="jsonparam" type="string" column="jsonparam" length="256" nullable="true"/>
+    <field name="name" type="string" column="name" length="32" nullable="true"/>
+    <field name="querysql" type="text" column="querysql" nullable="true"/>
+    <field name="createdtime" type="datetime" column="createdtime" nullable="true"/>
+    <field name="prespell" type="string" column="prespell" length="1" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+  </entity>
+</doctrine-mapping>

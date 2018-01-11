@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsQaCrawlerNews" table="sns_qa_crawler_news">
+    <unique-constraints>
+      <unique-constraint name="news_id_UNIQUE" columns="news_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="newsId" type="string" column="news_id" length="40" nullable="false"/>
+    <field name="title" type="string" column="title" length="2000" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="category" type="string" column="category" length="20" nullable="false"/>
+    <field name="categoryId" type="integer" column="category_id" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="crawlerTime" type="datetime" column="crawler_time" nullable="false"/>
+    <field name="webFrom" type="string" column="web_from" length="96" nullable="false"/>
+    <field name="url" type="string" column="url" length="96" nullable="false"/>
+    <field name="imageurls" type="string" column="imageurls" length="500" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="keyword" type="string" column="keyword" length="96" nullable="false"/>
+    <field name="image" type="string" column="image" length="500" nullable="true"/>
+    <field name="issue" type="integer" column="issue" nullable="false"/>
+    <field name="releaseTime" type="integer" column="release_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

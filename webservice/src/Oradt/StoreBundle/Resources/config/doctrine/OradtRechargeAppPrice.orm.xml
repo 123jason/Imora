@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OradtRechargeAppPrice" table="oradt_recharge_app_price">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="title" type="string" column="title" length="255" nullable="false"/>
+    <field name="equityTime" type="integer" column="equity_time" nullable="false"/>
+    <field name="equityCapacity" type="integer" column="equity_capacity" nullable="false"/>
+    <field name="price" type="float" column="price" precision="10" scale="2" nullable="false"/>
+    <field name="appid" type="string" column="appid" length="50" nullable="false"/>
+    <field name="info" type="text" column="info" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="createdTime" type="bigint" column="created_time" nullable="false"/>
+    <field name="modifiedTime" type="bigint" column="modified_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

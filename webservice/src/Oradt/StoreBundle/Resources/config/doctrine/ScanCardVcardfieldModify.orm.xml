@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScanCardVcardfieldModify" table="scan_card_vcardfield_modify">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="vcardid" type="string" column="vcardid" length="32" nullable="false"/>
+    <field name="fromvcard" type="text" column="fromvcard" nullable="false"/>
+    <field name="tovcard" type="text" column="tovcard" nullable="false"/>
+    <field name="checkAccount" type="string" column="check_account" length="40" nullable="false"/>
+    <field name="fullcheckAccount" type="string" column="fullcheck_account" length="40" nullable="false"/>
+    <field name="name" type="integer" column="name" nullable="false"/>
+    <field name="mobile" type="integer" column="mobile" nullable="false"/>
+    <field name="company" type="integer" column="company" nullable="false"/>
+    <field name="department" type="integer" column="department" nullable="false"/>
+    <field name="job" type="integer" column="job" nullable="false"/>
+    <field name="address" type="integer" column="address" nullable="false"/>
+    <field name="telphone" type="integer" column="telphone" nullable="false"/>
+    <field name="fax" type="integer" column="fax" nullable="false"/>
+    <field name="email" type="integer" column="email" nullable="false"/>
+    <field name="web" type="integer" column="web" nullable="false"/>
+    <field name="modifyTime" type="string" column="modify_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

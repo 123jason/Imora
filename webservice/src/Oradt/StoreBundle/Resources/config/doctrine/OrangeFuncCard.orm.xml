@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeFuncCard" table="orange_func_card">
+    <indexes>
+      <index name="u_idx_index" columns="user_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="module" type="integer" column="module" nullable="false"/>
+    <field name="cardNumber" type="string" column="card_Number" length="18" nullable="false"/>
+    <field name="userName" type="string" column="user_name" length="96" nullable="false"/>
+    <field name="passwd" type="string" column="passwd" length="56" nullable="false"/>
+    <field name="cardName" type="string" column="card_name" length="100" nullable="false"/>
+    <field name="logo" type="string" column="logo" length="256" nullable="false"/>
+    <field name="tempId" type="integer" column="temp_id" length="32" nullable="false"/>
+    <field name="picPathA" type="string" column="pic_path_a" length="256" nullable="false"/>
+    <field name="picPathB" type="string" column="pic_path_b" length="256" nullable="false"/>
+    <field name="validDate" type="string" column="valid_date" length="16" nullable="false"/>
+    <field name="safeCode" type="string" column="safe_code" length="32" nullable="false"/>
+    <field name="barCodePath" type="string" column="bar_code_path" length="256" nullable="false"/>
+    <field name="certification" type="integer" column="certification" nullable="false"/>
+    <field name="email" type="string" column="email" length="96" nullable="false"/>
+    <field name="emailpwd" type="string" column="emailpwd" length="56" nullable="false"/>
+    <field name="commonUsed" type="integer" column="common_used" nullable="false"/>
+    <field name="lastusetime" type="integer" column="lastusetime" nullable="false"/>
+    <field name="location" type="string" column="location" length="96" nullable="false"/>
+    <field name="cardType" type="integer" column="card_type" nullable="false"/>
+    <field name="isdefault" type="integer" column="isdefault" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="phone" type="string" column="phone" length="56" nullable="false"/>
+    <field name="consumptionAmount" type="float" column="consumption_amount" precision="10" scale="2" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="applyAid" type="string" column="apply_aid" length="32" nullable="false"/>
+    <field name="cardCreatedMode" type="integer" column="card_created_mode" nullable="false"/>
+    <field name="validSwipeCard" type="integer" column="valid_swipe_card" nullable="false"/>
+    <field name="ruleid" type="string" column="ruleid" length="500" nullable="false"/>
+    <field name="commonUseTime" type="integer" column="common_use_time" nullable="false"/>
+    <field name="localCardid" type="string" column="local_cardid" nullable="false"/>
+    <field name="tempUpdateHints" type="integer" column="temp_update_hints" nullable="false"/>
+    <field name="panId" type="string" column="pan_id" length="40" nullable="false"/>
+    <field name="pan" type="string" column="pan" length="40" nullable="false"/>
+    <field name="issuername" type="string" column="issuername" length="40" nullable="false"/>
+    <field name="panStatus" type="string" column="pan_status" length="40" nullable="false"/>
+    <field name="deviceId" type="string" column="device_id" length="40" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\HrCandidateWorks" table="hr_candidate_works">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="worksId" type="string" column="works_id" length="32" nullable="false"/>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="worksName" type="string" column="works_name" length="96" nullable="false"/>
+    <field name="position" type="string" column="position" length="96" nullable="false"/>
+    <field name="startDate" type="date" column="start_date" nullable="true"/>
+    <field name="endDate" type="date" column="end_date" nullable="true"/>
+    <field name="worksUrl" type="string" column="works_url" length="96" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="true"/>
+    <field name="members" type="string" column="members" length="96" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="96" nullable="true"/>
+  </entity>
+</doctrine-mapping>

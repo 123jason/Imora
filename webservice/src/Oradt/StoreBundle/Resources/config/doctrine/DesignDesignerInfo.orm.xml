@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignDesignerInfo" table="design_designer_info">
+    <indexes>
+      <index name="fk_design_designer_info_design_professional_field1_idx" columns="professional_field_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="realName" type="string" column="real_name" length="96" nullable="false"/>
+	<field name="nickName" type="string" column="nick_name" length="32" nullable="false"/>
+	<field name="professionalFieldId" type="integer" column="professional_field_id" nullable="false"/>
+    <field name="identityCardType" type="integer" column="identity_card_type" nullable="false"/>
+    <field name="identityCardNumber" type="string" column="identity_card_number" length="18" nullable="false"/>
+    <field name="identityPic1Url" type="string" column="identity_pic1_url" length="255" nullable="false"/>
+    <field name="identityPic2Url" type="string" column="identity_pic2_url" length="255" nullable="false"/>
+    <field name="email" type="string" column="email" length="100" nullable="true"/>
+    <field name="qq" type="string" column="qq" length="20" nullable="true"/>
+    <field name="skype" type="string" column="skype" length="45" nullable="true"/>
+    <field name="address" type="string" column="address" length="45" nullable="true"/>
+    <field name="paymentMethod" type="integer" column="payment_method" nullable="true"/>
+    <field name="mobile" type="string" column="mobile" length="20" nullable="true"/>
+    <field name="status" type="integer" column="status" nullable="true"/>
+    <field name="comment" type="text" column="comment" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="true"/>
+    <field name="updateTime" type="integer" column="update_time" nullable="true"/>
+  </entity>
+</doctrine-mapping>

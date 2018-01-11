@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsActivityResource" table="sns_activity_resource">
+    <indexes>
+      <index name="activity_id" columns="activity_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="res_id_uni" columns="res_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="resId" type="string" column="res_id" length="32" nullable="true"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="activityId" type="string" column="activity_id" length="32" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

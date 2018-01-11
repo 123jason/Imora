@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\TaskRecordResource" table="task_record_resource">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="recordId" type="bigint" column="record_id" nullable="false"/>
+    <field name="smallPath" type="string" column="small_path" length="256" nullable="false"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="false"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+	<field name="reshigh" type="integer" column="reshigh" nullable="false"/>
+	<field name="reswide" type="integer" column="reswide" nullable="false"/>
+  </entity>
+</doctrine-mapping>

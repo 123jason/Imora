@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AccountBizAuthorizationRole" table="account_biz_authorization_role">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+    <field name="rid" type="string" column="rid" length="32" nullable="true"/>
+    <field name="name" type="string" column="name" length="50" nullable="true"/>
+    <field name="permission" type="string" column="permission" length="8192" nullable="true"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="true"/>
+    <field name="remark" type="string" column="remark" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

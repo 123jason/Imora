@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+  	<ringid>
+		<type>string</type>
+		<mapdb>ring_id</mapdb>
+		<w> AND ring_id=:ringid</w></ringid>
+	<contactid>
+		<type>string</type>
+		<mapdb>A.contact_id</mapdb>
+		<w> AND A.contact_id IN (%s)</w></contactid>
+    <contactavatar><type>string</type>
+		<mapdb>B.from_uid</mapdb>
+		<w>0</w></contactavatar>
+	<lastcontacted><type>string</type>
+		<mapdb>last_contact_time</mapdb>
+		<w>Range</w></lastcontacted>
+  </fields>
+  <provide_max_fields>ringid,contactid,lastcontacted,contactavatar</provide_max_fields>
+  <default_dataparam>
+  <userId></userId>
+  </default_dataparam>
+  <sql><![CDATA[
+		 SELECT %s FROM (SELECT * FROM annual_ring WHERE user_id=:userId) AS A INNER JOIN contact AS B ON
+		  A.contact_id=B.contact_id%s%s
+   ]]></sql>
+  <where><![CDATA[A.user_id=:userId AND B.user_id<>B.from_uid]]></where>
+  <order> ORDER BY A.id DESC</order>
+
+</root>

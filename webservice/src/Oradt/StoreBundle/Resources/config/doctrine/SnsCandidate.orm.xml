@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\SnsCandidate" table="sns_candidate">
+    <unique-constraints>
+      <unique-constraint name="candidate_id_uni" columns="candidate_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="candidateId" type="string" column="candidate_id" length="32" nullable="false"/>
+    <field name="candidateProfile" type="text" column="candidate_profile" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="languageId" type="integer" column="language_id" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

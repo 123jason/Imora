@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeFlight" table="orange_flight">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fnum" type="string" column="fnum" length="10" nullable="false"/>
+    <field name="fdate" type="string" column="fdate" length="20" nullable="false"/>
+    <field name="fcontent" type="text" column="fcontent" nullable="false"/>
+    <field name="fjson" type="text" column="fjson" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="ifcustom" type="integer" column="ifcustom" nullable="false"/>
+    <field name="updateContent" type="text" column="update_content" nullable="false"/>
+    <field name="contrastContent" type="text" column="contrast_content" nullable="false"/>
+    <field name="fcategory" type="integer" column="fcategory" nullable="false"/>
+    <field name="orgTimezone" type="string" column="org_timezone" length="20" nullable="false"/>
+    <field name="dstTimezone" type="string" column="dst_timezone" length="20" nullable="false"/>
+    <field name="flightcompany" type="string" column="FlightCompany" length="255" nullable="false"/>
+    <field name="flightdepcode" type="string" column="FlightDepcode" length="4" nullable="false"/>
+    <field name="flightarrcode" type="string" column="FlightArrcode" length="4" nullable="false"/>
+    <field name="flightdeptimeplandate" type="string" column="FlightDeptimePlanDate" length="50" nullable="false"/>
+    <field name="flightarrtimeplandate" type="string" column="FlightArrtimePlanDate" length="50" nullable="false"/>
+    <field name="flightdeptimereadydate" type="string" column="FlightDeptimeReadyDate" length="50" nullable="false"/>
+    <field name="flightarrtimereadydate" type="string" column="FlightArrtimeReadyDate" length="50" nullable="false"/>
+    <field name="flightdeptimedate" type="string" column="FlightDeptimeDate" length="50" nullable="false"/>
+    <field name="flightarrtimedate" type="string" column="FlightArrtimeDate" length="50" nullable="false"/>
+    <field name="boardgate" type="string" column="BoardGate" length="10" nullable="false"/>
+    <field name="baggageid" type="string" column="BaggageID" length="10" nullable="false"/>
+    <field name="flightstate" type="string" column="FlightState" length="10" nullable="false"/>
+    <field name="shareflightno" type="string" column="ShareFlightNo" length="20" nullable="false"/>
+    <field name="flighthterminal" type="string" column="FlightHTerminal" length="10" nullable="false"/>
+    <field name="flightterminal" type="string" column="FlightTerminal" length="10" nullable="false"/>
+    <field name="stopflag" type="integer" column="StopFlag" nullable="false"/>
+    <field name="shareflag" type="integer" column="ShareFlag" nullable="false"/>
+    <field name="legflag" type="integer" column="LegFlag" nullable="false"/>
+    <field name="flightdep" type="string" column="FlightDep" length="255" nullable="false"/>
+    <field name="flightarr" type="string" column="FlightArr" length="255" nullable="false"/>
+    <field name="flightdepairport" type="string" column="FlightDepAirport" length="255" nullable="false"/>
+    <field name="flightarrairport" type="string" column="FlightArrAirport" length="255" nullable="false"/>
+    <field name="distance" type="integer" column="distance" nullable="false"/>
+  </entity>
+</doctrine-mapping>

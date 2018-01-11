@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\YpBizProductResource" table="yp_biz_product_resource">
+    <indexes>
+      <index name="fk_yp_biz_product_resource_1" columns="product_id"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="res_id_UNIQUE" columns="res_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="resId" type="string" column="res_id" length="32" nullable="false"/>
+    <field name="resPath" type="string" column="res_path" length="256" nullable="false"/>
+    <field name="productId" type="string" column="product_id" length="32" nullable="true"/>
+    <field name="sorting" type="integer" column="sorting" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="resType" type="string" column="res_type" nullable="true"/>
+  </entity>
+</doctrine-mapping>

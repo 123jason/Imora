@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OperationAlert" table="operation_alert">
+    <unique-constraints>
+      <unique-constraint name="alert_id" columns="alert_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="alertId" type="string" column="alert_id" length="40" nullable="false"/>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="isnotify" type="integer" column="isnotify" nullable="false"/>
+    <field name="title" type="string" column="title" length="100" nullable="true"/>
+    <field name="content" type="text" column="content" nullable="true"/>
+    <field name="alertDate" type="integer" column="alert_date" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="isDelete" type="integer" column="is_delete" nullable="false"/>
+  </entity>
+</doctrine-mapping>

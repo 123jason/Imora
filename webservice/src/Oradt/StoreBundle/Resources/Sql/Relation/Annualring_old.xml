@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <fields>
+  	<ringid>
+		<type>string</type>
+		<mapdb>ring_id</mapdb>
+		<w> AND ring_id=:ringid</w></ringid>
+  	<introducerid>
+		<type>string</type>
+		<mapdb>''</mapdb>
+		<w>0</w></introducerid>
+	<contactid>
+		<type>string</type>
+		<mapdb>a.contact_id</mapdb>
+		<w> AND a.contact_id=:contactid</w></contactid>
+	<cardid>
+		<type>string</type>
+		<mapdb>a.card_id</mapdb>
+		<w> AND a.card_id=:cardid</w></cardid>	
+    <fromuid><type>string</type>
+		<mapdb>b.from_uid</mapdb>
+		<w> AND b.from_uid=:fromuid</w></fromuid>
+	<lastcontacted><type>string</type>
+		<mapdb>last_contact_time</mapdb>
+		<w> AND last_contact_time>=:lastcontacted</w></lastcontacted>
+  </fields>
+  <provide_max_fields>ringid,introducerid,contactid,cardid,lastcontacted,fromuid</provide_max_fields>
+  <default_dataparam>
+  <userId></userId>
+  </default_dataparam>
+  <sql><![CDATA[
+		 SELECT %s FROM annual_ring AS a INNER JOIN contact AS b ON 
+a.contact_id=b.contact_id
+%s%s
+   ]]></sql>
+  <where><![CDATA[a.user_id=:userId AND b.user_id<>b.from_uid]]></where>
+  <order> ORDER BY a.id DESC</order>
+
+</root>

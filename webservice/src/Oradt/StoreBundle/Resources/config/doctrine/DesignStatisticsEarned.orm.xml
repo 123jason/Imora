@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignStatisticsEarned" table="design_statistics_earned">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="date" type="date" column="date" nullable="false"/>
+    <field name="userid" type="string" column="userid" length="40" nullable="false"/>
+    <field name="productSales" type="integer" column="product_sales" nullable="true"/>
+    <field name="productEarn" type="decimal" column="product_earn" precision="12" scale="2" nullable="true"/>
+    <field name="projectNum" type="integer" column="project_num" nullable="true"/>
+    <field name="projectEarn" type="decimal" column="project_earn" precision="12" scale="2" nullable="true"/>
+    <field name="projectSelfNum" type="integer" column="project_self_num" nullable="true"/>
+    <field name="projectEarnSelf" type="decimal" column="project_earn_self" precision="12" scale="2" nullable="true"/>
+    <field name="earnSum" type="decimal" column="earn_sum" precision="13" scale="2" nullable="true"/>
+    <field name="unitid" type="integer" column="unitid" nullable="true"/>
+  </entity>
+</doctrine-mapping>

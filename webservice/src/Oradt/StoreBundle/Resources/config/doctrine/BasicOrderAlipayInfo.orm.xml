@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BasicOrderAlipayInfo" table="basic_order_alipay_info">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="orderId" type="string" column="order_id" length="40" nullable="false"/>
+    <field name="totalFee" type="decimal" column="total_fee" precision="12" scale="2" nullable="true"/>
+    <field name="feeType" type="string" column="fee_type" length="8" nullable="true"/>
+    <field name="notifyTime" type="integer" column="notify_time" nullable="true"/>
+    <field name="notifyType" type="string" column="notify_type" length="32" nullable="true"/>
+    <field name="notifyId" type="string" column="notify_id" length="100" nullable="true"/>
+    <field name="signType" type="string" column="sign_type" nullable="true"/>
+    <field name="aliTradeNo" type="string" column="ali_trade_no" length="100" nullable="true"/>
+    <field name="tradeStatus" type="string" column="trade_status" nullable="true"/>
+    <field name="gmtCreate" type="integer" column="gmt_create" nullable="true"/>
+    <field name="gmtPayment" type="integer" column="gmt_payment" nullable="true"/>
+    <field name="gmtClose" type="integer" column="gmt_close" nullable="true"/>
+    <field name="isRefund" type="integer" column="is_refund" nullable="true"/>
+    <field name="refundAmount" type="float" column="refund_amount" precision="10" scale="2" nullable="true"/>
+    <field name="refundStatus" type="integer" column="refund_status" nullable="true"/>
+    <field name="gmtRefund" type="integer" column="gmt_refund" nullable="true"/>
+    <field name="sellerEmail" type="string" column="seller_email" length="100" nullable="true"/>
+    <field name="buyerEmail" type="string" column="buyer_email" length="100" nullable="true"/>
+    <field name="sellerId" type="string" column="seller_id" length="64" nullable="true"/>
+    <field name="buyerId" type="string" column="buyer_id" length="64" nullable="true"/>
+    <field name="designFailReason" type="string" column="design_fail_reason" length="255" nullable="true"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ScanCardAppItem" table="scan_card_app_item">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="cardId" type="string" column="card_id" length="32"/>
+    <field name="itemType" type="string" column="item_type" length="255"/>
+    <field name="itemValue" type="text" column="item_value"/>
+    <field name="handleState" type="string" column="handle_state" length="255"/>
+    <field name="emplId" type="string" column="empl_id" length="40"/>
+  </entity>
+</doctrine-mapping>

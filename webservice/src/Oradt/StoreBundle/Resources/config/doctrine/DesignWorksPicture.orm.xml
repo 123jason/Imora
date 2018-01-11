@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignWorksPicture" table="design_works_picture">
+    <indexes>
+      <index name="fk_design_works_picture_design_works1_idx" columns="works_id"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="picId" type="string" column="pic_id" length="32" nullable="true"/>
+    <field name="worksId" type="bigint" column="works_id" nullable="false"/>
+    <field name="name" type="string" column="name" length="100" nullable="false"/>
+    <field name="size" type="integer" column="size" nullable="false"/>
+    <field name="url" type="string" column="url" length="255" nullable="false"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

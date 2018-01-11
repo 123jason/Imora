@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\CardpackageConsumelog" table="cardpackage_consumelog">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="logid" type="string" column="logid" length="32" nullable="true"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="price" type="string" column="price" length="32" nullable="false"/>
+    <field name="date" type="datetime" column="date" nullable="true"/>
+    <field name="balance" type="string" column="balance" length="32" nullable="true"/>
+  </entity>
+</doctrine-mapping>

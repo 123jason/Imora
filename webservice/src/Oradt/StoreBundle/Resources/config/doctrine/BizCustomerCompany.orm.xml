@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BizCustomerCompany" table="biz_customer_company">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+    <field name="name" type="string" column="name" length="256" nullable="false"/>
+    <field name="md5Name" type="string" column="md5_name" length="40" nullable="false"/>
+    <field name="dueTime" type="integer" column="due_time" nullable="false"/>
+    <field name="regnumber" type="string" column="regnumber" length="60" nullable="false"/>
+    <field name="lastUpdateTime" type="integer" column="last_update_time" nullable="false"/>
+    <field name="legalperson" type="string" column="legalperson" length="30" nullable="false"/>
+    <field name="approvedTime" type="string" column="approved_time" length="30" nullable="false"/>
+    <field name="companymortgage" type="text" column="companymortgage" nullable="false"/>
+  </entity>
+</doctrine-mapping>

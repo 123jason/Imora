@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\ApiStatistic" table="api_statistic">
+    <indexes>
+      <index name="date_time_idx" columns="date_time"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="uuid" type="string" column="uuid" length="32" nullable="false"/>
+    <field name="dateTime" type="datetime" column="date_time" nullable="false"/>
+    <field name="apiName" type="string" column="api_name" length="128" nullable="false"/>
+    <field name="method" type="string" column="method" nullable="false"/>
+    <field name="callTimes" type="bigint" column="call_times" nullable="true"/>
+  </entity>
+</doctrine-mapping>

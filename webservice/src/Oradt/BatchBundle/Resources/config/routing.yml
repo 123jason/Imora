@@ -1,0 +1,20 @@
+oradt_batch:
+    path:     /batch
+    defaults: { _controller: OradtBatchBundle:Batch:post }
+    requirements:
+        _method:   POST
+
+################上传,浏览###############
+oradt_batch_upload:
+    path:   /upload
+    defaults: { _controller: OradtBatchBundle:Upload:post}
+    requirements:
+        _method:    POST
+
+oradt_batch_get:
+    path:   /upload
+    defaults: { _controller: OradtBatchBundle:Upload:get}
+    requirements:
+        _method:    GET
+
+

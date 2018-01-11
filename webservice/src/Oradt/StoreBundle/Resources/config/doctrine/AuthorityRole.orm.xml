@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\AuthorityRole" table="authority_role">
+    <unique-constraints>
+      <unique-constraint name="role_id_UNIQUE" columns="role_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="roleId" type="string" column="role_id" length="32" nullable="false"/>
+    <field name="name" type="string" column="name" length="48" nullable="false"/>
+    <field name="displayName" type="string" column="display_name" length="48" nullable="false"/>
+    <field name="permission" type="string" column="permission" length="3192" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+  </entity>
+</doctrine-mapping>

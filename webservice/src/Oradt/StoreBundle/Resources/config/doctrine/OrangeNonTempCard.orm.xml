@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OrangeNonTempCard" table="orange_non_temp_card">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cardType" type="integer" column="card_type" nullable="false"/>
+    <field name="cardName" type="string" column="card_name" length="100" nullable="false"/>
+    <field name="personnum" type="integer" column="personnum" nullable="false"/>
+    <field name="createtime" type="integer" column="createtime" nullable="false"/>
+    <field name="tempId" type="integer" column="temp_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

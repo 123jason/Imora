@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\CalendarNote" table="calendar_note">
+    <unique-constraints>
+      <unique-constraint name="note_id_UNIQUE" columns="note_id"/>
+    </unique-constraints>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="noteId" type="string" column="note_id" length="32" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="title" type="string" column="title" length="128" nullable="false"/>
+    <field name="content" type="string" column="content" length="8192" nullable="true"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="startTime" type="datetime" column="start_time" nullable="false"/>
+    <field name="lastModified" type="datetime" column="last_modified" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

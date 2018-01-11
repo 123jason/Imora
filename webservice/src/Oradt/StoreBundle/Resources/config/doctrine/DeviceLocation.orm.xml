@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DeviceLocation" table="device_location">
+    <indexes>
+      <index name="fk_device_location_1_idx" columns="device_id"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="deviceId" type="string" column="device_id" length="32" nullable="false"/>
+    <field name="latitude" type="decimal" column="latitude" precision="13" scale="8" nullable="false"/>
+    <field name="longitude" type="decimal" column="longitude" precision="13" scale="8" nullable="false"/>
+    <field name="updateTime" type="datetime" column="update_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\BasicOrder" table="basic_order">
+    <unique-constraints>
+      <unique-constraint name="key_order_id" columns="order_id"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="type" type="integer" column="type" nullable="false"/>
+    <field name="orderId" type="string" column="order_id" length="40" nullable="false"/>
+    <field name="goodsId" type="string" column="goods_id" length="40" nullable="false"/>
+    <field name="content" type="text" column="content" nullable="false"/>
+    <field name="appContent" type="text" column="app_content" nullable="false"/>
+    <field name="buyer" type="string" column="buyer" length="255" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="paystatus" type="integer" column="paystatus" nullable="false"/>
+    <field name="price" type="float" column="price" precision="10" scale="2" nullable="false"/>
+    <field name="unit" type="string" column="unit" length="10" nullable="false"/>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="userName" type="string" column="user_name" length="96" nullable="false"/>
+    <field name="userAccount" type="string" column="user_account" length="20" nullable="false"/>
+    <field name="toUserid" type="string" column="to_userid" length="40" nullable="false"/>
+    <field name="toUserName" type="string" column="to_user_name" length="96" nullable="false"/>
+    <field name="toUserAccount" type="string" column="to_user_account" length="20" nullable="false"/>
+    <field name="payment" type="integer" column="payment" nullable="false"/>
+    <field name="bizId" type="string" column="biz_id" length="40" nullable="true"/>
+    <field name="createTime" type="integer" column="create_time" nullable="false"/>
+    <field name="modifyTime" type="integer" column="modify_time" nullable="false"/>
+    <field name="endTime" type="integer" column="end_time" nullable="false"/>
+    <field name="remark" type="string" column="remark" length="500" nullable="false"/>
+    <field name="mapVcardId" type="string" column="map_vcard_id" length="32" nullable="false"/>
+    <field name="isAbnormal" type="integer" column="is_abnormal" nullable="false"/>
+    <field name="tradeNo" type="string" column="trade_no" length="100" nullable="false"/>
+    <field name="settlementTime" type="integer" column="settlement_time" nullable="false"/>
+    <field name="confirmType" type="integer" column="confirm_type" nullable="false"/>
+  </entity>
+</doctrine-mapping>

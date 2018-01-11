@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\OradtRedeemCodeGroup" table="oradt_redeem_code_group">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="adminId" type="string" column="admin_id" length="40" nullable="false"/>
+    <field name="name" type="string" column="name" length="18" nullable="false"/>
+    <field name="exchangeLength" type="integer" column="exchange_length" nullable="false"/>
+    <field name="exchangeStock" type="integer" column="exchange_stock" nullable="false"/>
+    <field name="num" type="integer" column="num" nullable="false"/>
+    <field name="leaveNum" type="integer" column="leave_num" nullable="false"/>
+    <field name="startTime" type="integer" column="start_time" nullable="false"/>
+    <field name="endTime" type="integer" column="end_time" nullable="false"/>
+    <field name="addNum" type="integer" column="add_num" nullable="false"/>
+    <field name="createNum" type="integer" column="create_num" nullable="false"/>
+    <field name="status" type="integer" column="status" nullable="false"/>
+    <field name="createdTime" type="integer" column="created_time" nullable="false"/>
+  </entity>
+</doctrine-mapping>

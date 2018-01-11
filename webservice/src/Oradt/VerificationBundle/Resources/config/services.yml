@@ -1,0 +1,7 @@
+parameters:
+#    oradt_verification.example.class: Oradt\VerificationBundle\Example
+
+services:
+#    oradt_verification.example:
+#        class: %oradt_verification.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

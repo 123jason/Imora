@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\IntroducationMsg" table="introducation_msg">
+    <indexes>
+      <index name="fk_introducation_msg_1_idx" columns="map_id"/>
+      <index name="user_id_idx" columns="to_uid"/>
+    </indexes>
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="msgId" type="string" column="msg_id" length="32" nullable="false"/>
+    <field name="mapId" type="string" column="map_id" length="32" nullable="false"/>
+    <field name="fromUid" type="string" column="from_uid" length="40" nullable="false"/>
+    <field name="toUid" type="string" column="to_uid" length="40" nullable="false"/>
+    <field name="content" type="string" column="content" length="8192" nullable="false"/>
+    <field name="createdTime" type="datetime" column="created_time" nullable="false"/>
+    <field name="status" type="string" column="status" nullable="false"/>
+    <field name="handleResult" type="string" column="handle_result" nullable="false"/>
+  </entity>
+</doctrine-mapping>

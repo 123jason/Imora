@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Oradt\StoreBundle\Entity\DesignFundBalanceLog" table="design_fund_balance_log">
+    <id name="id" type="bigint" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="userId" type="string" column="user_id" length="40" nullable="false"/>
+    <field name="number0" type="decimal" column="number0" precision="13" scale="2" nullable="true"/>
+    <field name="money" type="decimal" column="money" precision="13" scale="2" nullable="true"/>
+    <field name="number1" type="decimal" column="number1" precision="13" scale="2" nullable="true"/>
+    <field name="unitId" type="integer" column="unit_id" nullable="true"/>
+    <field name="insertTime" type="integer" column="insert_time" nullable="true"/>
+    <field name="type" type="string" column="type" nullable="true"/>
+    <field name="description" type="string" column="description" length="255" nullable="true"/>
+    <field name="itemId" type="string" column="item_id" length="32" nullable="true"/>
+    <field name="itemName" type="string" column="item_name" length="255" nullable="true"/>
+    <field name="account" type="string" column="account" length="100" nullable="true"/>
+  </entity>
+</doctrine-mapping>

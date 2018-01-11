@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Oradt\StoreBundle\Entity\WxBizOrder" table="wx_biz_order">
+        <indexes>
+            <index name="idx_bid" columns="biz_id"/>
+        </indexes>
+        <id name="id" type="integer" column="id">
+            <generator strategy="IDENTITY"/>
+        </id>
+        <field name="orderSn" type="integer" column="order_sn" nullable="false"/>
+        <field name="bizId" type="string" column="biz_id" length="40" nullable="false"/>
+        <field name="accountId" type="integer" column="account_id" nullable="false"/>
+        <field name="orderType" type="integer" column="order_type" nullable="false"/>
+        <field name="orderSource" type="integer" column="order_source" nullable="false"/>
+        <field name="payStatus" type="integer" column="pay_status" nullable="false"/>
+        <field name="num" type="integer" column="num" nullable="false"/>
+        <field name="price" type="decimal" column="price" precision="10" scale="2" nullable="false"/>
+        <field name="totalAmount" type="decimal" column="total_amount" precision="15" scale="2" nullable="false"/>
+        <field name="discountSource" type="string" column="discount_source" nullable="false"/>
+        <field name="discountAmount" type="decimal" column="discount_amount" precision="10" scale="2" nullable="false"/>
+        <field name="payAmount" type="decimal" column="pay_amount" precision="10" scale="2" nullable="false"/>
+        <field name="termTime" type="integer" column="term_time" nullable="false"/>
+        <field name="termDate" type="string" column="term_date" nullable="false"/>
+        <field name="platform" type="integer" column="platform" nullable="false"/>
+        <field name="tradeNo" type="string" column="trade_no" length="64" nullable="true"/>
+        <field name="payTime" type="integer" column="pay_time" nullable="true"/>
+        <field name="createTime" type="integer" column="create_time" nullable="false"/>
+        <field name="metadata" type="string" column="metadata" nullable="false"/>
+    </entity>
+</doctrine-mapping>
